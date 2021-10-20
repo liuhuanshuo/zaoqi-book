@@ -13,4 +13,5 @@ parts:
   chapters:
   - file: doc/notebooks/chapter1/chapt1
     sections:
-    - file: doc/notebooks/chapter1/数据加载与存储
+    - file: doc/notebooks/chapter1/读取 Excel 文件
+    - file: doc/notebooks/chapter1/读取 文本 文件

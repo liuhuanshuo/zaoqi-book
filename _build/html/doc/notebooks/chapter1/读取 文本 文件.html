@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>数据读取与存储 &#8212; Pandas速查手册</title>
+    <title>读取 文本 文件 &#8212; Pandas速查手册</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="读取 Excel 文件" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html" />
-    <link rel="prev" title="使用说明" href="../../%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html" />
+    <link rel="prev" title="读取 Excel 文件" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -105,7 +104,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="chapt1.html">
    数据读取与存储
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -113,14 +112,14 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html">
      读取 Excel 文件
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20%E6%96%87%E6%9C%AC%20%E6%96%87%E4%BB%B6.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      读取 文本 文件
     </a>
    </li>
@@ -167,9 +166,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/doc/notebooks/chapter1/chapt1.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/doc/notebooks/chapter1/读取 文本 文件.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -187,7 +186,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/notebooks/chapter1/chapt1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/notebooks/chapter1/读取 文本 文件.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -203,11 +202,44 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=lab/tree/doc/notebooks/chapter1/读取 文本 文件.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#txt">
+   读取 txt 格式
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -217,20 +249,29 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>数据读取与存储<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>读取 文本 文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
 <p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
 </div>
-<p>读取数据是所有 Python 数据分析的第一步，也是常常容易被忽略的一个操作。</p>
-<p>在一次数据分析的过程中，我们可能频繁的读取不同数据并对其进行处理。</p>
-<p>若能灵活掌握数据读取的各项设置，在读取阶段就将<strong>数据筛选、匹配、格式指定</strong>等操作完成，有时可以节省大量时间。</p>
-<p>以下是本章全部内容，你可以点击下方链接或从左侧目录进入对应内容。</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html">读取 Excel 文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20%E6%96%87%E6%9C%AC%20%E6%96%87%E4%BB%B6.html">读取 文本 文件</a></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本页面代码可以在线编辑、执行！</p>
+</div>
+<div class="section" id="txt">
+<h2>读取 txt 格式<a class="headerlink" href="#txt" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;66666&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66666
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -264,23 +305,14 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../../%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html" title="previous page">
+        <a class="left-prev" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">使用说明</p>
+                <p class="prevnext-title">读取 Excel 文件</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">读取 Excel 文件</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
