@@ -4,14 +4,14 @@
 title: Pandas速查手册
 author: 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a>
 logo: logo.png
-copyright                   : 2020-2021
-exclude_patterns            : [README.md]
+copyright: 2020-2021
+exclude_patterns: [README.md]
 only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: cache
+  execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -22,6 +22,7 @@ latex:
 repository:
   url: https://github.com/liuhuanshuo/zaoqi-book  # Online location of your book
   branch: master  # Which branch of the repository should be used when creating links (optional)
+  path_to_book: doc
 
 
 
@@ -36,7 +37,9 @@ html:
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
 
-
+#交互式代码
+launch_buttons:
+  thebe: true
 
 #sphinx:
   config:

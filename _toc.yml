@@ -11,6 +11,6 @@ parts:
 
 - caption: pandas速查手册 📖
   chapters:
-  - file: notebooks/notebooks
+  - file: doc/notebooks/chapter1/chapt1
     sections:
-    - file: notebooks/aaa
+    - file: doc/notebooks/chapter1/数据加载与存储
