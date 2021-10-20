@@ -3,6 +3,14 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
+parts:
+- caption: 指引 📌
+  chapters:
+  - file: doc/指引/使用说明
+
+
+- caption: pandas速查手册 📖
+  chapters:
+  - file: notebooks/notebooks
+    sections:
+    - file: notebooks/aaa
