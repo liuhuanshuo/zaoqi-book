@@ -5,11 +5,21 @@
 # 
 # 这是第一章的介绍
 # 
-# :::{note}
 # 
-# [在线刷题链接](https://www.heywhale.com/mw/project/6146c0318447b8001769ff20)
+
+# ```{admonition} 在线刷题
 # 
-# :::{note}
+
+# ```{admonition} 定義
+
+# ```{admonition} 定義
+# 
+# 樣本空間為隨機試驗所有可能結果的集合。
+# 事件為樣本空間 $\mathcal{S}$ 的子集合。
+# 
+# 
+# 
+# 测试
 
 # ## 习题一
 # 
