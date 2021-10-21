@@ -1,36 +1,35 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
-
-title: ""
-author: 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a>
-logo: logo.png
-copyright: 2020-2021
-exclude_patterns: [README.md]
-only_build_toc_files: true
-
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+#######################################################################################
+# Book settings
+title                       : ""  # The title of the book. Will be placed in the left navbar.
+author                      : 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a>
+copyright                   : "2020-2021"  # Copyright year to be placed in the footer
+logo                        : logo.png  # A path to the book logo
+email                       : "huanshuo0801@gmail.com"
+exclude_patterns            : ['README.md']  # Patterns to skip when building the book. Can be glob-style (for example "*skip.ipynb")
+only_build_toc_files          : true
+#######################################################################################
+# Execution settings
 execute:
-  execute_notebooks: force
-
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
+  execute_notebooks         : auto  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  cache                     : ""  # A path to the jupyter cache that will be used to store execution artifacs. Defaults to `_build/.jupyter_cache/`
+#######################################################################################
+#交互式代码
+launch_buttons:
+  notebook_interface        : "classic"  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (for example, https://mybinder.org)
+  thebe                     : true
 
 repository:
-  url: https://github.com/liuhuanshuo/zaoqi-book  # Online location of your book
-  branch: main # Which branch of the repository should be used when creating links (optional)
-  path_to_book: ""
-
-
-
+  url                       : https://github.com/liuhuanshuo/zaoqi-book  # Online location of your book
+  branch                    : main # Which branch of the repository should be used when creating links (optional)
+  path_to_book              : ""
+#######################################################################################
 # HTML-specific settings
 html:
   comments:
     hypothesis: true
-
   favicon                   : ""  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages.
   use_repository_button     : true  # Whether to add a link to your repository button
@@ -39,14 +38,9 @@ html:
   extra_footer              : ""  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
-
-#交互式代码
-launch_buttons:
-  thebe: true
-  notebook_interface: "jupyterlab"  # or "classic"
-  binderhub_url: "https://mybinder.org"
-
-#sphinx:
-  config:
-    html_theme_options:
-      show_navbar_depth: 2
+#######################################################################################
+# Advanced and power-user settings
+sphinx:
+  extra_extensions          :  # A list of extra extensions to load by Sphinx.
+  config                    :  # key-value pairs to directly over-ride the Sphinx configuration
+    language                : en

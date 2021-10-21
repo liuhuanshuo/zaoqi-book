@@ -15,14 +15,11 @@
 
 # ## 默认读取
 # 
-# <br>
 # 
-# - 读取当前目录下 `某招聘网站数据.csv` 文件
-# - 读取当前目录下 `TOP250.xlsx` 文件
+# 默认读取是最简单的方式，使用 `pd.read_csv('xxxx.csv')` 即可读取对应文件
 # 
-# **注意**：使用 `pandas` 读取 `CSV` 与 读取 `xlsx` 格式的 `Excel` 文件方法大致相同
+# 现在尝试使用 `pandas` 读取当前目录下 `某招聘网站数据.csv`
 # 
-# 因此接下来与 `Excel` 相关的操作均以 `CSV` 格式进行介绍。
 
 # In[1]:
 
@@ -30,6 +27,15 @@
 import pandas as pd
 data = pd.read_csv("某招聘网站数据.csv")
 
+
+# ```{admonition} 注意
+# :class: top tip
+# 
+# 使用 `pandas` 读取 `CSV` 与读取 `xlsx` 格式的 `Excel` 文件方法大致相同
+# 
+# 因此下面与 `Excel` 相关的读取操作均以 `CSV` 格式进行介绍
+# 
+# ```
 
 # ## 指定行读取（顺序）
 # <br>
