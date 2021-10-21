@@ -29,7 +29,7 @@ data = pd.read_csv("某招聘网站数据.csv")
 
 
 # ```{admonition} 注意
-# :class: top tip
+# :class: warning
 # 
 # 使用 `pandas` 读取 `CSV` 与读取 `xlsx` 格式的 `Excel` 文件方法大致相同
 # 

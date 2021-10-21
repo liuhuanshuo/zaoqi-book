@@ -30,7 +30,7 @@ repository:
 html:
   comments:
     hypothesis: true
-  favicon                   : ""  # A path to a favicon image
+  favicon                   : "images/logo-square.svg"  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages.
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
@@ -40,7 +40,7 @@ html:
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
 #######################################################################################
 # Advanced and power-user settings
-sphinx:
-  extra_extensions          :  # A list of extra extensions to load by Sphinx.
-  config                    :  # key-value pairs to directly over-ride the Sphinx configuration
-    language                : en
+#sphinx:
+#  extra_extensions          :  # A list of extra extensions to load by Sphinx.
+#  config                    :  # key-value pairs to directly over-ride the Sphinx configuration
+#    language                : en
