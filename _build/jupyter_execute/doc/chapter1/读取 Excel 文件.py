@@ -29,7 +29,6 @@
 
 import pandas as pd
 data = pd.read_csv("某招聘网站数据.csv")
-data = pd.read_excel("TOP250.xlsx")
 
 
 # ## 指定行读取（顺序）

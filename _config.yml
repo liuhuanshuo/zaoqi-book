@@ -28,6 +28,9 @@ repository:
 
 # HTML-specific settings
 html:
+  comments:
+    hypothesis: true
+
   favicon                   : ""  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages.
   use_repository_button     : true  # Whether to add a link to your repository button
