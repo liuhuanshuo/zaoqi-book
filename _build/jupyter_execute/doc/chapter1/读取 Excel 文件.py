@@ -10,20 +10,19 @@
 # ```
 
 # ```{note} 
-# 本页面代码可以在线编辑、执行！
+# 本页面代码可以[在线编辑、执行](../指引/在线执行.md)！
 # ```
 
-# ## 读取 Excel 文件
+# ## 默认读取
 # 
 # <br>
 # 
 # - 读取当前目录下 `某招聘网站数据.csv` 文件
-# 
 # - 读取当前目录下 `TOP250.xlsx` 文件
 # 
 # **注意**：使用 `pandas` 读取 `CSV` 与 读取 `xlsx` 格式的 `Excel` 文件方法大致相同
 # 
-# 因此接下来与 `Excel` 相关的操作均以 `CSV` 格式进行出题。
+# 因此接下来与 `Excel` 相关的操作均以 `CSV` 格式进行介绍。
 
 # In[1]:
 
@@ -33,7 +32,7 @@ data = pd.read_csv("某招聘网站数据.csv")
 data = pd.read_excel("TOP250.xlsx")
 
 
-# ## 读取 Excel 文件｜指定行（顺序）
+# ## 指定行读取（顺序）
 # <br>
 # 
 # 读取当前目录下 `某招聘网站数据.csv` 文件的 <font color = '#5F5FFC'>前20行</font>
@@ -44,7 +43,7 @@ data = pd.read_excel("TOP250.xlsx")
 data = pd.read_csv("某招聘网站数据.csv",nrows = 20)
 
 
-# ## 读取 Excel 文件｜指定行（跳过）
+# ## 指定行读取（跳过）
 # <br>
 # 
 # 读取当前目录下 `某招聘网站数据.csv` 文件并<font color = '#5F5FFC'>跳过前20行</font>
@@ -55,7 +54,7 @@ data = pd.read_csv("某招聘网站数据.csv",nrows = 20)
 data = pd.read_csv("某招聘网站数据.csv",skiprows = [i for i in range(1,21)])
 
 
-# ## 读取 Excel 文件｜指定行（条件）
+# ## 指定行读取（条件）
 # <br>
 # 
 # 读取当前目录下 `某招聘网站数据.csv` 文件中全部<font color = '#5F5FFC'>偶数行</font>
