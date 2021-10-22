@@ -29,7 +29,7 @@ data = pd.read_csv("某招聘网站数据.csv")
 
 
 # ```{admonition} 注意
-# :class: warning
+# :class: Attention
 # 
 # 使用 `pandas` 读取 `CSV` 与读取 `xlsx` 格式的 `Excel` 文件方法大致相同
 # 
@@ -38,9 +38,9 @@ data = pd.read_csv("某招聘网站数据.csv")
 # ```
 
 # ## 指定行读取（顺序）
-# <br>
 # 
-# 读取当前目录下 `某招聘网站数据.csv` 文件的 <font color = '#5F5FFC'>前20行</font>
+# 
+# 读取当前目录下 `某招聘网站数据.csv` 文件的 **<font color = '#5F5FFC'>前20行</font>**
 
 # In[2]:
 
@@ -49,9 +49,8 @@ data = pd.read_csv("某招聘网站数据.csv",nrows = 20)
 
 
 # ## 指定行读取（跳过）
-# <br>
 # 
-# 读取当前目录下 `某招聘网站数据.csv` 文件并<font color = '#5F5FFC'>跳过前20行</font>
+# 读取当前目录下 `某招聘网站数据.csv` 文件并 **跳过前20行**
 
 # In[3]:
 
@@ -60,16 +59,29 @@ data = pd.read_csv("某招聘网站数据.csv",skiprows = [i for i in range(1,21
 
 
 # ## 指定行读取（条件）
-# <br>
 # 
-# 读取当前目录下 `某招聘网站数据.csv` 文件中全部<font color = '#5F5FFC'>偶数行</font>
-# 
-# 思考：如果是读取全部奇数行，或者更多满足指定条件的行呢？
+# 读取当前目录下 `某招聘网站数据.csv` 文件中全部**偶数行**
 
 # In[4]:
 
 
 data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: (x != 0) and not x % 2)
 
-# data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: x % 2) 奇数行
 
+# In[5]:
+
+
+data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: x % 2) #读取奇数行
+
+
+# ```{admonition} 思考
+# :class: Important
+# 
+# 如果是读取全部奇数行，或者更多满足指定条件的行呢？
+# ```
+
+# ::::{hint}
+# :::{dropdown} **Click to reveal the solution**
+# Test text here
+# :::
+# ::::

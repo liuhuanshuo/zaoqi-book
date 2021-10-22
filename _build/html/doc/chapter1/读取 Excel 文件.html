@@ -269,7 +269,7 @@
         
               <div>
                 
-  <div class="section" id="excel">
+  <div class="tex2jax_ignore mathjax_ignore section" id="excel">
 <h1>读取 Excel 文件<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
@@ -291,7 +291,7 @@
 </div>
 </div>
 </div>
-<div class="warning admonition">
+<div class="attention admonition">
 <p class="admonition-title">注意</p>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 读取 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 与读取 <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> 格式的 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 文件方法大致相同</p>
 <p>因此下面与 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 相关的读取操作均以 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 格式进行介绍</p>
@@ -299,8 +299,7 @@
 </div>
 <div class="section" id="id2">
 <h2>指定行读取（顺序）<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<br>
-<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <font color = '#5F5FFC'>前20行</font></p>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <strong><font color = '#5F5FFC'>前20行</font></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
@@ -311,8 +310,7 @@
 </div>
 <div class="section" id="id3">
 <h2>指定行读取（跳过）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<br>
-<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件并<font color = '#5F5FFC'>跳过前20行</font></p>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件并 <strong>跳过前20行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">skiprows</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)])</span>
@@ -323,18 +321,37 @@
 </div>
 <div class="section" id="id4">
 <h2>指定行读取（条件）<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<br>
-<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件中全部<font color = '#5F5FFC'>偶数行</font></p>
-<p>思考：如果是读取全部奇数行，或者更多满足指定条件的行呢？</p>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件中全部<strong>偶数行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># data = pd.read_csv(&#39;某招聘网站数据.csv&#39;, skiprows=lambda x: x % 2) 奇数行</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#读取奇数行</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">思考</p>
+<p>如果是读取全部奇数行，或者更多满足指定条件的行呢？</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Click to reveal the solution</strong><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Test text here</p>
+</div>
+</details></div>
 </div>
 </div>
 

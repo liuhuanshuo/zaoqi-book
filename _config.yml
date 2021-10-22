@@ -40,7 +40,35 @@ html:
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
 #######################################################################################
 # Advanced and power-user settings
-#sphinx:
-#  extra_extensions          :  # A list of extra extensions to load by Sphinx.
-#  config                    :  # key-value pairs to directly over-ride the Sphinx configuration
-#    language                : en
+parse:
+  myst_substitutions:
+      sub3: My _global_ value!
+  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+#######################################################################################
+sphinx:
+  config:
+    nb_custom_formats:
+      .Rmd:
+        - jupytext.reads
+        - fmt: Rmd
+
+
+
+
+extra_extensions:
+    - sphinx_click.ext
+    - sphinx_inline_tabs
+    - sphinxext.rediraffe
+    - sphinx_proof
+    - myst_nb
+#######################################################################################
