@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -50,6 +51,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="读取 文本 文件" href="%E8%AF%BB%E5%8F%96%20%E6%96%87%E6%9C%AC%20%E6%96%87%E4%BB%B6.html" />
@@ -212,7 +214,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=lab/tree/doc/chapter1/读取 Excel 文件.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter1/读取 Excel 文件.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -268,7 +270,7 @@
         
               <div>
                 
-  <div class="section" id="excel">
+  <div class="tex2jax_ignore mathjax_ignore section" id="excel">
 <h1>读取 Excel 文件<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
@@ -280,13 +282,8 @@
 </div>
 <div class="section" id="id1">
 <h2>默认读取<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<br>
-<ul class="simple">
-<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件</p></li>
-<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">TOP250.xlsx</span></code> 文件</p></li>
-</ul>
-<p><strong>注意</strong>：使用 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 读取 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 与 读取 <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> 格式的 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 文件方法大致相同</p>
-<p>因此接下来与 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 相关的操作均以 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 格式进行介绍。</p>
+<p>默认读取是最简单的方式，使用 <code class="docutils literal notranslate"><span class="pre">pd.read_csv('xxxx.csv')</span></code> 即可读取对应文件</p>
+<p>现在尝试使用 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -295,11 +292,15 @@
 </div>
 </div>
 </div>
+<div class="attention admonition">
+<p class="admonition-title">注意</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 读取 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 与读取 <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> 格式的 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 文件方法大致相同</p>
+<p>因此下面与 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 相关的读取操作均以 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 格式进行介绍</p>
+</div>
 </div>
 <div class="section" id="id2">
 <h2>指定行读取（顺序）<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<br>
-<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <font color = '#5F5FFC'>前20行</font></p>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <strong><font color = '#5F5FFC'>前20行</font></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
@@ -310,8 +311,7 @@
 </div>
 <div class="section" id="id3">
 <h2>指定行读取（跳过）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<br>
-<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件并<font color = '#5F5FFC'>跳过前20行</font></p>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件并 <strong>跳过前20行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">skiprows</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)])</span>
@@ -322,14 +322,21 @@
 </div>
 <div class="section" id="id4">
 <h2>指定行读取（条件）<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<br>
-<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件中全部<font color = '#5F5FFC'>偶数行</font></p>
-<p>思考：如果是读取全部奇数行，或者更多满足指定条件的行呢？</p>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件中全部<strong>偶数行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># data = pd.read_csv(&#39;某招聘网站数据.csv&#39;, skiprows=lambda x: x % 2) 奇数行</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">思考</p>
+<p>如果是读取全部奇数行，或者更多满足指定条件的行呢？</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#读取奇数行</span>
 </pre></div>
 </div>
 </div>
