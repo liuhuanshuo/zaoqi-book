@@ -68,20 +68,14 @@ data = pd.read_csv("某招聘网站数据.csv",skiprows = [i for i in range(1,21
 data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: (x != 0) and not x % 2)
 
 
+# ```{admonition} 思考
+# :class: hint
+# 
+# 如果是读取全部奇数行，或者更多满足指定条件的行呢？
+# ```
+
 # In[5]:
 
 
 data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: x % 2) #读取奇数行
 
-
-# ```{admonition} 思考
-# :class: Important
-# 
-# 如果是读取全部奇数行，或者更多满足指定条件的行呢？
-# ```
-
-# ::::{hint}
-# :::{dropdown} **Click to reveal the solution**
-# Test text here
-# :::
-# ::::

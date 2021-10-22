@@ -62,9 +62,6 @@ sphinx:
         - jupytext.reads
         - fmt: Rmd
 
-
-
-
 extra_extensions:
     - sphinx_click.ext
     - sphinx_inline_tabs
