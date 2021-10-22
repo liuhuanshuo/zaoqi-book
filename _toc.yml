@@ -14,5 +14,20 @@ parts:
   chapters:
   - file: doc/chapter1/chapt1
     sections:
-    - file: doc/chapter1/读取 Excel 文件
-    - file: doc/chapter1/读取 文本 文件
+    - title: 常见文件读取
+      file: doc/chapter1/常见文件读取
+      sections:
+      - title: 读取 Excel
+        file: doc/chapter1/读取 Excel 文件
+      - title: 读取 TXT
+        file: doc/chapter1/读取 TXT
+      - title: 读取 JSON
+        file: doc/chapter1/读取 JSON
+      - title: 读取 SQL
+        file: doc/chapter1/读取 SQL
+      - title: 读取 HDF5
+        file: doc/chapter1/读取 HDF5
+      - title: 读取网页
+        file: doc/chapter1/读取网页
+      - title: 读取剪贴板
+        file: doc/chapter1/读取剪贴板
