@@ -282,33 +282,63 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#n">
+   读取前 n 行
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   指定行读取（顺序）
+   跳过前 n 行
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   指定行读取（跳过）
+   指定行读取
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   指定行读取（条件）
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
    指定列号读取
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id5">
    指定列名读取
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id6">
    指定列匹配读取
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   读取时设置索引
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   读取时设置标题
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   读取并处理缺失值
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   读取时设置格式
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   分块读取
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   循环读取数据
   </a>
  </li>
 </ul>
@@ -350,8 +380,8 @@
 <p>因此下面与 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 相关的读取操作均以 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 格式进行介绍</p>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>指定行读取（顺序）<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="n">
+<h2>读取前 n 行<a class="headerlink" href="#n" title="Permalink to this headline">¶</a></h2>
 <p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <strong>前20行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -361,8 +391,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>指定行读取（跳过）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>跳过前 n 行<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件并 <strong>跳过前20行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -372,8 +402,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>指定行读取（条件）<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>指定行读取<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件中全部<strong>偶数行</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -394,8 +424,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>指定列号读取<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>指定列号读取<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的第 <code class="docutils literal notranslate"><span class="pre">1、3、5</span></code> 列</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -405,8 +435,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>指定列名读取<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>指定列名读取<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">positionId、positionName、salary</span></code> 列</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -416,8 +446,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>指定列匹配读取<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>指定列匹配读取<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>让我们来个更难一点的，还是读取 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，但现在有一个 list 中包含多个字段👇</p>
 <p><code class="docutils literal notranslate"><span class="pre">usecols</span> <span class="pre">=</span> <span class="pre">['positionId','test','positionName',</span> <span class="pre">'test1','salary']</span></code></p>
 <p>如果 <code class="docutils literal notranslate"><span class="pre">usecols</span></code> 中的列名存在于 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 中，则读取。</p>
@@ -426,6 +456,96 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;positionId&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;positionName&#39;</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="s1">&#39;salary&#39;</span><span class="p">]</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">usecols</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>读取时设置索引<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，并在读取时将 <code class="docutils literal notranslate"><span class="pre">positionId</span></code> 设置为索引列</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;positionId&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>读取时设置标题<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<br>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">positionId、positionName、salary</span></code> 列，并将标题设置为 <code class="docutils literal notranslate"><span class="pre">ID、岗位名称、薪资</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">17</span><span class="p">],</span><span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span><span class="s1">&#39;岗位名称&#39;</span><span class="p">,</span><span class="s1">&#39;薪资&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>读取并处理缺失值<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，<strong>并不将缺失值标记为 <code class="docutils literal notranslate"><span class="pre">NA</span></code></strong></p></li>
+<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，<strong>并将<code class="docutils literal notranslate"><span class="pre">[]</span></code>标记为缺失值</strong></p></li>
+<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，<strong>但不处理缺失值</strong></p></li>
+</ul>
+<p>思考：这三种方式有什么区别？</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span><span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;[]&#39;</span><span class="p">])</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">na_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>读取时设置格式<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，并将 <code class="docutils literal notranslate"><span class="pre">positionId,companyId</span></code> 设置为字符串格式</p></li>
+<li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，并将 <code class="docutils literal notranslate"><span class="pre">createTime</span></code> 列设置为时间</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;positionId&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="s1">&#39;companyId&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span> <span class="c1">#指定字符串格式</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;createTime&#39;</span><span class="p">])</span> <span class="c1">#指定时间格式</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>分块读取<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，要求返回一个可迭代对象，每次读取 10 行</p>
+<p>思考：为什么这样做？</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>循环读取数据<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>在 <code class="docutils literal notranslate"><span class="pre">demodata</span></code> 文件夹下有多个 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 文件，要求一次性循环读取全部文件</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;demodata/&#39;</span>
+<span class="n">filesnames</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">filesnames</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filesnames</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xlsx&quot;</span><span class="p">)]</span>
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filesnames</span><span class="p">:</span>
+    <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">filename</span><span class="p">))</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
