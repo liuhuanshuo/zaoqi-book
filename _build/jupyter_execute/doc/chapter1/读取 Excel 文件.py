@@ -37,7 +37,7 @@ data = pd.read_csv("某招聘网站数据.csv")
 # 
 # ```
 
-# ## 指定行读取（顺序）
+# ## 读取前 n 行
 # 
 # 
 # 读取当前目录下 `某招聘网站数据.csv` 文件的 **前20行**
@@ -48,7 +48,7 @@ data = pd.read_csv("某招聘网站数据.csv")
 data = pd.read_csv("某招聘网站数据.csv",nrows = 20)
 
 
-# ## 指定行读取（跳过）
+# ## 跳过前 n 行
 # 
 # 读取当前目录下 `某招聘网站数据.csv` 文件并 **跳过前20行**
 
@@ -58,7 +58,7 @@ data = pd.read_csv("某招聘网站数据.csv",nrows = 20)
 data = pd.read_csv("某招聘网站数据.csv",skiprows = [i for i in range(1,21)])
 
 
-# ## 指定行读取（条件）
+# ## 指定行读取
 # 
 # 读取当前目录下 `某招聘网站数据.csv` 文件中全部**偶数行**
 
@@ -117,4 +117,104 @@ data = pd.read_csv("某招聘网站数据.csv",usecols = ['positionId','position
 usecols = ['positionId', 'test', 'positionName', 'test1', 'salary']
 
 data = pd.read_csv('某招聘网站数据.csv', usecols=lambda c: c in set(usecols))
+
+
+# ## 读取时设置索引
+# 
+# 
+# 读取当前目录下 `某招聘网站数据.csv` 文件，并在读取时将 `positionId` 设置为索引列
+
+# In[9]:
+
+
+data = pd.read_csv('某招聘网站数据.csv',index_col=['positionId'])
+
+
+# ## 读取时设置标题
+# 
+# <br>
+# 
+# 
+# 读取当前目录下 `某招聘网站数据.csv` 文件的 `positionId、positionName、salary` 列，并将标题设置为 `ID、岗位名称、薪资`
+
+# In[10]:
+
+
+data = pd.read_csv('某招聘网站数据.csv', usecols=[0,1,17],header = 0,names=['ID','岗位名称','薪资'])
+
+
+# ## 读取并处理缺失值
+# 
+# 
+# 
+# 
+# - 读取当前目录下 `某招聘网站数据.csv` 文件，**并不将缺失值标记为 `NA`**
+# - 读取当前目录下 `某招聘网站数据.csv` 文件，**并将`[]`标记为缺失值**
+# - 读取当前目录下 `某招聘网站数据.csv` 文件，**但不处理缺失值**
+
+# In[11]:
+
+
+data = pd.read_csv('某招聘网站数据.csv', keep_default_na=False)
+
+data = pd.read_csv('某招聘网站数据.csv',na_values=['[]'])
+
+data = pd.read_csv("某招聘网站数据.csv",na_filter=False)
+
+
+# ```{admonition} 思考
+# :class: hint
+# 
+# 这三种方式有什么区别？
+# ```
+
+# ## 读取时设置格式
+# 
+# 
+# - 读取当前目录下 `某招聘网站数据.csv` 文件，并将 `positionId,companyId` 设置为字符串格式
+# 
+# - 读取当前目录下 `某招聘网站数据.csv` 文件，并将 `createTime` 列设置为时间
+
+# In[12]:
+
+
+data = pd.read_csv("某招聘网站数据.csv", dtype={'positionId': str,'companyId':str}) #指定字符串格式
+
+data = pd.read_csv("某招聘网站数据.csv",parse_dates=['createTime']) #指定时间格式
+
+
+# ## 分块读取
+# 
+# 
+# 读取当前目录下 `某招聘网站数据.csv` 文件，要求返回一个可迭代对象，每次读取 10 行
+
+# In[13]:
+
+
+data = pd.read_csv("某招聘网站数据.csv", chunksize= 10)
+
+
+# ```{admonition} 思考
+# :class: hint
+# 
+# 为什么这样做？
+# ```
+
+# ## 循环读取数据
+# 
+# 
+# 在 `demodata` 文件夹下有多个 `Excel` 文件，要求一次性循环读取全部文件
+
+# In[14]:
+
+
+import os
+path = 'demodata/'
+filesnames = os.listdir(path)
+filesnames = [f for f in filesnames if f.lower().endswith(".xlsx")]
+df_list = []
+for filename in filesnames:
+    df_list.append(pd.read_excel(path + filename))
+
+df = pd.concat(df_list)
 
