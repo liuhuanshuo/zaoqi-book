@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,7 +34,7 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -42,10 +42,10 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="读取 TXT 文件" href="%E8%AF%BB%E5%8F%96%20TXT.html" />
+    <link rel="next" title="读取 TXT 文件" href="%E8%AF%BB%E5%8F%96TXT.html" />
     <link rel="prev" title="常见文件读取" href="%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -87,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   指引 📌
  </span>
@@ -104,7 +104,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   图解Pandas 📖
  </span>
@@ -112,7 +112,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapt1.html">
-   数据读取与存储
+   数据加载与存储
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -136,22 +136,22 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20TXT.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96TXT.html">
        读取 TXT
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20JSON.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96JSON.html">
        读取 JSON
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20SQL.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96SQL.html">
        读取 SQL
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20HDF5.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96HDF5.html">
        读取 HDF5
       </a>
      </li>
@@ -210,7 +210,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/doc/chapter1/读取 Excel 文件.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/doc/chapter1/读取Excel文件.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -230,7 +230,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter1/读取 Excel 文件.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter1/读取Excel文件.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -251,7 +251,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter1/读取 Excel 文件.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter1/读取Excel文件.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -491,7 +491,6 @@
 <li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，<strong>并将<code class="docutils literal notranslate"><span class="pre">[]</span></code>标记为缺失值</strong></p></li>
 <li><p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，<strong>但不处理缺失值</strong></p></li>
 </ul>
-<p>思考：这三种方式有什么区别？</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;某招聘网站数据.csv&#39;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -502,6 +501,10 @@
 </pre></div>
 </div>
 </div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">思考</p>
+<p>这三种方式有什么区别？</p>
 </div>
 </div>
 <div class="section" id="id10">
@@ -523,13 +526,16 @@
 <div class="section" id="id11">
 <h2>分块读取<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>读取当前目录下 <code class="docutils literal notranslate"><span class="pre">某招聘网站数据.csv</span></code> 文件，要求返回一个可迭代对象，每次读取 10 行</p>
-<p>思考：为什么这样做？</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">思考</p>
+<p>为什么这样做？</p>
 </div>
 </div>
 <div class="section" id="id12">
@@ -592,7 +598,7 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="%E8%AF%BB%E5%8F%96%20TXT.html" title="next page">
+        <a class="right-next" href="%E8%AF%BB%E5%8F%96TXT.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
                 <p class="prevnext-title">读取 TXT 文件</p>

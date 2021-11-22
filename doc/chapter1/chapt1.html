@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>数据读取与存储</title>
+    <title>数据加载与存储</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,7 +34,7 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -42,10 +42,10 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -87,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   指引 📌
  </span>
@@ -104,7 +104,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   图解Pandas 📖
  </span>
@@ -112,7 +112,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   数据读取与存储
+   数据加载与存储
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -131,27 +131,27 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
        读取 Excel
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20TXT.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96TXT.html">
        读取 TXT
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20JSON.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96JSON.html">
        读取 JSON
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20SQL.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96SQL.html">
        读取 SQL
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20HDF5.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96HDF5.html">
        读取 HDF5
       </a>
      </li>
@@ -260,23 +260,23 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>数据读取与存储<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>数据加载与存储<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
 <p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
 </div>
-<p>读取数据是所有 Python 数据分析的第一步，也是常常容易被忽略的一个操作。</p>
+<p>加载数据是所有 Python 数据分析的第一步，也是常常容易被忽略的一个操作。</p>
 <p>在一次数据分析的过程中，我们可能频繁的读取不同数据并对其进行处理。</p>
 <p>若能灵活掌握数据读取的各项设置，在读取阶段就将<strong>数据筛选、匹配、格式指定</strong>等操作完成，有时可以节省大量时间。</p>
 <p>以下是本章全部内容，你可以点击下方链接或从左侧目录进入对应内容。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html">常见文件读取</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html">读取 Excel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20TXT.html">读取 TXT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20JSON.html">读取 JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20SQL.html">读取 SQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%20HDF5.html">读取 HDF5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">读取 Excel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96TXT.html">读取 TXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96JSON.html">读取 JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96SQL.html">读取 SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96HDF5.html">读取 HDF5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5.html">读取网页</a></li>
 <li class="toctree-l2"><a class="reference internal" href="%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html">读取剪贴板</a></li>
 </ul>
