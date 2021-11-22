@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,7 +34,7 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -42,10 +42,10 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -86,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   指引 📌
  </span>
@@ -103,7 +103,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   图解Pandas 📖
  </span>
@@ -111,7 +111,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapt1.html">
-   数据读取与存储
+   数据加载与存储
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -130,27 +130,27 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20Excel%20%E6%96%87%E4%BB%B6.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
        读取 Excel
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20TXT.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96TXT.html">
        读取 TXT
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20JSON.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96JSON.html">
        读取 JSON
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20SQL.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96SQL.html">
        读取 SQL
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%20HDF5.html">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96HDF5.html">
        读取 HDF5
       </a>
      </li>
@@ -270,6 +270,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   常规读取
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -287,6 +300,25 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
+</div>
+<div class="section" id="id2">
+<h2>常规读取<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>有时，我们想快速读取一些数据，又不想保存数据再读取。</p>
+<p>这时可以选中目标数据并复制，之后利用 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 直接从剪贴板读取</p>
+<p>现在，尝试复制一下数据并直接从剪贴板读取！</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># data = pd.read_clipboard()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">注意</p>
+<p>上面的代码应该复制到你的 <code class="docutils literal notranslate"><span class="pre">notebook</span></code> 中执行，在线执行会报错，因为你的剪贴板数据并没有上传到我的服务器🤔</p>
+</div>
 </div>
 </div>
 
