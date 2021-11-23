@@ -14,7 +14,7 @@ parts:
   chapters:
   - file: doc/chapter1/chapt1
     sections:
-    - title: 常见文件读取
+    - title: 常见格式读取
       file: doc/chapter1/常见文件读取
       sections:
       - title: 读取 Excel
@@ -31,3 +31,15 @@ parts:
         file: doc/chapter1/读取网页
       - title: 读取剪贴板
         file: doc/chapter1/读取剪贴板
+
+    - title: 常见数据创建
+      file: doc/chapter1/常见数据创建
+      sections:
+      - title: 从列表创建
+        file: doc/chapter1/从列表创建
+      - title: 从字典创建
+        file: doc/chapter1/从字典创建
+      - title: 从集合创建
+        file: doc/chapter1/从集合创建
+    - title: 数据存储
+      file: doc/chapter1/数据存储
