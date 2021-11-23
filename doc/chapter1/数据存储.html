@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>读取网页</title>
+    <title>数据存储</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,7 @@
     <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="读取剪贴板" href="%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html" />
-    <link rel="prev" title="读取 HDF5 文件" href="%E8%AF%BB%E5%8F%96HDF5.html" />
+    <link rel="prev" title="从集合创建 DataFrame" href="%E4%BB%8E%E9%9B%86%E5%90%88%E5%88%9B%E5%BB%BA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -120,16 +119,16 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html">
      常见格式读取
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
        读取 Excel
@@ -155,8 +154,8 @@
        读取 HDF5
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5.html">
        读取网页
       </a>
      </li>
@@ -194,8 +193,8 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      数据存储
     </a>
    </li>
@@ -242,7 +241,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/doc/chapter1/读取网页.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/doc/chapter1/数据存储.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -262,7 +261,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter1/读取网页.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter1/数据存储.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -283,7 +282,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter1/读取网页.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter1/数据存储.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -309,8 +308,48 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#csv">
+   保存为 CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   常规读取
+   指定列保存
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   取消索引
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   标记缺失值
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zip">
+   保存为 ZIP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#excel">
+   保存为 Excel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json">
+   保存为 JSON
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown">
+   保存为 Markdown
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#html">
+   保存为 Html
   </a>
  </li>
 </ul>
@@ -325,7 +364,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>读取网页<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>数据存储<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
 <p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
@@ -334,100 +373,111 @@
 <p class="admonition-title">Note</p>
 <p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
 </div>
-<div class="section" id="id2">
-<h2>常规读取<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>有时候我们需要网页上的表格数据，但又不想下载数据再读取，可以试试使用 <code class="docutils literal notranslate"><span class="pre">pd.read_html</span></code> 直接读取！</p>
-<p>例如直接从<a href="https://baike.baidu.com/item/2020%E5%B9%B4%E4%B8%9C%E4%BA%AC%E5%A5%A5%E8%BF%90%E4%BC%9A/10188878?fromtitle=%E4%B8%9C%E4%BA%AC%E5%A5%A5%E8%BF%90%E4%BC%9A&fromid=3250130&fr=aladdin#5_1" target="_blank">百度百科 - 东京奥运会</a>读取奖牌榜数据并查看前 5 名。</p>
-<p><a href="https://baike.baidu.com/item/2020%E5%B9%B4%E4%B8%9C%E4%BA%AC%E5%A5%A5%E8%BF%90%E4%BC%9A/10188878?fromtitle=%E4%B8%9C%E4%BA%AC%E5%A5%A5%E8%BF%90%E4%BC%9A&fromid=3250130&fr=aladdin#5_1" target="_blank"><img alt="image.png" src="http://tva1.sinaimg.cn/large/c23ef7c0ly1gwnx3k6qzpj21a80gmmz7.jpg" /></a></p>
+<div class="section" id="csv">
+<h2>保存为 CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
+<p>将数据保存为 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 格式至当前目录下（文件名任意）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s2">&quot;https://baike.baidu.com/item/2020</span><span class="si">%E</span><span class="s2">5%B9%B4</span><span class="si">%E</span><span class="s2">4%B8%9C</span><span class="si">%E</span><span class="s2">4%BA%AC</span><span class="si">%E</span><span class="s2">5%A5%A5</span><span class="si">%E</span><span class="s2">8%BF</span><span class="si">%90%</span><span class="s2">E4%BC%9A/10188878?fromtitle=</span><span class="si">%E</span><span class="s2">4%B8%9C</span><span class="si">%E</span><span class="s2">4%BA%AC</span><span class="si">%E</span><span class="s2">5%A5%A5</span><span class="si">%E</span><span class="s2">8%BF</span><span class="si">%90%</span><span class="s2">E4%BC%9A&amp;fromid=3250130&amp;fr=aladdin&quot;</span><span class="p">)[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;out.csv&quot;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf_8_sig&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>排名</th>
-      <th>代表团</th>
-      <th>金牌</th>
-      <th>银牌</th>
-      <th>铜牌</th>
-      <th>总数</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>美国</td>
-      <td>39</td>
-      <td>41</td>
-      <td>33</td>
-      <td>113</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>中国</td>
-      <td>38</td>
-      <td>32</td>
-      <td>18</td>
-      <td>88</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>日本</td>
-      <td>27</td>
-      <td>14</td>
-      <td>17</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>英国</td>
-      <td>22</td>
-      <td>21</td>
-      <td>22</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>俄罗斯奥运队</td>
-      <td>20</td>
-      <td>28</td>
-      <td>23</td>
-      <td>71</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">什么类型的表格可以直接读取？</p>
-<p>目标网站使用 <code class="docutils literal notranslate"><span class="pre">table</span></code> 渲染的表格可以直接读取</p>
-<p><img alt="image.png" src="http://tva1.sinaimg.cn/large/c23ef7c0ly1gwnxjfks6vj220g0zuk8t.jpg" /></p>
+</div>
+<div class="section" id="id2">
+<h2>指定列保存<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>将 <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html"><span class="doc std std-doc">读取 Excel 文件</span></a> 中读取到的数据保存为 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 格式至当前目录下（文件名任意），且只保留<code class="docutils literal notranslate"><span class="pre">positionName、salary</span></code>两列</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;out.csv&quot;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf_8_sig&#39;</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;positionName&#39;</span><span class="p">,</span><span class="s1">&#39;salary&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>取消索引<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>将 <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html"><span class="doc std std-doc">读取 Excel 文件</span></a> 中读取到的数据保存为 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 格式至当前目录下（文件名任意），且取消每一行的索引</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;out.csv&quot;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf_8_sig&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>标记缺失值<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>在上面的基础上，在保存的同时，将缺失值标记为<code class="docutils literal notranslate"><span class="pre">'数据缺失'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;out.csv&quot;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf_8_sig&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">na_rep</span> <span class="o">=</span> <span class="s1">&#39;数据缺失&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zip">
+<h2>保存为 ZIP<a class="headerlink" href="#zip" title="Permalink to this headline">¶</a></h2>
+<p>将上面的数据保存至 <code class="docutils literal notranslate"><span class="pre">zip</span></code> 文件，解压后出现 <code class="docutils literal notranslate"><span class="pre">out.csv</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compression_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;zip&#39;</span><span class="p">,</span>
+                        <span class="n">archive_name</span><span class="o">=</span><span class="s1">&#39;out.csv&#39;</span><span class="p">)</span>  
+<span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out.zip&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+          <span class="n">compression</span><span class="o">=</span><span class="n">compression_opts</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="excel">
+<h2>保存为 Excel<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h2>
+<p>将数据保存为 <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> 格式至当前目录下（文件名任意）</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;test.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="json">
+<h2>保存为 JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
+<p>将数据保存为 <code class="docutils literal notranslate"><span class="pre">json</span></code> 格式至当前目录下（文件名任意）</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;out.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="markdown">
+<h2>保存为 Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h2>
+<p>将数据转换为 <code class="docutils literal notranslate"><span class="pre">markdown</span></code> 形式表格，这样可以直接复制进 <code class="docutils literal notranslate"><span class="pre">.md</span></code> 文件中使用</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="html">
+<h2>保存为 Html<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h2>
+<p>将数据保存为 <code class="docutils literal notranslate"><span class="pre">html</span></code> 格式至当前目录下（文件名任意），并进行如下设置</p>
+<ul class="simple">
+<li><p>取消行索引</p></li>
+<li><p>标题居中对齐</p></li>
+<li><p>列宽100</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;out.html&quot;</span><span class="p">,</span> <span class="n">col_space</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">justify</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">border</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -462,23 +512,14 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="%E8%AF%BB%E5%8F%96HDF5.html" title="previous page">
+        <a class="left-prev" href="%E4%BB%8E%E9%9B%86%E5%90%88%E5%88%9B%E5%BB%BA.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">读取 HDF5 文件</p>
+                <p class="prevnext-title">从集合创建 DataFrame</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">读取剪贴板</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
