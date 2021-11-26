@@ -17,3 +17,4 @@ workshops/boost-research-reproducibility-binder/workshop-presentations/*pptx
 
 # Jupyter Notebook
 .ipynb_checkpoints
+_build/html/_static/__pycache__/__init__.cpython-38.pyc

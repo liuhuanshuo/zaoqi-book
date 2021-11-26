@@ -65,16 +65,6 @@ df[df.isnull().T.any() == True]
 .set_table_attributes('style="font-size: 10px"'))
 
 
-# In[6]:
-
-
-with option_context('display.max_colwidth', 10):
-    display((df[df.isnull().T.any() == True]
-.style
-.highlight_null(null_color='skyblue')
-.set_table_attributes('style="font-size: 10px"')))
-
-
 # In[ ]:
 
 

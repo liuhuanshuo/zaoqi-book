@@ -70,4 +70,4 @@ extra_extensions:
     - sphinxext.rediraffe
     - sphinx_proof
     - myst_nb
-#######################################################################################
+    - sphinx_thebe
