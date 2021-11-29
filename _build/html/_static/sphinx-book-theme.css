@@ -698,7 +698,7 @@ div.tableofcontents-wrapper p.caption {
 }
 
 .scrolled .topbar {
-    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3)
+    // box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3)
 }
 
 .topbar .topbar-main {
@@ -820,7 +820,7 @@ button.topbarbtn img {
 
 #navbar-toggler i.fa-bars {
     opacity: 0;
-    transform: rotate(180deg) scale(0.5)
+    transform: rotate(180deg) scale(0.5);
 }
 
 #navbar-toggler i.fa-arrow-left, #navbar-toggler i.fa-arrow-up {

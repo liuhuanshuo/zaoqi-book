@@ -41,6 +41,7 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
@@ -313,9 +314,16 @@
 
 
           
+
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+
+<div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
@@ -328,16 +336,13 @@
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
             </button>
-
-            <button  class="btn btn-secondary topbarbtn"><a href="https://www.baidu.com"><i
-                    class="fa fa-home"></i></a>
-            </button>
-
             
+
+            <button class="btn btn-secondary topbarbtn"><a href="https://www.baidu.com"  target="_blank"><i data-feather="home" color = '#5A5A5A'></i></a></button>
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+            data-feather="download-cloud"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
@@ -356,7 +361,7 @@
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+        aria-label="Connect with source repository"><i data-feather="github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/liuhuanshuo/zaoqi-book"><button type="button" class="btn btn-secondary topbarbtn"
@@ -375,13 +380,13 @@
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
         data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
         title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            data-feather="maximize"></i></button></a>
 
             <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter2/数据预览.ipynb"><button type="button"
@@ -523,18 +528,18 @@
   </thead>
   <tbody>
     <tr>
-      <th>194</th>
-      <td>寄生虫</td>
-      <td>2019</td>
-      <td>8.7</td>
-      <td>1103840.0</td>
-      <td>奉俊昊</td>
-      <td>奉俊昊 / 韩进元</td>
-      <td>宋康昊 / 李善均 / 曹如晶 / 崔宇植 / 朴素丹 / 李姃垠 / 张慧珍 / 郑知晓 ...</td>
-      <td>剧情 / 喜剧</td>
-      <td>韩国</td>
-      <td>韩语</td>
-      <td>132.0</td>
+      <th>61</th>
+      <td>美丽心灵</td>
+      <td>2001</td>
+      <td>9.0</td>
+      <td>611950.0</td>
+      <td>朗·霍华德</td>
+      <td>阿齐瓦·高斯曼 / 西尔维娅·纳萨尔</td>
+      <td>罗素·克劳 / 艾德·哈里斯 / 詹妮弗·康纳利 / 克里斯托弗·普卢默 / 保罗·贝坦尼 ...</td>
+      <td>剧情 / 传记</td>
+      <td>美国</td>
+      <td>英语</td>
+      <td>135.0</td>
     </tr>
   </tbody>
 </table>
@@ -906,6 +911,7 @@ memory usage: 22.6+ KB
     </div>
   
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  
 
   
   </body>

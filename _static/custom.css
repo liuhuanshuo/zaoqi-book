@@ -1,6 +1,6 @@
-/*html, body {*/
-/*  scroll-behavior: smooth;*/
-/*}*/
+html, body {
+  scroll-behavior: smooth;
+}
 
 /*.mermaidClass > rect{*/
 /*    fill: #f57676;*/
@@ -252,9 +252,9 @@
 /*  width: 130%;*/
 /*}*/
 
-/*main.overflow-auto {*/
-/*    overflow: initial !important;*/
-/*}*/
+main.overflow-auto {
+    overflow: initial !important;
+}
 
 /*img.imageez {*/
 /*    display: block;*/
@@ -403,6 +403,7 @@ div.firstCol div.d-block {
     }
     button#navbar-toggler {
         margin-left: 10px !important;
+        outline:none
     }
     div.topbar-contents div.site-navigation {
         display: none;
@@ -635,6 +636,7 @@ details table{
 
 div.topbar div.bd-toc {
     border-left: 1px solid #fc7a4a !important;
+    margin-left: 1rem;
 }
 nav#bd-toc-nav li.active,
 nav#bd-toc-nav a.active {
@@ -724,55 +726,55 @@ li.toc-list-itme-active,
 /*	color: #300861;*/
 /*}*/
 
-.fab.fa-github,
-.fas.fa-download,
-.fas.fa-expand,
-.fas.fa-arrow-left,
-.fas.far-arrow-up,
-.fas.fa-bars,
-.fas.fa-lightbulb,
-.fas.fa-pencil-alt,
-.fas.fa-list,
-.fas.fa-download,
-i.fab.fa-github,
-.fas.fa-download,
-.fas.fa-expand,
-.fas.fa-arrow-left,
-.fas.far-arrow-up,
-.fas.fa-bars,
-.fas.fa-lightbulb,
-.fas.fa-pencil-alt,
-.fas.fa-list,
-i.fas.fa-download,
-main.bd-content #main-content a,
-main.bd-content #main-content a:visited,
-main.bd-content #main-content h3,
-main.bd-content #main-content h3 *,
-main.bd-content #main-content h4,
-main.bd-content #main-content h4 *,
-.bd-toc nav a:hover,
-.bd-toc nav li.active > a.active,
-nav.onthispage li.active a,
-a,
-a.reference.external,
-a:visited,
-a.anchorjs-link,
-a.anchor-link,
-a.nav-link,
-li.toc-list-item,
-button.btn.btn-secondary.topbarbtn,
-button.btn.btn-secondary,
-.prev-next-bottom a.right-next,
-.prev-next-bottom a.left-prev,
-.bd-sidebar nav ul.nav a:hover,
-.bd-sidebar nav ul.nav li.active > a,
-.bd-sidebar nav ul.nav li.active > a:hover,
-.c-sidebar__title,
-ul.c-sidebar__chapters,
-button.btn.btn-secondary.topbarbtn,
-button.btn.btn-secondary {
-  color: #666666;
-}
+/*.fab.fa-github,*/
+/*.fas.fa-download,*/
+/*.fas.fa-expand,*/
+/*.fas.fa-arrow-left,*/
+/*.fas.far-arrow-up,*/
+/*.fas.fa-bars,*/
+/*.fas.fa-lightbulb,*/
+/*.fas.fa-pencil-alt,*/
+/*.fas.fa-list,*/
+/*.fas.fa-download,*/
+/*i.fab.fa-github,*/
+/*.fas.fa-download,*/
+/*.fas.fa-expand,*/
+/*.fas.fa-arrow-left,*/
+/*.fas.far-arrow-up,*/
+/*.fas.fa-bars,*/
+/*.fas.fa-lightbulb,*/
+/*.fas.fa-pencil-alt,*/
+/*.fas.fa-list,*/
+/*i.fas.fa-download,*/
+/*main.bd-content #main-content a,*/
+/*main.bd-content #main-content a:visited,*/
+/*main.bd-content #main-content h3,*/
+/*main.bd-content #main-content h3 *,*/
+/*main.bd-content #main-content h4,*/
+/*main.bd-content #main-content h4 *,*/
+/*.bd-toc nav a:hover,*/
+/*.bd-toc nav li.active > a.active,*/
+/*nav.onthispage li.active a,*/
+/*a,*/
+/*a.reference.external,*/
+/*a:visited,*/
+/*a.anchorjs-link,*/
+/*a.anchor-link,*/
+/*a.nav-link,*/
+/*li.toc-list-item,*/
+/*button.btn.btn-secondary.topbarbtn,*/
+/*button.btn.btn-secondary,*/
+/*.prev-next-bottom a.right-next,*/
+/*.prev-next-bottom a.left-prev,*/
+/*.bd-sidebar nav ul.nav a:hover,*/
+/*.bd-sidebar nav ul.nav li.active > a,*/
+/*.bd-sidebar nav ul.nav li.active > a:hover,*/
+/*.c-sidebar__title,*/
+/*ul.c-sidebar__chapters,*/
+/*button.btn.btn-secondary.topbarbtn,*/
+/*button.btn.btn-secondary {*/
+/*  color: #666666;*/
+/*}*/
 
 main.c-textbook__page {
    color:black;
@@ -1063,11 +1065,13 @@ div.topbar {
 }
 
 #navbar-toggler {
-    position: relative;
-    margin-right: 0.5em;
+    position: inherit;
+    margin-right: 0.4em;
     margin-left: 0.5em;
-    color: #5a5a5a;
+    color: #5A5A5A;
     transition: all 0.2s ease-in-out;
+    font-size: 1.2rem;
+    -webkit-text-stroke: 1.5px #EFEFEF;
 }
 
 main.bd-content #main-content>div>div>div.section, main.bd-content #main-content .prev-next-bottom {
@@ -1092,4 +1096,72 @@ h2 {
 
 h1 {
   font-size: 2em;
+}
+
+.qe-sidebar {
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #efefef;
+    padding: 2rem;
+    margin: 0;
+    border-right: 1px solid #ccc;
+    width: 250px;
+    transform: translate3d(0px, 0px, 0px);
+    visibility: visible;
+    transition: all 0.2s ease 0s;
+    height: 100vh;
+    overflow-y: scroll;
+    position: fixed;
+    padding-top: 5rem;
+}
+
+.bd-toc nav>.nav {
+    border-left: 1px solid #eee;
+    padding-top: 0.5rem;
+}
+
+.bd-toc .toc-entry a {
+    padding: 0.125rem 1rem !important;
+    margin-top: 0.2rem;
+}
+
+.bd-toc .tocsection {
+    padding: 0.7rem 0 0.5rem 1rem !important;
+}
+
+
+.topbar, .topbar-contents, .topbar-main {
+    height: 3em;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+
+.bd-search {
+    position: relative;
+    padding: 1rem 15px;
+    margin-right: -15px;
+    margin-left: 5px;
+}
+
+.bd-search .icon {
+    position: absolute;
+    color: #a4a6a7;
+    left: 25px;
+    top: 27px;
+}
+
+img, svg {
+    vertical-align: middle;
+    height: 22px;
+}
+
+#navbar-toggler i {
+    transition: opacity .3s, transform .3s;
+    position: absolute;
+    top: 16%;
+    left: 0;
+    display: block;
+    font-size: 1.2em;
+    padding-top: inherit;
 }
