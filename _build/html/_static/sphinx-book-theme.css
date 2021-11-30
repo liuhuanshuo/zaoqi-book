@@ -986,15 +986,17 @@ button.topbarbtn img {
 }
 
 #site-navigation::-webkit-scrollbar {
-    width: 5px
+    width: 0.9rem
 }
 
 #site-navigation::-webkit-scrollbar {
-    background: #f1f1f1
+    background: #FAFAFA
 }
 
 #site-navigation::-webkit-scrollbar-thumb {
-    background: #c1c1c1
+    background: #c1c1c1;
+    border: 3px #FAFAFA solid;
+    -webkit-border-radius: 10px;
 }
 
 #site-navigation::-webkit-scrollbar-thumb:hover {
@@ -1007,11 +1009,15 @@ button.topbarbtn img {
     }
 
     #site-navigation:not(:hover)::-webkit-scrollbar {
-        background: #FFFFFF
+        background: #FAFAFB;
+        width: 0.9rem;
     }
 
     #site-navigation:not(:hover)::-webkit-scrollbar-thumb {
-        background: #FFFFFF
+        background: #C1C1C1;
+        border: 3px #FAFAFA solid;
+        -webkit-border-radius: 10px;
+
     }
 
 }
