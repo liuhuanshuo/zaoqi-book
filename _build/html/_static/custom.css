@@ -143,18 +143,18 @@ section > table {
 /*-------END OF DEFINING CSS CARD AND TABLE LAAOUT---------*/
 
 
-.footer {
-	width: auto;
-	text-align: center;
-}
+/*.footer {*/
+/*	width: auto;*/
+/*	text-align: center;*/
+/*}*/
 
-footer div.container p:first-child {
-    display: none !important;
-}
+/*footer div.container p:first-child {*/
+/*    display: none !important;*/
+/*}*/
 
-footer li {
-    text-align: left;
-}
+/*footer li {*/
+/*    text-align: left;*/
+/*}*/
 
 /*::-webkit-scrollbar,*/
 /*::-webkit-scrollbar-thumb {*/
@@ -385,7 +385,7 @@ div.firstCol div.d-block {
 /* ################################################## */
 
 @media (min-width: 1405px) {
-    div.container-xl, footer .container {
+    div.container-xl, .container {
         max-width: 100% !important;
         padding-left: 0 !important;
     }
@@ -393,7 +393,7 @@ div.firstCol div.d-block {
         max-width: 360px;
         padding: 40px 20px 20px 20px;
     }
-    div#site-navigation .navbar_extra_footer {
+    div#site-navigation {
         margin-bottom: 0 !important;
         margin-top: 20px;
     }
@@ -402,7 +402,7 @@ div.firstCol div.d-block {
         min-height: 97vh;
     }
     button#navbar-toggler {
-        margin-left: 10px !important;
+        margin-left: 3px !important;
         outline:none
     }
     div.topbar-contents div.site-navigation {
@@ -412,29 +412,29 @@ div.firstCol div.d-block {
         padding-right: 10px;
     }
     footer,
-    footer {
-        width: 98.5vw !important;
-        position: absolute;
-        left: -295px;
-    }
-    footer *:not(img) {
-        width: 100% !important;
-    }
-    footer .column {
-      float: initial !important;
-    }
-    footer .container p, footer .container div.extra_footer {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    footer .container .extra_footer * {
-        max-width: 900px;
-    }
-    footer .row_footer {
-        display: block;
-        margin: auto;
-    }
+    /*footer {*/
+    /*    width: 98.5vw !important;*/
+    /*    position: absolute;*/
+    /*    left: -295px;*/
+    /*}*/
+    /*footer *:not(img) {*/
+    /*    width: 100% !important;*/
+    /*}*/
+    /*footer .column {*/
+    /*  float: initial !important;*/
+    /*}*/
+    /*footer .container p, footer .container div.extra_footer {*/
+    /*    display: block;*/
+    /*    margin-left: auto;*/
+    /*    margin-right: auto;*/
+    /*}*/
+    /*footer .container .extra_footer * {*/
+    /*    max-width: 900px;*/
+    /*}*/
+    /*footer .row_footer {*/
+    /*    display: block;*/
+    /*    margin: auto;*/
+    /*}*/
     #site-navigation {
         display: flex;
         flex-direction: column;
@@ -444,11 +444,11 @@ div.firstCol div.d-block {
     }
 }
 
-@media (max-width: 1404px) {
-    .footer {
-        margin-right: 20px;
-    }
-}
+/*@media (max-width: 1404px) {*/
+/*    .footer {*/
+/*        margin-right: 20px;*/
+/*    }*/
+/*}*/
 
 div#site-navigation img.logo{
     width: 260px !important;
@@ -799,11 +799,11 @@ details table tr th {
     min-width: 100px;
 }
 
-footer,
-footer *:not(a) {
-    background: #421C6E;
-    color: white;
-}
+/*footer,*/
+/*footer *:not(a) {*/
+/*    background: #421C6E;*/
+/*    color: white;*/
+/*}*/
 
 /*.text--primary {*/
 /*    color: #421C6E !important*/
@@ -1064,6 +1064,7 @@ div.topbar {
     /* margin-bottom: 1rem; */
     padding: 1.5rem;
     padding-top: 0rem;
+    padding-bottom: 0rem;
 }
 
 #navbar-toggler {
@@ -1209,3 +1210,17 @@ img, svg {
     letter-spacing: 0.2px;
 }
 
+footer {
+    width: 73%;
+    border-top: 1.5px solid gray;
+    padding: 1rem 0 0 0;
+    opacity: 0.9;
+    margin: 2rem;
+}
+
+#site-navigation div.navbar_extra_footer {
+    text-align: center;
+    font-size: .9em;
+    color: #5a5a5a;
+    margin-bottom: 1em;
+}
