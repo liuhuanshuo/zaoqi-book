@@ -41,6 +41,7 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
@@ -246,6 +247,11 @@
   </ul>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../chapter2-2/chapt2-2.html">
+   数据统计
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../chapter3/chapt3.html">
    数据修改与筛选
   </a>
@@ -308,11 +314,19 @@
 
 
           
+
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+
+<div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+
+
         <div class="col pl-md-4 topbar-main">
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
@@ -324,10 +338,13 @@
                 <i class="fas fa-arrow-up"></i>
             </button>
             
+
+
+            <a href="https://www.baidu.com"  target="_blank"><button data-tippy-content="返回主页" class="btn btn-secondary topbarbtn"><i data-feather="home" color = '#5A5A5A'></i></button></a>
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+            data-feather="download-cloud"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
@@ -346,7 +363,7 @@
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+        aria-label="Connect with source repository"><i data-feather="github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/liuhuanshuo/zaoqi-book"><button type="button" class="btn btn-secondary topbarbtn"
@@ -365,13 +382,13 @@
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
         data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
         title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            data-feather="maximize"></i></button></a>
 
             <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter1/从字典创建.ipynb"><button type="button"
@@ -751,6 +768,7 @@
     </div>
   
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  
 
   
   </body>
