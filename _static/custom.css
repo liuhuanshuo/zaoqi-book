@@ -1085,7 +1085,7 @@ div.topbar {
 main.bd-content #main-content>div>div>div.section, main.bd-content #main-content .prev-next-bottom {
     padding-right: 1em;
     padding-left: 1em;
-    padding-top: 2em;
+    padding-top: 0.5em;
 }
 
 p {
@@ -1223,7 +1223,8 @@ img, svg {
 
 footer {
     width: 73%;
-    border-top: 1.5px solid gray;
+    // border-top: 1.5px solid gray;
+    border-top: 5px solid #0072bc;
     padding: 1rem 0 0 0;
     opacity: 0.9;
     margin: 2rem;
@@ -1316,4 +1317,77 @@ cite, code, tt {
     border-radius: 2px;
     padding: 0 2px;
     overflow-wrap: break-word;
+}
+
+
+
+
+.qe-page__header {
+    border-bottom: 5px solid #0072bc;
+    width: 73%;
+    margin: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.main-index .qe-page__header {
+	display: none
+}
+
+.qe-page__header-copy {
+	display: flex
+}
+
+@media (max-width:768px) {
+	.qe-page__header-copy {
+		flex-direction: column-reverse
+	}
+
+}
+
+.qe-page__header-heading {
+    margin: 0 0.5rem 0 0;
+	font-weight: 700;
+	flex-shrink: 0
+}
+
+.qe-page__header-heading a {
+	color: #444 !important
+}
+
+@media (max-width:768px) {
+	.qe-page__header-heading {
+		font-weight: 400;
+		font-size: 0.9rem
+	}
+
+}
+
+.qe-page__header-subheading {
+	margin: 0
+}
+
+@media (max-width:768px) {
+	.qe-page__header-subheading {
+		margin: 0 0 0.5rem 0;
+		font-weight: 700
+	}
+
+}
+
+.qe-page__header-authors {
+	margin: 0.25rem 0 0 0;
+	font-size: 0.9rem
+}
+
+@media (max-width:768px) {
+	.qe-page__header-authors {
+		font-size: 0.8rem
+	}
+
+}
+
+main.bd-content #main-content {
+    padding-top: 1em;
 }
