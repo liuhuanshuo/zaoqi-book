@@ -647,7 +647,7 @@ nav#bd-toc-nav a.active {
 div.topbar div.tocsection {
     color:#333;
     min-height: 50px;
-    border-left: 1px solid #fc7a4a;
+    border-left: 1px solid #0072BC;
     //border: 0 !important;
 }
 
@@ -1099,14 +1099,19 @@ div.cell_output table.dataframe {
     font-size: 80%;
 }
 
+h3 {
+    font-size: 1.45em;
+}
+
+
 h2 {
 
     font-size: 1.9em;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
     color: #0072BC;
     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;
     font-weight: 500;
@@ -1131,7 +1136,7 @@ h1 {
 }
 
 .bd-toc nav>.nav {
-    border-left: 1px solid #fc7a4a;
+    border-left: 1px solid #0072BC;
     padding-top: 0.5rem;
 }
 
@@ -1167,7 +1172,7 @@ h1 {
 
 img, svg {
     vertical-align: middle;
-    height: 21px;
+    // height: 21px;
 }
 
 #navbar-toggler i {
@@ -1222,7 +1227,7 @@ img, svg {
 }
 
 footer {
-    width: 73%;
+    width: 72.2%;
     // border-top: 1.5px solid gray;
     border-top: 5px solid #0072bc;
     padding: 1rem 0 0 0;
@@ -1270,6 +1275,10 @@ main.bd-content #main-content h1, main.bd-content #main-content h2, main.bd-cont
     color: #0072BC;
 }
 
+main.bd-content #main-content h3, main.bd-content #main-content h4, main.bd-content #main-content h5 {
+    color: #333333;
+}
+
 main.bd-content #main-content a, main.bd-content #main-content a:visited {
     color: #0072BC;
 }
@@ -1313,9 +1322,9 @@ div.dropdown-buttons-trigger div.dropdown-buttons button.topbarbtn {
 cite, code, tt {
     letter-spacing: 0.01rem;
     font-style: normal;
-    border: 1px dotted #cccccc;
-    border-radius: 2px;
-    padding: 0 2px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 1.5px 3px;;
     overflow-wrap: break-word;
 }
 
@@ -1324,7 +1333,7 @@ cite, code, tt {
 
 .qe-page__header {
     border-bottom: 5px solid #0072bc;
-    width: 73%;
+    width: 72.2%;
     margin: 2rem;
     margin-bottom: 2rem;
     padding-top: 1rem;
@@ -1378,7 +1387,7 @@ cite, code, tt {
 
 .qe-page__header-authors {
 	margin: 0.25rem 0 0 0;
-	font-size: 0.9rem
+	font-size: 0.8rem
 }
 
 @media (max-width:768px) {
@@ -1390,4 +1399,25 @@ cite, code, tt {
 
 main.bd-content #main-content {
     padding-top: 1em;
+}
+
+main.bd-content #main-content .prev-next-bottom .right-next .prevnext-title, main.bd-content #main-content .prev-next-bottom .left-prev .prevnext-title {
+    font-size: 1em;
+    color: rgba(var(--pst-color-link), 1);
+    font-weight: 500;
+}
+
+.bd-toc .nav .nav {
+    display: block;
+}
+
+blockquote {
+    margin: 1rem 0;
+    padding: 0.2em 1.5em;
+    border-left: 5px solid #1665ad;
+}
+
+blockquote div>p {
+    margin-bottom: 0.5em;
+    color: #6a737d;
 }

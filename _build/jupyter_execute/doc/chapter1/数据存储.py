@@ -14,7 +14,8 @@
 # ```
 
 # ## 保存为 CSV
-# 
+
+# ### 默认保存
 # 
 # 将数据保存为 `csv` 格式至当前目录下（文件名任意）
 
@@ -24,7 +25,7 @@
 data.to_csv("out.csv",encoding = 'utf_8_sig')
 
 
-# ## 指定列保存
+# ### 指定列保存
 # 
 # 
 # 
@@ -36,7 +37,7 @@ data.to_csv("out.csv",encoding = 'utf_8_sig')
 data.to_csv("out.csv",encoding = 'utf_8_sig',columns=['positionName','salary'])
 
 
-# ## 取消索引
+# ### 取消索引
 # 
 # 
 # 将 [读取 Excel 文件](读取Excel文件.ipynb) 中读取到的数据保存为 `csv` 格式至当前目录下（文件名任意），且取消每一行的索引
@@ -47,7 +48,7 @@ data.to_csv("out.csv",encoding = 'utf_8_sig',columns=['positionName','salary'])
 data.to_csv("out.csv",encoding = 'utf_8_sig',index = False)
 
 
-# ## 标记缺失值
+# ### 标记缺失值
 # 
 # 
 # 在上面的基础上，在保存的同时，将缺失值标记为`'数据缺失'`

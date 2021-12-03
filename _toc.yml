@@ -36,14 +36,14 @@ parts:
         file: doc/chapter1/读取剪贴板
 
     - title: 常见数据创建
-      file: doc/chapter1/常见数据创建
-      sections:
-      - title: 从列表创建
-        file: doc/chapter1/从列表创建
-      - title: 从字典创建
-        file: doc/chapter1/从字典创建
-      - title: 从集合创建
-        file: doc/chapter1/从集合创建
+      file: doc/chapter1/从列表创建
+#      sections:
+#      - title: 从列表创建
+#        file: doc/chapter1/从列表创建
+#      - title: 从字典创建
+#        file: doc/chapter1/从字典创建
+#      - title: 从集合创建
+#        file: doc/chapter1/从集合创建
     - title: 数据存储
       file: doc/chapter1/数据存储
 #######################################################################################
@@ -54,18 +54,13 @@ parts:
       - title: 数据信息预览
         file: doc/chapter2/数据预览
       - title: 缺失值检查与处理
-        file: doc/chapter2/缺失值检查与处理
-        sections:
-          - title: 缺失值检查
-            file: doc/chapter2/缺失值检查
-          - title: 缺失值处理
-            file: doc/chapter2/缺失值处理
+        file: doc/chapter2/缺失值检查
       - title: 重复值检查与处理
         file: doc/chapter2/重复值检查与处理
 #######################################################################################
 #chapt2 补充
-  - title: 数据统计
-    file: doc/chapter2-2/chapt2-2
+  - title: 数据统计与描述性分析
+    file: doc/chapter2-2/数据统计描述性分析
 #######################################################################################
 #chapt3
   - title: 数据修改与筛选
