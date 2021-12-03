@@ -237,9 +237,3 @@ sns.set(font='Songti SC')
 sns.distplot(df['总分'])
 plt.show()
 
-
-# In[ ]:
-
-
-
-
