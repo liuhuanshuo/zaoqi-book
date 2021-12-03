@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>数据探索与统计分析</title>
+    <title>数据探索与描述性统计分析</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="数据加载与存储" href="../chapter3/chapt3.html" />
+    <link rel="next" title="数据修改与筛选" href="../chapter3/chapt3.html" />
     <link rel="prev" title="重复值检查与处理" href="../chapter2/%E9%87%8D%E5%A4%8D%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -209,13 +209,30 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   数据统计与描述性分析
+   数据统计与描述性统计分析
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter3/chapt3.html">
    数据修改与筛选
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9.html">
+     数据修改
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E7%AD%9B%E9%80%89.html">
+     数据筛选
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../chapter4/chapt4.html">
@@ -500,7 +517,7 @@
 
     <div class="qe-page__header-copy">
         <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
-        <p class="qe-page__header-subheading"> 数据探索与统计分析</p>
+        <p class="qe-page__header-subheading"> 数据探索与描述性统计分析</p>
     </div>
     <p class="qe-page__header-authors" style="color: #333">刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a></p>
 
@@ -513,7 +530,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>数据探索与统计分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>数据探索与描述性统计分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>在利用 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 进行对数据进行<strong>缺失值</strong>、<strong>重复值</strong>进行检查与相关处理后</p>
 <p>接下来一般是对数据进行简单的<strong>探索与统计描述性分析</strong>，进一步观察数据特征，为后续的分析提供大致方向。</p>
 <div class="seealso admonition">
@@ -524,7 +541,7 @@
 <p class="admonition-title">Note</p>
 <p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
 </div>
-<div class="cell tag_thebe-init tag_remove-input docutils container">
+<div class="cell tag_thebe-init tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="section" id="id2">
 <h2>数据查看<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -2023,24 +2040,24 @@ Name: 总分, dtype: float64
 江苏     15
 上海     10
 广东      9
-陕西      7
 湖北      7
+陕西      7
 浙江      4
-湖南      3
-安徽      3
-四川      3
 山东      3
+安徽      3
+湖南      3
+四川      3
 吉林      2
-河南      2
 黑龙江     2
-重庆      2
+河南      2
 福建      2
-天津      2
+重庆      2
 辽宁      2
+天津      2
 云南      1
-甘肃      1
-河北      1
 江西      1
+河北      1
+甘肃      1
 Name: 省市, dtype: int64
 </pre></div>
 </div>
@@ -2068,235 +2085,10 @@ Name: 省市, dtype: int64
 
     <span class="p">)</span>
 <span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">render_notebook</span><span class="p">()</span>
+<span class="c1"># c.render_notebook() #展示在notebook中</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<script>
-    require.config({
-        paths: {
-            'echarts':'https://assets.pyecharts.org/assets/echarts.min', 'china':'https://assets.pyecharts.org/assets/maps/china'
-        }
-    });
-</script>
-
-        <div id="748b4570551c4c7db5d63c2e20c9b6f8" style="width:900px; height:500px;"></div>
-
-<script>
-        require(['echarts', 'china'], function(echarts) {
-                var chart_748b4570551c4c7db5d63c2e20c9b6f8 = echarts.init(
-                    document.getElementById('748b4570551c4c7db5d63c2e20c9b6f8'), 'white', {renderer: 'canvas'});
-                var option_748b4570551c4c7db5d63c2e20c9b6f8 = {
-    "animation": true,
-    "animationThreshold": 2000,
-    "animationDuration": 1000,
-    "animationEasing": "cubicOut",
-    "animationDelay": 0,
-    "animationDurationUpdate": 300,
-    "animationEasingUpdate": "cubicOut",
-    "animationDelayUpdate": 0,
-    "color": [
-        "#c23531",
-        "#2f4554",
-        "#61a0a8",
-        "#d48265",
-        "#749f83",
-        "#ca8622",
-        "#bda29a",
-        "#6e7074",
-        "#546570",
-        "#c4ccd3",
-        "#f05b72",
-        "#ef5b9c",
-        "#f47920",
-        "#905a3d",
-        "#fab27b",
-        "#2a5caa",
-        "#444693",
-        "#726930",
-        "#b2d235",
-        "#6d8346",
-        "#ac6767",
-        "#1d953f",
-        "#6950a1",
-        "#918597"
-    ],
-    "series": [
-        {
-            "type": "map",
-            "label": {
-                "show": true,
-                "position": "top",
-                "margin": 8
-            },
-            "mapType": "china",
-            "data": [
-                {
-                    "name": "\u5317\u4eac",
-                    "value": 18
-                },
-                {
-                    "name": "\u6c5f\u82cf",
-                    "value": 15
-                },
-                {
-                    "name": "\u4e0a\u6d77",
-                    "value": 10
-                },
-                {
-                    "name": "\u5e7f\u4e1c",
-                    "value": 9
-                },
-                {
-                    "name": "\u9655\u897f",
-                    "value": 7
-                },
-                {
-                    "name": "\u6e56\u5317",
-                    "value": 7
-                },
-                {
-                    "name": "\u6d59\u6c5f",
-                    "value": 4
-                },
-                {
-                    "name": "\u6e56\u5357",
-                    "value": 3
-                },
-                {
-                    "name": "\u5b89\u5fbd",
-                    "value": 3
-                },
-                {
-                    "name": "\u56db\u5ddd",
-                    "value": 3
-                },
-                {
-                    "name": "\u5c71\u4e1c",
-                    "value": 3
-                },
-                {
-                    "name": "\u5409\u6797",
-                    "value": 2
-                },
-                {
-                    "name": "\u6cb3\u5357",
-                    "value": 2
-                },
-                {
-                    "name": "\u9ed1\u9f99\u6c5f",
-                    "value": 2
-                },
-                {
-                    "name": "\u91cd\u5e86",
-                    "value": 2
-                },
-                {
-                    "name": "\u798f\u5efa",
-                    "value": 2
-                },
-                {
-                    "name": "\u5929\u6d25",
-                    "value": 2
-                },
-                {
-                    "name": "\u8fbd\u5b81",
-                    "value": 2
-                },
-                {
-                    "name": "\u4e91\u5357",
-                    "value": 1
-                },
-                {
-                    "name": "\u7518\u8083",
-                    "value": 1
-                },
-                {
-                    "name": "\u6cb3\u5317",
-                    "value": 1
-                },
-                {
-                    "name": "\u6c5f\u897f",
-                    "value": 1
-                }
-            ],
-            "roam": true,
-            "aspectScale": 0.75,
-            "nameProperty": "name",
-            "selectedMode": false,
-            "zoom": 1,
-            "mapValueCalculation": "sum",
-            "showLegendSymbol": false,
-            "emphasis": {}
-        }
-    ],
-    "legend": [
-        {
-            "data": [
-                ""
-            ],
-            "selected": {
-                "": true
-            },
-            "show": true,
-            "padding": 5,
-            "itemGap": 10,
-            "itemWidth": 25,
-            "itemHeight": 14
-        }
-    ],
-    "tooltip": {
-        "show": true,
-        "trigger": "item",
-        "triggerOn": "mousemove|click",
-        "axisPointer": {
-            "type": "line"
-        },
-        "showContent": true,
-        "alwaysShowContent": false,
-        "showDelay": 0,
-        "hideDelay": 100,
-        "textStyle": {
-            "fontSize": 14
-        },
-        "borderWidth": 0,
-        "padding": 5
-    },
-    "title": [
-        {
-            "text": "\u6392\u540d\u524d100\u9ad8\u6821\u5404\u7701\u5e02\u5360\u6bd4",
-            "padding": 5,
-            "itemGap": 10
-        }
-    ],
-    "visualMap": {
-        "show": true,
-        "type": "continuous",
-        "min": 0,
-        "max": 20,
-        "inRange": {
-            "color": [
-                "#50a3ba",
-                "#eac763",
-                "#d94e5d"
-            ]
-        },
-        "calculable": true,
-        "inverse": false,
-        "splitNumber": 5,
-        "orient": "vertical",
-        "showLabel": true,
-        "itemWidth": 20,
-        "itemHeight": 140,
-        "borderWidth": 0
-    }
-};
-                chart_748b4570551c4c7db5d63c2e20c9b6f8.setOption(option_748b4570551c4c7db5d63c2e20c9b6f8);
-        });
-    </script>
-</div></div>
 </div>
 </div>
 <div class="section" id="id20">
@@ -2362,7 +2154,7 @@ Name: 省市, dtype: int64
         <a class="right-next" href="../chapter3/chapt3.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">数据加载与存储</p>
+                <p class="prevnext-title">数据修改与筛选</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 数据探索与统计分析
+# # 数据探索与描述性统计分析
 # 
 # 
 # 在利用 `Pandas` 进行对数据进行**缺失值**、**重复值**进行检查与相关处理后
@@ -221,7 +221,7 @@ c = (
 
     )
 )
-c.render_notebook()
+# c.render_notebook() #展示在notebook中
 
 
 # ### 统计信息｜直方图
