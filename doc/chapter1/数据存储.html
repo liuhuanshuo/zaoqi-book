@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="数据预览与预处理" href="../chapter2/chapt2.html" />
-    <link rel="prev" title="从集合创建 DataFrame" href="%E4%BB%8E%E9%9B%86%E5%90%88%E5%88%9B%E5%BB%BA.html" />
+    <link rel="prev" title="常见数据创建" href="%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -168,32 +168,10 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BA.html">
+   <li class="toctree-l2">
+    <a class="reference internal" href="%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html">
      常见数据创建
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html">
-       从列表创建
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="%E4%BB%8E%E5%AD%97%E5%85%B8%E5%88%9B%E5%BB%BA.html">
-       从字典创建
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="%E4%BB%8E%E9%9B%86%E5%90%88%E5%88%9B%E5%BB%BA.html">
-       从集合创建
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
@@ -206,8 +184,8 @@
   <a class="reference internal" href="../chapter2/chapt2.html">
    数据预览与预处理
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -217,27 +195,10 @@
      数据信息预览
     </a>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5.html">
      缺失值检查与处理
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5.html">
-       缺失值检查
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86.html">
-       缺失值处理
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter2/%E9%87%8D%E5%A4%8D%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html">
@@ -247,8 +208,8 @@
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../chapter2-2/chapt2-2.html">
-   数据统计
+  <a class="reference internal" href="../chapter2-2/%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%88%86%E6%9E%90.html">
+   数据统计与描述性分析
   </a>
  </li>
  <li class="toctree-l1">
@@ -420,21 +381,28 @@
   <a class="reference internal nav-link" href="#csv">
    保存为 CSV
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   指定列保存
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   取消索引
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   标记缺失值
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     默认保存
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     指定列保存
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     取消索引
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     标记缺失值
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zip">
@@ -507,6 +475,8 @@
 </div>
 <div class="section" id="csv">
 <h2>保存为 CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>默认保存<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>将数据保存为 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 格式至当前目录下（文件名任意）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -516,8 +486,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>指定列保存<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>指定列保存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>将 <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html"><span class="doc std std-doc">读取 Excel 文件</span></a> 中读取到的数据保存为 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 格式至当前目录下（文件名任意），且只保留<code class="docutils literal notranslate"><span class="pre">positionName、salary</span></code>两列</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -527,8 +497,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>取消索引<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>取消索引<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>将 <a class="reference internal" href="%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html"><span class="doc std std-doc">读取 Excel 文件</span></a> 中读取到的数据保存为 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 格式至当前目录下（文件名任意），且取消每一行的索引</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -538,13 +508,14 @@
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>标记缺失值<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>标记缺失值<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>在上面的基础上，在保存的同时，将缺失值标记为<code class="docutils literal notranslate"><span class="pre">'数据缺失'</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;out.csv&quot;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf_8_sig&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">na_rep</span> <span class="o">=</span> <span class="s1">&#39;数据缺失&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -644,11 +615,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="%E4%BB%8E%E9%9B%86%E5%90%88%E5%88%9B%E5%BB%BA.html" title="previous page">
+        <a class="left-prev" href="%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">从集合创建 DataFrame</p>
+                <p class="prevnext-title">常见数据创建</p>
             </div>
         </a>
     </div>
