@@ -73,24 +73,67 @@ parts:
 #######################################################################################
 #chapt4
   - title: 数据分组与聚合
-    file: doc/chapter4/chapt4
+    file: doc/chapter4/数据分组与聚合
+    sections:
+      - title: 数据分组
+        file: doc/chapter4/数据分组
+      - title: 数据聚合
+        file: doc/chapter4/数据聚合
 #######################################################################################
 #chapt5
   - title: 数据透视与合并
-    file: doc/chapter5/chapt5
+    file: doc/chapter5/数据透视与合并
+    sections:
+      - title: 数据透视
+        file: doc/chapter5/数据透视
+      - title: 数据合并
+        file: doc/chapter5/数据合并
+        sections:
+        - title: concat - 数据拼接
+          file: doc/chapter5/concat
+        - title: merge - 数据连接
+          file: doc/chapter5/merge
+        - title: join - 数据组合
+          file: doc/chapter5/join
+
 #######################################################################################
 #chapt6
   - title: 金融数据与时间处理
     file: doc/chapter6/chapt6
+    sections:
+      - title: 时间处理
+        file: doc/chapter6/时间处理
+      - title: 股票数据分析
+        file: doc/chapter6/股票数据分析
+      - title: 制作K线图
+        file: doc/chapter6/制作K线图
+
 #######################################################################################
 #chapt7
-
   - title: 数据可视化
     file: doc/chapter7/chapt7
+    sections:
+      - title: 折线图
+        file: doc/chapter7/折线图
+      - title: 条形图
+        file: doc/chapter7/条形图
+      - title: 直方图
+        file: doc/chapter7/直方图
+      - title: 散点图
+        file: doc/chapter7/散点图
+      - title: 更多图形
+        file: doc/chapter7/更多图形
+      - title: 更多样式
+        file: doc/chapter7/更多样式
 #######################################################################################
 #chapt8
   - title: 个性化显示
     file: doc/chapter8/chapt8
+    sections:
+      - title: option
+        file: doc/chapter8/option
+      - title: style
+        file: doc/chapter8/style
 #######################################################################################
 #chapt9
   - title: 更多未提及操作

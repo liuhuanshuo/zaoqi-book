@@ -13,12 +13,17 @@
 # 本页面代码可以[在线编辑、执行](../指引/在线执行.md)！
 # ```
 
+# ## 本页数据说明
+# 
+# 为了更好的介绍相关操作，本页面使用 **豆瓣电影TOP250** 数据进行展开，你应该对数据**字段、数值、类型**等相关信息做一个大致了解！
+
 # In[1]:
 
 
 import pandas as pd
-df = pd.read_excel("TOP250.xlsx")
 pd.set_option('display.max_colwidth',10)
+df = pd.read_excel("TOP250.xlsx")
+df.head()
 
 
 # ## 查找全部重复值

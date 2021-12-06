@@ -13,7 +13,7 @@ workshops/boost-research-reproducibility-binder/workshop-presentations/*pptx
 # IDE configs
 .vscode/settings.json
 .Rproj.user
-.idea
+.idea/
 
 # Jupyter Notebook
 .ipynb_checkpoints

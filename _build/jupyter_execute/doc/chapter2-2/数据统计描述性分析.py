@@ -18,6 +18,10 @@
 # 本页面代码可以[在线编辑、执行](../指引/在线执行.md)！
 # ```
 
+# ## 本页数据说明
+# 
+# 为了更好的介绍相关操作，本页面使用 **2020年中国大学排名** 数据进行展开，你应该对数据**字段、数值、类型**等相关信息做一个大致了解！
+
 # In[1]:
 
 
@@ -25,6 +29,7 @@ import pandas as pd
 df = pd.read_excel("2020年中国大学排名.xlsx",index_col=0)
 import warnings
 warnings.filterwarnings("ignore")
+df.head()
 
 
 # ## 数据查看
