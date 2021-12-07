@@ -138,6 +138,26 @@ parts:
 #chapt9
   - title: 更多未提及操作
     file: doc/chapter9/chapt9
+    sections:
+      - title: map与applymap
+        file: doc/chapter9/map与applymap
+      - title: stack与unstack
+        file: doc/chapter9/stack与unstack
+      - title: isin - 筛选
+        file: doc/chapter9/isin筛选
+      - title: select_dtypes - 筛选
+        file: doc/chapter9/select_dtypes筛选
+      - title: explode - 数据展开
+        file: doc/chapter9/explode数据展开
+      - title: cusum - 累加计算
+        file: doc/chapter9/cusum累加计算
+      - title: nunique - 统计
+        file: doc/chapter9/nunique-统计
+      - title: append - 数据添加
+        file: doc/chapter9/append
+      - title: compare - 数据比较
+        file: doc/chapter9/compare
+
 #######################################################################################
 #chapt10
 - caption: 彩蛋 🎉

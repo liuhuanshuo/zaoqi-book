@@ -1170,10 +1170,17 @@ h1 {
     top: 27px;
 }
 
-img, svg {
+img{
     vertical-align: middle;
-    // height: 21px;
+
 }
+
+svg {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
 
 #navbar-toggler i {
     transition: opacity .3s, transform .3s;
