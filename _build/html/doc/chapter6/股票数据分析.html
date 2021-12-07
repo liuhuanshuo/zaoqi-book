@@ -1,0 +1,4990 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>股票数据分析</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="制作K线图" href="%E5%88%B6%E4%BD%9CK%E7%BA%BF%E5%9B%BE.html" />
+    <link rel="prev" title="pandas中的时间操作" href="%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  指引 📌
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">
+   使用说明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
+   如何在线执行代码
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  图解Pandas 📖
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/chapt1.html">
+   数据加载与存储
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter1/%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html">
+     常见格式读取
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
+       读取 Excel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96TXT.html">
+       读取 TXT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96JSON.html">
+       读取 JSON
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96SQL.html">
+       读取 SQL
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96HDF5.html">
+       读取 HDF5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5.html">
+       读取网页
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html">
+       读取剪贴板
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html">
+     常见数据创建
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.html">
+     数据存储
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter2/chapt2.html">
+   数据预览与预处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E6%95%B0%E6%8D%AE%E9%A2%84%E8%A7%88.html">
+     数据信息预览
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5.html">
+     缺失值检查与处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E9%87%8D%E5%A4%8D%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html">
+     重复值检查与处理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter2-2/%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%88%86%E6%9E%90.html">
+   数据统计与描述性统计分析
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter3/chapt3.html">
+   数据修改与筛选
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9.html">
+     数据修改
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E7%AD%9B%E9%80%89.html">
+     数据筛选
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E4%B8%8E%E8%81%9A%E5%90%88.html">
+   数据分组与聚合
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84.html">
+     数据分组
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88.html">
+     数据聚合
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86%E4%B8%8E%E5%90%88%E5%B9%B6.html">
+   数据透视与合并
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86.html">
+     数据透视
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html">
+     数据合并
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/concat.html">
+       concat - 数据拼接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/merge.html">
+       merge - 数据连接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/join.html">
+       join - 数据组合
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapt6.html">
+   金融数据与时间处理
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html">
+     时间处理
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     股票数据分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="%E5%88%B6%E4%BD%9CK%E7%BA%BF%E5%9B%BE.html">
+     制作K线图
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter7/chapt7.html">
+   数据可视化
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%8A%98%E7%BA%BF%E5%9B%BE.html">
+     折线图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9D%A1%E5%BD%A2%E5%9B%BE.html">
+     条形图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E7%9B%B4%E6%96%B9%E5%9B%BE.html">
+     直方图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%95%A3%E7%82%B9%E5%9B%BE.html">
+     散点图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E5%9B%BE%E5%BD%A2.html">
+     更多图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E6%A0%B7%E5%BC%8F.html">
+     更多样式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter8/chapt8.html">
+   个性化显示
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/option.html">
+     option
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/style.html">
+     style
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter9/chapt9.html">
+   更多未提及操作
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/map%E4%B8%8Eapplymap.html">
+     map与applymap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/stack%E4%B8%8Eunstack.html">
+     stack与unstack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/isin%E7%AD%9B%E9%80%89.html">
+     isin - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/select_dtypes%E7%AD%9B%E9%80%89.html">
+     select_dtypes - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/explode%E6%95%B0%E6%8D%AE%E5%B1%95%E5%BC%80.html">
+     explode - 数据展开
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/cusum%E7%B4%AF%E5%8A%A0%E8%AE%A1%E7%AE%97.html">
+     cusum - 累加计算
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/nunique-%E7%BB%9F%E8%AE%A1.html">
+     nunique - 统计
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/append.html">
+     append - 数据添加
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/compare.html">
+     compare - 数据比较
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  彩蛋 🎉
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter10/chapt10.html">
+   Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+
+
+
+
+</div>
+
+
+          
+
+
+          
+
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+
+<div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+
+
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+
+
+            <a href="https://www.baidu.com"  target="_blank"><button data-tippy-content="返回主页" class="btn btn-secondary topbarbtn"><i data-feather="home" color = '#5A5A5A'></i></button></a>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            data-feather="download-cloud"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/doc/chapter6/股票数据分析.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i data-feather="github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter6/股票数据分析.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            data-feather="maximize"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter6/股票数据分析.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   本页面数据说明
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   时间类型转换
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   日期筛选
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     按区间筛选
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     按指定时间筛选
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   金融计算
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     涨跌额
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     涨跌幅
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     移动均值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     移动均值（可视化）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     移动均值（可视化）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ema">
+     指数移动平均值（EMA）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#macd">
+     MACD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     布林指标
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   日期移动
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     移动值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     移动索引
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   日期重采样
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     日 -&gt; 周
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     日 -&gt; 月
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     分钟 -&gt; 日
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     低频 -&gt; 高频
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+
+            </nav>
+
+        <div class="qe-page__toc-footer">
+            <p style="font-size: 0.8em;color: #444444;">Powered by <a href="https://jupyterbook.org/" style="color: #004979;">Jupyter Book</a></p>
+            <p><a href="#top"><strong>Back to top</strong></a></p>
+        </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="qe-page__header">
+
+    <div class="qe-page__header-copy">
+        <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
+        <p class="qe-page__header-subheading"> 股票数据分析</p>
+    </div>
+    <p class="qe-page__header-authors"><a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
+
+</div> <!-- .page__header -->
+
+
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>股票数据分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="seealso admonition">
+<p class="admonition-title">在线刷题</p>
+<p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
+</div>
+<div class="section" id="id2">
+<h2>本页面数据说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>为了更好的介绍相关操作，本页面使用 <strong>某股票数据</strong> 数据进行展开，你应该对数据字段、数值、类型等相关信息做一个大致了解！</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;000001_daily.csv&quot;</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;000001_5min.csv&quot;</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>日期</th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>换手率</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017/1/3</td>
+      <td>8.27</td>
+      <td>8.32</td>
+      <td>8.34</td>
+      <td>8.25</td>
+      <td>459840</td>
+      <td>420595184</td>
+      <td>1.09</td>
+      <td>0.73</td>
+      <td>0.06</td>
+      <td>0.31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017/1/4</td>
+      <td>8.31</td>
+      <td>8.32</td>
+      <td>8.34</td>
+      <td>8.30</td>
+      <td>449330</td>
+      <td>411503440</td>
+      <td>0.48</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017/1/5</td>
+      <td>8.33</td>
+      <td>8.33</td>
+      <td>8.34</td>
+      <td>8.31</td>
+      <td>344373</td>
+      <td>315769696</td>
+      <td>0.36</td>
+      <td>0.12</td>
+      <td>0.01</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017/1/6</td>
+      <td>8.33</td>
+      <td>8.29</td>
+      <td>8.33</td>
+      <td>8.27</td>
+      <td>358154</td>
+      <td>327176432</td>
+      <td>0.72</td>
+      <td>-0.48</td>
+      <td>-0.04</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017/1/9</td>
+      <td>8.29</td>
+      <td>8.31</td>
+      <td>8.33</td>
+      <td>8.27</td>
+      <td>361082</td>
+      <td>329994608</td>
+      <td>0.72</td>
+      <td>0.24</td>
+      <td>0.02</td>
+      <td>0.21</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>时间类型转换<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>将 df1 和 df2 的 日期 列转换为 pandas 支持的时间格式</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;日期&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;日期&#39;</span><span class="p">])</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;时间&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;时间&#39;</span><span class="p">])</span>
+<span class="c1"># df1[&#39;日期&#39;] = df1[&#39;日期&#39;].astype(&#39;datetime64[ns]&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>日期筛选<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>按区间筛选<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>筛选出 df2 时间在 <code class="docutils literal notranslate"><span class="pre">2021-08-03</span> <span class="pre">09:35:00</span></code> 与 <code class="docutils literal notranslate"><span class="pre">2021-08-04</span> <span class="pre">15:00:00</span></code> 之间的数据</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;时间&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2021-08-03 09:35:00&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;时间&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;2021-08-04 15:00:00&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>时间</th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>换手率</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2021-08-03 09:40:00</td>
+      <td>17.77</td>
+      <td>17.76</td>
+      <td>17.83</td>
+      <td>17.66</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>41508</td>
+      <td>73683531</td>
+      <td>0.96</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-08-03 09:45:00</td>
+      <td>17.77</td>
+      <td>17.77</td>
+      <td>17.83</td>
+      <td>17.73</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>18521</td>
+      <td>32915794</td>
+      <td>0.56</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-08-03 09:50:00</td>
+      <td>17.77</td>
+      <td>17.72</td>
+      <td>17.78</td>
+      <td>17.70</td>
+      <td>-0.28</td>
+      <td>-0.05</td>
+      <td>24424</td>
+      <td>43323693</td>
+      <td>0.45</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-08-03 09:55:00</td>
+      <td>17.71</td>
+      <td>17.77</td>
+      <td>17.78</td>
+      <td>17.70</td>
+      <td>0.28</td>
+      <td>0.05</td>
+      <td>23197</td>
+      <td>41110937</td>
+      <td>0.45</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2021-08-03 10:00:00</td>
+      <td>17.78</td>
+      <td>17.81</td>
+      <td>17.83</td>
+      <td>17.74</td>
+      <td>0.23</td>
+      <td>0.04</td>
+      <td>18111</td>
+      <td>32208076</td>
+      <td>0.51</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>2021-08-04 14:35:00</td>
+      <td>17.81</td>
+      <td>17.81</td>
+      <td>17.83</td>
+      <td>17.78</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>12903</td>
+      <td>22973276</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>2021-08-04 14:40:00</td>
+      <td>17.82</td>
+      <td>17.80</td>
+      <td>17.85</td>
+      <td>17.79</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>12254</td>
+      <td>21835743</td>
+      <td>0.34</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>2021-08-04 14:45:00</td>
+      <td>17.82</td>
+      <td>17.82</td>
+      <td>17.84</td>
+      <td>17.80</td>
+      <td>0.11</td>
+      <td>0.02</td>
+      <td>9893</td>
+      <td>17631076</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>2021-08-04 14:50:00</td>
+      <td>17.81</td>
+      <td>17.80</td>
+      <td>17.83</td>
+      <td>17.80</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>12127</td>
+      <td>21603534</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>2021-08-04 14:55:00</td>
+      <td>17.80</td>
+      <td>17.81</td>
+      <td>17.84</td>
+      <td>17.79</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>17028</td>
+      <td>30332096</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+  </tbody>
+</table>
+<p>94 rows × 11 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>按指定时间筛选<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>筛选 df2 时间为 2021-08-03 的全部数据</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;时间&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">after</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2021-08-04&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>换手率</th>
+    </tr>
+    <tr>
+      <th>时间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-08-03 09:35:00</th>
+      <td>17.99</td>
+      <td>17.78</td>
+      <td>18.02</td>
+      <td>17.75</td>
+      <td>-1.28</td>
+      <td>-0.23</td>
+      <td>52807</td>
+      <td>94339287</td>
+      <td>1.50</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:40:00</th>
+      <td>17.77</td>
+      <td>17.76</td>
+      <td>17.83</td>
+      <td>17.66</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>41508</td>
+      <td>73683531</td>
+      <td>0.96</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:45:00</th>
+      <td>17.77</td>
+      <td>17.77</td>
+      <td>17.83</td>
+      <td>17.73</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>18521</td>
+      <td>32915794</td>
+      <td>0.56</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:50:00</th>
+      <td>17.77</td>
+      <td>17.72</td>
+      <td>17.78</td>
+      <td>17.70</td>
+      <td>-0.28</td>
+      <td>-0.05</td>
+      <td>24424</td>
+      <td>43323693</td>
+      <td>0.45</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:55:00</th>
+      <td>17.71</td>
+      <td>17.77</td>
+      <td>17.78</td>
+      <td>17.70</td>
+      <td>0.28</td>
+      <td>0.05</td>
+      <td>23197</td>
+      <td>41110937</td>
+      <td>0.45</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:00:00</th>
+      <td>17.78</td>
+      <td>17.81</td>
+      <td>17.83</td>
+      <td>17.74</td>
+      <td>0.23</td>
+      <td>0.04</td>
+      <td>18111</td>
+      <td>32208076</td>
+      <td>0.51</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:05:00</th>
+      <td>17.83</td>
+      <td>17.84</td>
+      <td>17.91</td>
+      <td>17.79</td>
+      <td>0.17</td>
+      <td>0.03</td>
+      <td>28273</td>
+      <td>50498772</td>
+      <td>0.67</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:10:00</th>
+      <td>17.84</td>
+      <td>18.01</td>
+      <td>18.01</td>
+      <td>17.83</td>
+      <td>0.95</td>
+      <td>0.17</td>
+      <td>37675</td>
+      <td>67585497</td>
+      <td>1.01</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:15:00</th>
+      <td>18.01</td>
+      <td>18.05</td>
+      <td>18.09</td>
+      <td>18.01</td>
+      <td>0.22</td>
+      <td>0.04</td>
+      <td>31315</td>
+      <td>56528108</td>
+      <td>0.44</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:20:00</th>
+      <td>18.04</td>
+      <td>18.00</td>
+      <td>18.07</td>
+      <td>17.98</td>
+      <td>-0.28</td>
+      <td>-0.05</td>
+      <td>25998</td>
+      <td>46873326</td>
+      <td>0.50</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:25:00</th>
+      <td>18.01</td>
+      <td>17.99</td>
+      <td>18.03</td>
+      <td>17.98</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>19840</td>
+      <td>35724912</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:30:00</th>
+      <td>17.99</td>
+      <td>17.89</td>
+      <td>18.00</td>
+      <td>17.89</td>
+      <td>-0.56</td>
+      <td>-0.10</td>
+      <td>22437</td>
+      <td>40295707</td>
+      <td>0.61</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:35:00</th>
+      <td>17.89</td>
+      <td>17.96</td>
+      <td>17.97</td>
+      <td>17.89</td>
+      <td>0.39</td>
+      <td>0.07</td>
+      <td>16344</td>
+      <td>29302241</td>
+      <td>0.45</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:40:00</th>
+      <td>17.97</td>
+      <td>17.94</td>
+      <td>17.98</td>
+      <td>17.94</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>13929</td>
+      <td>25017058</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:45:00</th>
+      <td>17.94</td>
+      <td>17.99</td>
+      <td>18.04</td>
+      <td>17.90</td>
+      <td>0.28</td>
+      <td>0.05</td>
+      <td>20556</td>
+      <td>36934160</td>
+      <td>0.78</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:50:00</th>
+      <td>18.00</td>
+      <td>18.11</td>
+      <td>18.11</td>
+      <td>17.99</td>
+      <td>0.67</td>
+      <td>0.12</td>
+      <td>24688</td>
+      <td>44603411</td>
+      <td>0.67</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 10:55:00</th>
+      <td>18.11</td>
+      <td>18.01</td>
+      <td>18.15</td>
+      <td>18.01</td>
+      <td>-0.55</td>
+      <td>-0.10</td>
+      <td>23020</td>
+      <td>41643532</td>
+      <td>0.77</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:00:00</th>
+      <td>18.01</td>
+      <td>18.03</td>
+      <td>18.05</td>
+      <td>17.99</td>
+      <td>0.11</td>
+      <td>0.02</td>
+      <td>12102</td>
+      <td>21795475</td>
+      <td>0.33</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:05:00</th>
+      <td>18.04</td>
+      <td>18.03</td>
+      <td>18.05</td>
+      <td>18.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>17303</td>
+      <td>31197226</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:10:00</th>
+      <td>18.03</td>
+      <td>18.02</td>
+      <td>18.04</td>
+      <td>18.00</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>12736</td>
+      <td>22940014</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:15:00</th>
+      <td>18.03</td>
+      <td>18.00</td>
+      <td>18.03</td>
+      <td>18.00</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>12273</td>
+      <td>22104969</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:20:00</th>
+      <td>18.02</td>
+      <td>18.07</td>
+      <td>18.10</td>
+      <td>18.01</td>
+      <td>0.39</td>
+      <td>0.07</td>
+      <td>20951</td>
+      <td>37844518</td>
+      <td>0.50</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:25:00</th>
+      <td>18.08</td>
+      <td>18.02</td>
+      <td>18.09</td>
+      <td>18.01</td>
+      <td>-0.28</td>
+      <td>-0.05</td>
+      <td>15905</td>
+      <td>28711245</td>
+      <td>0.44</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 11:30:00</th>
+      <td>18.02</td>
+      <td>18.02</td>
+      <td>18.05</td>
+      <td>18.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>13814</td>
+      <td>24893817</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:05:00</th>
+      <td>18.02</td>
+      <td>18.01</td>
+      <td>18.04</td>
+      <td>18.00</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>16530</td>
+      <td>29783440</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:10:00</th>
+      <td>18.01</td>
+      <td>18.04</td>
+      <td>18.07</td>
+      <td>18.01</td>
+      <td>0.17</td>
+      <td>0.03</td>
+      <td>14666</td>
+      <td>26464258</td>
+      <td>0.33</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:15:00</th>
+      <td>18.04</td>
+      <td>17.99</td>
+      <td>18.05</td>
+      <td>17.99</td>
+      <td>-0.28</td>
+      <td>-0.05</td>
+      <td>13880</td>
+      <td>25011176</td>
+      <td>0.33</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:20:00</th>
+      <td>17.99</td>
+      <td>17.98</td>
+      <td>18.02</td>
+      <td>17.98</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>13451</td>
+      <td>24208140</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:25:00</th>
+      <td>17.98</td>
+      <td>18.00</td>
+      <td>18.01</td>
+      <td>17.97</td>
+      <td>0.11</td>
+      <td>0.02</td>
+      <td>14024</td>
+      <td>25229291</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:30:00</th>
+      <td>18.00</td>
+      <td>18.01</td>
+      <td>18.05</td>
+      <td>17.99</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>15333</td>
+      <td>27633217</td>
+      <td>0.33</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:35:00</th>
+      <td>18.01</td>
+      <td>18.00</td>
+      <td>18.03</td>
+      <td>17.98</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>16424</td>
+      <td>29582866</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:40:00</th>
+      <td>18.00</td>
+      <td>17.99</td>
+      <td>18.02</td>
+      <td>17.98</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>14696</td>
+      <td>26452384</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:45:00</th>
+      <td>18.00</td>
+      <td>17.99</td>
+      <td>18.02</td>
+      <td>17.98</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>14632</td>
+      <td>26334531</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:50:00</th>
+      <td>18.01</td>
+      <td>17.99</td>
+      <td>18.01</td>
+      <td>17.98</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>11746</td>
+      <td>21134264</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 13:55:00</th>
+      <td>17.98</td>
+      <td>17.94</td>
+      <td>18.00</td>
+      <td>17.92</td>
+      <td>-0.28</td>
+      <td>-0.05</td>
+      <td>17023</td>
+      <td>30591848</td>
+      <td>0.44</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:00:00</th>
+      <td>17.93</td>
+      <td>17.95</td>
+      <td>17.96</td>
+      <td>17.93</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>8906</td>
+      <td>15983206</td>
+      <td>0.17</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:05:00</th>
+      <td>17.95</td>
+      <td>17.94</td>
+      <td>17.96</td>
+      <td>17.93</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>9690</td>
+      <td>17392582</td>
+      <td>0.17</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:10:00</th>
+      <td>17.95</td>
+      <td>17.93</td>
+      <td>17.96</td>
+      <td>17.93</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>10427</td>
+      <td>18707878</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:15:00</th>
+      <td>17.93</td>
+      <td>17.92</td>
+      <td>17.96</td>
+      <td>17.92</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>10498</td>
+      <td>18828673</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:20:00</th>
+      <td>17.93</td>
+      <td>17.92</td>
+      <td>17.94</td>
+      <td>17.91</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>16589</td>
+      <td>29733764</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:25:00</th>
+      <td>17.91</td>
+      <td>17.93</td>
+      <td>17.94</td>
+      <td>17.90</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>17581</td>
+      <td>31496394</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:30:00</th>
+      <td>17.92</td>
+      <td>17.94</td>
+      <td>17.96</td>
+      <td>17.91</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>12845</td>
+      <td>23035897</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:35:00</th>
+      <td>17.94</td>
+      <td>17.93</td>
+      <td>17.94</td>
+      <td>17.90</td>
+      <td>-0.06</td>
+      <td>-0.01</td>
+      <td>14611</td>
+      <td>26183179</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:40:00</th>
+      <td>17.93</td>
+      <td>17.93</td>
+      <td>17.94</td>
+      <td>17.90</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>12076</td>
+      <td>21636917</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:45:00</th>
+      <td>17.90</td>
+      <td>17.93</td>
+      <td>17.93</td>
+      <td>17.89</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>16397</td>
+      <td>29359350</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:50:00</th>
+      <td>17.93</td>
+      <td>17.97</td>
+      <td>17.98</td>
+      <td>17.91</td>
+      <td>0.22</td>
+      <td>0.04</td>
+      <td>19476</td>
+      <td>34965331</td>
+      <td>0.39</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 14:55:00</th>
+      <td>17.96</td>
+      <td>17.93</td>
+      <td>17.97</td>
+      <td>17.91</td>
+      <td>-0.22</td>
+      <td>-0.04</td>
+      <td>17597</td>
+      <td>31563908</td>
+      <td>0.33</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 15:00:00</th>
+      <td>17.92</td>
+      <td>17.89</td>
+      <td>17.94</td>
+      <td>17.89</td>
+      <td>-0.22</td>
+      <td>-0.04</td>
+      <td>20126</td>
+      <td>36034747</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>金融计算<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>涨跌额<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">df1</span></code> 新增一列 涨跌，计算前后两日收盘价之差</p>
+<p>注意：虽然我们的df1包含涨跌额列，但是这个操作很常用，所以练习一下</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;涨跌&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">收盘</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>涨跌幅<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">df1</span></code> 新增一列 涨跌变化率，计算前后两日收盘价之差的变化率</p>
+<p>注意：虽然我们的df1包含涨跌幅列，但是这个操作很常用，所以练习一下，结果可以用于验证</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;涨跌变化率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">收盘</span><span class="o">.</span><span class="n">pct_change</span><span class="p">())</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.2%&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>移动均值<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>计算收盘价的5日移动均线</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">收盘</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0          NaN
+1          NaN
+2          NaN
+3          NaN
+4        8.314
+         ...  
+1141    18.672
+1142    18.792
+1143    19.298
+1144    19.650
+1145    19.676
+Name: 收盘, Length: 1146, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>移动均值（可视化）<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>计算并绘制收盘价的5日移动均线</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">收盘</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/股票数据分析_18_1.png" src="../../_images/股票数据分析_18_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>移动均值（可视化）<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>同时计算并绘制 df1 的收盘价、5日均线、20日均线</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;日期&quot;</span><span class="p">)[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;日期&quot;</span><span class="p">)[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;日期&quot;</span><span class="p">)[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;日期&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/股票数据分析_20_1.png" src="../../_images/股票数据分析_20_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ema">
+<h3>指数移动平均值（EMA）<a class="headerlink" href="#ema" title="Permalink to this headline">¶</a></h3>
+<p>根据 df1 计算 EMA20</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;EMA20&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ewm</span><span class="p">(</span><span class="n">span</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">adjust</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ignore_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="macd">
+<h3>MACD<a class="headerlink" href="#macd" title="Permalink to this headline">¶</a></h3>
+<p>计算 df1 的 MACD 指标</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ewm</span><span class="p">(</span><span class="n">span</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">adjust</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">exp2</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ewm</span><span class="p">(</span><span class="n">span</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">adjust</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;MACD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exp1</span> <span class="o">-</span> <span class="n">exp2</span>
+<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;Signal line&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;MACD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ewm</span><span class="p">(</span><span class="n">span</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">adjust</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>布林指标<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>计算并绘制布林指标，计算方法参考<a class="reference external" href="https://baike.baidu.com/item/%E5%B8%83%E6%9E%97%E7%BA%BF%E6%8C%87%E6%A0%87/3325894?fromtitle=%E5%B8%83%E6%9E%97%E6%8C%87%E6%A0%87&amp;fromid=258891&amp;fr=aladdin">百度百科</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;former 30 days rolling Close mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;upper bound&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;former 30 days rolling Close mean&#39;</span><span class="p">]</span> <span class="o">+</span> \
+    <span class="mi">2</span><span class="o">*</span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># 在这里我们取20天内的标准差</span>
+<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;lower bound&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;former 30 days rolling Close mean&#39;</span><span class="p">]</span> <span class="o">-</span> \
+    <span class="mi">2</span><span class="o">*</span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;收盘&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Songti SC&#39;</span><span class="p">]</span> <span class="c1">#设置中文，如果本句代码导致失效，可以点击https://mp.weixin.qq.com/s/WKOGvQP-6QUAP00ZXjhweg</span>
+
+<span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;日期&quot;</span><span class="p">)[[</span><span class="s1">&#39;收盘&#39;</span><span class="p">,</span> <span class="s1">&#39;former 30 days rolling Close mean&#39;</span><span class="p">,</span><span class="s1">&#39;upper bound&#39;</span><span class="p">,</span><span class="s1">&#39;lower bound&#39;</span> <span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/股票数据分析_26_0.png" src="../../_images/股票数据分析_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>日期移动<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>移动值<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>将 df1 的索引设置为日期，将 df1 数据向后移动一天</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;日期&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>换手率</th>
+      <th>涨跌</th>
+      <th>涨跌变化率</th>
+      <th>EMA20</th>
+      <th>MACD</th>
+      <th>Signal line</th>
+      <th>former 30 days rolling Close mean</th>
+      <th>upper bound</th>
+      <th>lower bound</th>
+    </tr>
+    <tr>
+      <th>日期</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-03</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-04</th>
+      <td>8.27</td>
+      <td>8.32</td>
+      <td>8.34</td>
+      <td>8.25</td>
+      <td>459840.0</td>
+      <td>4.205952e+08</td>
+      <td>1.09</td>
+      <td>0.73</td>
+      <td>0.06</td>
+      <td>0.31</td>
+      <td>NaN</td>
+      <td>nan%</td>
+      <td>8.320000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-05</th>
+      <td>8.31</td>
+      <td>8.32</td>
+      <td>8.34</td>
+      <td>8.30</td>
+      <td>449330.0</td>
+      <td>4.115034e+08</td>
+      <td>0.48</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.31</td>
+      <td>0.00</td>
+      <td>0.00%</td>
+      <td>8.320000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-06</th>
+      <td>8.33</td>
+      <td>8.33</td>
+      <td>8.34</td>
+      <td>8.31</td>
+      <td>344373.0</td>
+      <td>3.157697e+08</td>
+      <td>0.36</td>
+      <td>0.12</td>
+      <td>0.01</td>
+      <td>0.24</td>
+      <td>0.01</td>
+      <td>0.12%</td>
+      <td>8.320952</td>
+      <td>0.000798</td>
+      <td>0.000160</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-09</th>
+      <td>8.33</td>
+      <td>8.29</td>
+      <td>8.33</td>
+      <td>8.27</td>
+      <td>358154.0</td>
+      <td>3.271764e+08</td>
+      <td>0.72</td>
+      <td>-0.48</td>
+      <td>-0.04</td>
+      <td>0.24</td>
+      <td>-0.04</td>
+      <td>-0.48%</td>
+      <td>8.318005</td>
+      <td>-0.001777</td>
+      <td>-0.000228</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021-09-08</th>
+      <td>18.60</td>
+      <td>19.24</td>
+      <td>19.56</td>
+      <td>18.35</td>
+      <td>1622344.0</td>
+      <td>3.067366e+09</td>
+      <td>6.56</td>
+      <td>4.28</td>
+      <td>0.79</td>
+      <td>0.84</td>
+      <td>0.79</td>
+      <td>4.28%</td>
+      <td>18.816960</td>
+      <td>-0.369698</td>
+      <td>-0.414708</td>
+      <td>19.0895</td>
+      <td>20.861284</td>
+      <td>17.317716</td>
+    </tr>
+    <tr>
+      <th>2021-09-09</th>
+      <td>19.24</td>
+      <td>19.23</td>
+      <td>19.55</td>
+      <td>19.10</td>
+      <td>1026201.0</td>
+      <td>1.979771e+09</td>
+      <td>2.34</td>
+      <td>-0.05</td>
+      <td>-0.01</td>
+      <td>0.53</td>
+      <td>-0.01</td>
+      <td>-0.05%</td>
+      <td>18.856297</td>
+      <td>-0.293684</td>
+      <td>-0.390503</td>
+      <td>19.0605</td>
+      <td>20.801346</td>
+      <td>17.319654</td>
+    </tr>
+    <tr>
+      <th>2021-09-10</th>
+      <td>19.11</td>
+      <td>19.00</td>
+      <td>19.15</td>
+      <td>18.80</td>
+      <td>739506.0</td>
+      <td>1.399536e+09</td>
+      <td>1.82</td>
+      <td>-1.20</td>
+      <td>-0.23</td>
+      <td>0.38</td>
+      <td>-0.23</td>
+      <td>-1.20%</td>
+      <td>18.869983</td>
+      <td>-0.249129</td>
+      <td>-0.362229</td>
+      <td>19.0160</td>
+      <td>20.712503</td>
+      <td>17.319497</td>
+    </tr>
+    <tr>
+      <th>2021-09-13</th>
+      <td>18.89</td>
+      <td>20.57</td>
+      <td>20.77</td>
+      <td>18.84</td>
+      <td>2314945.0</td>
+      <td>4.668362e+09</td>
+      <td>10.16</td>
+      <td>8.26</td>
+      <td>1.57</td>
+      <td>1.19</td>
+      <td>1.57</td>
+      <td>8.26%</td>
+      <td>19.031889</td>
+      <td>-0.086141</td>
+      <td>-0.307011</td>
+      <td>19.0500</td>
+      <td>20.844670</td>
+      <td>17.255330</td>
+    </tr>
+    <tr>
+      <th>2021-09-14</th>
+      <td>20.36</td>
+      <td>20.21</td>
+      <td>20.51</td>
+      <td>19.81</td>
+      <td>1297228.0</td>
+      <td>2.606152e+09</td>
+      <td>3.40</td>
+      <td>-1.75</td>
+      <td>-0.36</td>
+      <td>0.67</td>
+      <td>-0.36</td>
+      <td>-1.75%</td>
+      <td>19.144090</td>
+      <td>0.013821</td>
+      <td>-0.242845</td>
+      <td>19.0630</td>
+      <td>20.888620</td>
+      <td>17.237380</td>
+    </tr>
+  </tbody>
+</table>
+<p>1146 rows × 18 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>移动索引<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>将 df1 的索引设置为日期，并将全部日期向后移动一天</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;日期&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>换手率</th>
+      <th>涨跌</th>
+      <th>涨跌变化率</th>
+      <th>EMA20</th>
+      <th>MACD</th>
+      <th>Signal line</th>
+      <th>former 30 days rolling Close mean</th>
+      <th>upper bound</th>
+      <th>lower bound</th>
+    </tr>
+    <tr>
+      <th>日期</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-04</th>
+      <td>8.27</td>
+      <td>8.32</td>
+      <td>8.34</td>
+      <td>8.25</td>
+      <td>459840</td>
+      <td>420595184</td>
+      <td>1.09</td>
+      <td>0.73</td>
+      <td>0.06</td>
+      <td>0.31</td>
+      <td>NaN</td>
+      <td>nan%</td>
+      <td>8.320000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-05</th>
+      <td>8.31</td>
+      <td>8.32</td>
+      <td>8.34</td>
+      <td>8.30</td>
+      <td>449330</td>
+      <td>411503440</td>
+      <td>0.48</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.31</td>
+      <td>0.00</td>
+      <td>0.00%</td>
+      <td>8.320000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-06</th>
+      <td>8.33</td>
+      <td>8.33</td>
+      <td>8.34</td>
+      <td>8.31</td>
+      <td>344373</td>
+      <td>315769696</td>
+      <td>0.36</td>
+      <td>0.12</td>
+      <td>0.01</td>
+      <td>0.24</td>
+      <td>0.01</td>
+      <td>0.12%</td>
+      <td>8.320952</td>
+      <td>0.000798</td>
+      <td>0.000160</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-07</th>
+      <td>8.33</td>
+      <td>8.29</td>
+      <td>8.33</td>
+      <td>8.27</td>
+      <td>358154</td>
+      <td>327176432</td>
+      <td>0.72</td>
+      <td>-0.48</td>
+      <td>-0.04</td>
+      <td>0.24</td>
+      <td>-0.04</td>
+      <td>-0.48%</td>
+      <td>8.318005</td>
+      <td>-0.001777</td>
+      <td>-0.000228</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-10</th>
+      <td>8.29</td>
+      <td>8.31</td>
+      <td>8.33</td>
+      <td>8.27</td>
+      <td>361082</td>
+      <td>329994608</td>
+      <td>0.72</td>
+      <td>0.24</td>
+      <td>0.02</td>
+      <td>0.21</td>
+      <td>0.02</td>
+      <td>0.24%</td>
+      <td>8.317242</td>
+      <td>-0.002179</td>
+      <td>-0.000618</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021-09-09</th>
+      <td>19.24</td>
+      <td>19.23</td>
+      <td>19.55</td>
+      <td>19.10</td>
+      <td>1026201</td>
+      <td>1979771472</td>
+      <td>2.34</td>
+      <td>-0.05</td>
+      <td>-0.01</td>
+      <td>0.53</td>
+      <td>-0.01</td>
+      <td>-0.05%</td>
+      <td>18.856297</td>
+      <td>-0.293684</td>
+      <td>-0.390503</td>
+      <td>19.0605</td>
+      <td>20.801346</td>
+      <td>17.319654</td>
+    </tr>
+    <tr>
+      <th>2021-09-10</th>
+      <td>19.11</td>
+      <td>19.00</td>
+      <td>19.15</td>
+      <td>18.80</td>
+      <td>739506</td>
+      <td>1399536016</td>
+      <td>1.82</td>
+      <td>-1.20</td>
+      <td>-0.23</td>
+      <td>0.38</td>
+      <td>-0.23</td>
+      <td>-1.20%</td>
+      <td>18.869983</td>
+      <td>-0.249129</td>
+      <td>-0.362229</td>
+      <td>19.0160</td>
+      <td>20.712503</td>
+      <td>17.319497</td>
+    </tr>
+    <tr>
+      <th>2021-09-11</th>
+      <td>18.89</td>
+      <td>20.57</td>
+      <td>20.77</td>
+      <td>18.84</td>
+      <td>2314945</td>
+      <td>4668361728</td>
+      <td>10.16</td>
+      <td>8.26</td>
+      <td>1.57</td>
+      <td>1.19</td>
+      <td>1.57</td>
+      <td>8.26%</td>
+      <td>19.031889</td>
+      <td>-0.086141</td>
+      <td>-0.307011</td>
+      <td>19.0500</td>
+      <td>20.844670</td>
+      <td>17.255330</td>
+    </tr>
+    <tr>
+      <th>2021-09-14</th>
+      <td>20.36</td>
+      <td>20.21</td>
+      <td>20.51</td>
+      <td>19.81</td>
+      <td>1297228</td>
+      <td>2606152384</td>
+      <td>3.40</td>
+      <td>-1.75</td>
+      <td>-0.36</td>
+      <td>0.67</td>
+      <td>-0.36</td>
+      <td>-1.75%</td>
+      <td>19.144090</td>
+      <td>0.013821</td>
+      <td>-0.242845</td>
+      <td>19.0630</td>
+      <td>20.888620</td>
+      <td>17.237380</td>
+    </tr>
+    <tr>
+      <th>2021-09-15</th>
+      <td>20.18</td>
+      <td>19.37</td>
+      <td>20.27</td>
+      <td>19.27</td>
+      <td>1158173</td>
+      <td>2272080160</td>
+      <td>4.95</td>
+      <td>-4.16</td>
+      <td>-0.84</td>
+      <td>0.60</td>
+      <td>-0.84</td>
+      <td>-4.16%</td>
+      <td>19.165606</td>
+      <td>0.024972</td>
+      <td>-0.189281</td>
+      <td>19.0480</td>
+      <td>20.857479</td>
+      <td>17.238521</td>
+    </tr>
+  </tbody>
+</table>
+<p>1146 rows × 18 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>日期重采样<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>日 -&gt; 周<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>按周对 df1 进行重采样，保留每周最后一个数据</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;日期&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>换手率</th>
+      <th>涨跌</th>
+      <th>涨跌变化率</th>
+      <th>EMA20</th>
+      <th>MACD</th>
+      <th>Signal line</th>
+      <th>former 30 days rolling Close mean</th>
+      <th>upper bound</th>
+      <th>lower bound</th>
+    </tr>
+    <tr>
+      <th>日期</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-08</th>
+      <td>8.33</td>
+      <td>8.29</td>
+      <td>8.33</td>
+      <td>8.27</td>
+      <td>358154.0</td>
+      <td>3.271764e+08</td>
+      <td>0.72</td>
+      <td>-0.48</td>
+      <td>-0.04</td>
+      <td>0.24</td>
+      <td>-0.04</td>
+      <td>-0.48%</td>
+      <td>8.318005</td>
+      <td>-0.001777</td>
+      <td>-0.000228</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-15</th>
+      <td>8.30</td>
+      <td>8.32</td>
+      <td>8.35</td>
+      <td>8.28</td>
+      <td>434301.0</td>
+      <td>3.976019e+08</td>
+      <td>0.84</td>
+      <td>0.12</td>
+      <td>0.01</td>
+      <td>0.26</td>
+      <td>0.01</td>
+      <td>0.12%</td>
+      <td>8.315026</td>
+      <td>-0.002529</td>
+      <td>-0.002001</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-22</th>
+      <td>8.33</td>
+      <td>8.38</td>
+      <td>8.39</td>
+      <td>8.33</td>
+      <td>393329.0</td>
+      <td>3.618652e+08</td>
+      <td>0.72</td>
+      <td>0.48</td>
+      <td>0.04</td>
+      <td>0.23</td>
+      <td>0.04</td>
+      <td>0.48%</td>
+      <td>8.323220</td>
+      <td>0.005576</td>
+      <td>-0.000237</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-01-29</th>
+      <td>8.43</td>
+      <td>8.49</td>
+      <td>8.50</td>
+      <td>8.42</td>
+      <td>420713.0</td>
+      <td>3.918443e+08</td>
+      <td>0.95</td>
+      <td>0.83</td>
+      <td>0.07</td>
+      <td>0.25</td>
+      <td>0.07</td>
+      <td>0.83%</td>
+      <td>8.359773</td>
+      <td>0.029337</td>
+      <td>0.012089</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-02-05</th>
+      <td>8.50</td>
+      <td>8.42</td>
+      <td>8.52</td>
+      <td>8.39</td>
+      <td>315472.0</td>
+      <td>2.926179e+08</td>
+      <td>1.53</td>
+      <td>-0.82</td>
+      <td>-0.07</td>
+      <td>0.19</td>
+      <td>-0.07</td>
+      <td>-0.82%</td>
+      <td>8.365509</td>
+      <td>0.030296</td>
+      <td>0.015730</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021-08-22</th>
+      <td>19.97</td>
+      <td>19.42</td>
+      <td>20.07</td>
+      <td>18.70</td>
+      <td>1614628.0</td>
+      <td>3.119153e+09</td>
+      <td>6.74</td>
+      <td>-4.52</td>
+      <td>-0.92</td>
+      <td>0.83</td>
+      <td>-0.92</td>
+      <td>-4.52%</td>
+      <td>19.631205</td>
+      <td>-0.142627</td>
+      <td>-0.419982</td>
+      <td>18.8795</td>
+      <td>20.984246</td>
+      <td>16.774754</td>
+    </tr>
+    <tr>
+      <th>2021-08-29</th>
+      <td>18.56</td>
+      <td>18.39</td>
+      <td>18.88</td>
+      <td>18.31</td>
+      <td>728820.0</td>
+      <td>1.354409e+09</td>
+      <td>3.09</td>
+      <td>-0.38</td>
+      <td>-0.07</td>
+      <td>0.38</td>
+      <td>-0.07</td>
+      <td>-0.38%</td>
+      <td>19.335072</td>
+      <td>-0.307851</td>
+      <td>-0.292708</td>
+      <td>19.1150</td>
+      <td>20.952578</td>
+      <td>17.277422</td>
+    </tr>
+    <tr>
+      <th>2021-09-05</th>
+      <td>18.50</td>
+      <td>18.04</td>
+      <td>18.50</td>
+      <td>17.70</td>
+      <td>1394819.0</td>
+      <td>2.523273e+09</td>
+      <td>4.35</td>
+      <td>-1.96</td>
+      <td>-0.36</td>
+      <td>0.72</td>
+      <td>-0.36</td>
+      <td>-1.96%</td>
+      <td>18.806369</td>
+      <td>-0.493470</td>
+      <td>-0.416861</td>
+      <td>19.1445</td>
+      <td>20.911466</td>
+      <td>17.377534</td>
+    </tr>
+    <tr>
+      <th>2021-09-12</th>
+      <td>18.89</td>
+      <td>20.57</td>
+      <td>20.77</td>
+      <td>18.84</td>
+      <td>2314945.0</td>
+      <td>4.668362e+09</td>
+      <td>10.16</td>
+      <td>8.26</td>
+      <td>1.57</td>
+      <td>1.19</td>
+      <td>1.57</td>
+      <td>8.26%</td>
+      <td>19.031889</td>
+      <td>-0.086141</td>
+      <td>-0.307011</td>
+      <td>19.0500</td>
+      <td>20.844670</td>
+      <td>17.255330</td>
+    </tr>
+    <tr>
+      <th>2021-09-19</th>
+      <td>20.18</td>
+      <td>19.37</td>
+      <td>20.27</td>
+      <td>19.27</td>
+      <td>1158173.0</td>
+      <td>2.272080e+09</td>
+      <td>4.95</td>
+      <td>-4.16</td>
+      <td>-0.84</td>
+      <td>0.60</td>
+      <td>-0.84</td>
+      <td>-4.16%</td>
+      <td>19.165606</td>
+      <td>0.024972</td>
+      <td>-0.189281</td>
+      <td>19.0480</td>
+      <td>20.857479</td>
+      <td>17.238521</td>
+    </tr>
+  </tbody>
+</table>
+<p>246 rows × 18 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id19">
+<h3>日 -&gt; 月<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>按月对 df1 进行重采样，保留每月最后一个数据</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;日期&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>换手率</th>
+      <th>涨跌</th>
+      <th>涨跌变化率</th>
+      <th>EMA20</th>
+      <th>MACD</th>
+      <th>Signal line</th>
+      <th>former 30 days rolling Close mean</th>
+      <th>upper bound</th>
+      <th>lower bound</th>
+    </tr>
+    <tr>
+      <th>日期</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-31</th>
+      <td>8.43</td>
+      <td>8.49</td>
+      <td>8.50</td>
+      <td>8.42</td>
+      <td>420713</td>
+      <td>391844288</td>
+      <td>0.95</td>
+      <td>0.83</td>
+      <td>0.07</td>
+      <td>0.25</td>
+      <td>0.07</td>
+      <td>0.83%</td>
+      <td>8.359773</td>
+      <td>0.029337</td>
+      <td>0.012089</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-02-28</th>
+      <td>8.59</td>
+      <td>8.64</td>
+      <td>8.67</td>
+      <td>8.58</td>
+      <td>369720</td>
+      <td>350366896</td>
+      <td>1.05</td>
+      <td>0.58</td>
+      <td>0.05</td>
+      <td>0.22</td>
+      <td>0.05</td>
+      <td>0.58%</td>
+      <td>8.573112</td>
+      <td>0.074404</td>
+      <td>0.075472</td>
+      <td>8.5665</td>
+      <td>8.773460</td>
+      <td>8.359540</td>
+    </tr>
+    <tr>
+      <th>2017-03-31</th>
+      <td>8.24</td>
+      <td>8.33</td>
+      <td>8.34</td>
+      <td>8.24</td>
+      <td>633121</td>
+      <td>578579040</td>
+      <td>1.21</td>
+      <td>1.09</td>
+      <td>0.09</td>
+      <td>0.37</td>
+      <td>0.09</td>
+      <td>1.09%</td>
+      <td>8.413994</td>
+      <td>-0.073842</td>
+      <td>-0.049755</td>
+      <td>8.4575</td>
+      <td>8.748768</td>
+      <td>8.166232</td>
+    </tr>
+    <tr>
+      <th>2017-04-30</th>
+      <td>8.12</td>
+      <td>8.15</td>
+      <td>8.15</td>
+      <td>8.08</td>
+      <td>286446</td>
+      <td>256106698</td>
+      <td>0.86</td>
+      <td>0.25</td>
+      <td>0.02</td>
+      <td>0.17</td>
+      <td>0.02</td>
+      <td>0.25%</td>
+      <td>8.218865</td>
+      <td>-0.078102</td>
+      <td>-0.079294</td>
+      <td>8.2270</td>
+      <td>8.428896</td>
+      <td>8.025104</td>
+    </tr>
+    <tr>
+      <th>2017-05-31</th>
+      <td>8.26</td>
+      <td>8.36</td>
+      <td>8.39</td>
+      <td>8.22</td>
+      <td>1033211</td>
+      <td>948741888</td>
+      <td>2.06</td>
+      <td>1.21</td>
+      <td>0.10</td>
+      <td>0.61</td>
+      <td>0.10</td>
+      <td>1.21%</td>
+      <td>8.056467</td>
+      <td>0.011297</td>
+      <td>-0.052053</td>
+      <td>7.9735</td>
+      <td>8.314907</td>
+      <td>7.632093</td>
+    </tr>
+    <tr>
+      <th>2017-06-30</th>
+      <td>8.56</td>
+      <td>8.55</td>
+      <td>8.59</td>
+      <td>8.47</td>
+      <td>499633</td>
+      <td>468003520</td>
+      <td>1.40</td>
+      <td>-0.47</td>
+      <td>-0.04</td>
+      <td>0.30</td>
+      <td>-0.04</td>
+      <td>-0.47%</td>
+      <td>8.368898</td>
+      <td>0.107020</td>
+      <td>0.081328</td>
+      <td>8.3430</td>
+      <td>8.612198</td>
+      <td>8.073802</td>
+    </tr>
+    <tr>
+      <th>2017-07-31</th>
+      <td>10.12</td>
+      <td>9.99</td>
+      <td>10.14</td>
+      <td>9.77</td>
+      <td>1575864</td>
+      <td>1671814032</td>
+      <td>3.68</td>
+      <td>-0.70</td>
+      <td>-0.07</td>
+      <td>0.93</td>
+      <td>-0.07</td>
+      <td>-0.70%</td>
+      <td>9.708929</td>
+      <td>0.401497</td>
+      <td>0.434813</td>
+      <td>9.6690</td>
+      <td>11.022139</td>
+      <td>8.315861</td>
+    </tr>
+    <tr>
+      <th>2017-08-31</th>
+      <td>10.71</td>
+      <td>10.60</td>
+      <td>10.76</td>
+      <td>10.47</td>
+      <td>1151786</td>
+      <td>1297730592</td>
+      <td>2.70</td>
+      <td>-1.40</td>
+      <td>-0.15</td>
+      <td>0.68</td>
+      <td>-0.15</td>
+      <td>-1.40%</td>
+      <td>10.224083</td>
+      <td>0.250813</td>
+      <td>0.182339</td>
+      <td>10.1250</td>
+      <td>11.030480</td>
+      <td>9.219520</td>
+    </tr>
+    <tr>
+      <th>2017-09-30</th>
+      <td>10.24</td>
+      <td>10.43</td>
+      <td>10.48</td>
+      <td>10.18</td>
+      <td>682280</td>
+      <td>753852528</td>
+      <td>2.94</td>
+      <td>2.25</td>
+      <td>0.23</td>
+      <td>0.40</td>
+      <td>0.23</td>
+      <td>2.25%</td>
+      <td>10.512902</td>
+      <td>0.007831</td>
+      <td>0.083505</td>
+      <td>10.6590</td>
+      <td>11.128575</td>
+      <td>10.189425</td>
+    </tr>
+    <tr>
+      <th>2017-10-31</th>
+      <td>10.87</td>
+      <td>10.86</td>
+      <td>10.90</td>
+      <td>10.71</td>
+      <td>627491</td>
+      <td>721237472</td>
+      <td>1.75</td>
+      <td>-0.18</td>
+      <td>-0.02</td>
+      <td>0.37</td>
+      <td>-0.02</td>
+      <td>-0.18%</td>
+      <td>10.726516</td>
+      <td>0.061093</td>
+      <td>0.063177</td>
+      <td>10.7060</td>
+      <td>11.164666</td>
+      <td>10.247334</td>
+    </tr>
+    <tr>
+      <th>2017-11-30</th>
+      <td>13.02</td>
+      <td>12.70</td>
+      <td>13.05</td>
+      <td>12.58</td>
+      <td>1379636</td>
+      <td>1866700880</td>
+      <td>3.58</td>
+      <td>-3.35</td>
+      <td>-0.44</td>
+      <td>0.82</td>
+      <td>-0.44</td>
+      <td>-3.35%</td>
+      <td>12.629801</td>
+      <td>0.596790</td>
+      <td>0.642198</td>
+      <td>12.5160</td>
+      <td>14.678459</td>
+      <td>10.353541</td>
+    </tr>
+    <tr>
+      <th>2017-12-31</th>
+      <td>12.53</td>
+      <td>12.62</td>
+      <td>12.75</td>
+      <td>12.42</td>
+      <td>982916</td>
+      <td>1303222048</td>
+      <td>2.63</td>
+      <td>0.72</td>
+      <td>0.09</td>
+      <td>0.58</td>
+      <td>0.09</td>
+      <td>0.72%</td>
+      <td>12.577670</td>
+      <td>0.089316</td>
+      <td>0.108042</td>
+      <td>12.5215</td>
+      <td>13.033227</td>
+      <td>12.009773</td>
+    </tr>
+    <tr>
+      <th>2018-01-31</th>
+      <td>12.92</td>
+      <td>13.37</td>
+      <td>13.37</td>
+      <td>12.85</td>
+      <td>1747729</td>
+      <td>2423104768</td>
+      <td>4.01</td>
+      <td>3.08</td>
+      <td>0.40</td>
+      <td>1.03</td>
+      <td>0.40</td>
+      <td>3.08%</td>
+      <td>13.275908</td>
+      <td>0.181650</td>
+      <td>0.252009</td>
+      <td>13.2490</td>
+      <td>14.398387</td>
+      <td>12.099613</td>
+    </tr>
+    <tr>
+      <th>2018-02-28</th>
+      <td>11.42</td>
+      <td>11.37</td>
+      <td>11.51</td>
+      <td>11.25</td>
+      <td>1214146</td>
+      <td>1463313696</td>
+      <td>2.24</td>
+      <td>-1.98</td>
+      <td>-0.23</td>
+      <td>0.72</td>
+      <td>-0.23</td>
+      <td>-1.98%</td>
+      <td>12.166929</td>
+      <td>-0.425308</td>
+      <td>-0.337732</td>
+      <td>12.3780</td>
+      <td>14.314428</td>
+      <td>10.441572</td>
+    </tr>
+    <tr>
+      <th>2018-03-31</th>
+      <td>10.36</td>
+      <td>10.22</td>
+      <td>10.37</td>
+      <td>10.20</td>
+      <td>752174</td>
+      <td>823438176</td>
+      <td>1.64</td>
+      <td>-1.45</td>
+      <td>-0.15</td>
+      <td>0.44</td>
+      <td>-0.15</td>
+      <td>-1.45%</td>
+      <td>10.904021</td>
+      <td>-0.439439</td>
+      <td>-0.396420</td>
+      <td>10.9595</td>
+      <td>11.866792</td>
+      <td>10.052208</td>
+    </tr>
+    <tr>
+      <th>2018-04-30</th>
+      <td>10.81</td>
+      <td>10.17</td>
+      <td>10.83</td>
+      <td>9.95</td>
+      <td>2709796</td>
+      <td>2958464272</td>
+      <td>8.19</td>
+      <td>-5.31</td>
+      <td>-0.57</td>
+      <td>1.60</td>
+      <td>-0.57</td>
+      <td>-5.31%</td>
+      <td>10.724916</td>
+      <td>-0.081372</td>
+      <td>-0.109566</td>
+      <td>10.5930</td>
+      <td>11.340039</td>
+      <td>9.845961</td>
+    </tr>
+    <tr>
+      <th>2018-05-31</th>
+      <td>9.43</td>
+      <td>9.50</td>
+      <td>9.51</td>
+      <td>9.34</td>
+      <td>987360</td>
+      <td>999216336</td>
+      <td>1.81</td>
+      <td>1.06</td>
+      <td>0.10</td>
+      <td>0.58</td>
+      <td>0.10</td>
+      <td>1.06%</td>
+      <td>10.039416</td>
+      <td>-0.252155</td>
+      <td>-0.191171</td>
+      <td>10.0880</td>
+      <td>10.684502</td>
+      <td>9.491498</td>
+    </tr>
+    <tr>
+      <th>2018-06-30</th>
+      <td>8.33</td>
+      <td>8.41</td>
+      <td>8.45</td>
+      <td>8.28</td>
+      <td>675300</td>
+      <td>611346096</td>
+      <td>2.06</td>
+      <td>2.06</td>
+      <td>0.17</td>
+      <td>0.39</td>
+      <td>0.17</td>
+      <td>2.06%</td>
+      <td>9.096154</td>
+      <td>-0.391787</td>
+      <td>-0.315595</td>
+      <td>9.1725</td>
+      <td>10.036368</td>
+      <td>8.308632</td>
+    </tr>
+    <tr>
+      <th>2018-07-31</th>
+      <td>8.83</td>
+      <td>8.88</td>
+      <td>8.95</td>
+      <td>8.71</td>
+      <td>720151</td>
+      <td>674484656</td>
+      <td>2.71</td>
+      <td>0.34</td>
+      <td>0.03</td>
+      <td>0.42</td>
+      <td>0.03</td>
+      <td>0.34%</td>
+      <td>8.616982</td>
+      <td>0.004301</td>
+      <td>-0.105048</td>
+      <td>8.4140</td>
+      <td>9.097225</td>
+      <td>7.730775</td>
+    </tr>
+    <tr>
+      <th>2018-08-31</th>
+      <td>9.59</td>
+      <td>9.59</td>
+      <td>9.78</td>
+      <td>9.56</td>
+      <td>1310865</td>
+      <td>1337898864</td>
+      <td>2.30</td>
+      <td>0.10</td>
+      <td>0.01</td>
+      <td>0.76</td>
+      <td>0.01</td>
+      <td>0.10%</td>
+      <td>9.057319</td>
+      <td>0.287543</td>
+      <td>0.166752</td>
+      <td>8.8730</td>
+      <td>10.003665</td>
+      <td>7.742335</td>
+    </tr>
+    <tr>
+      <th>2018-09-30</th>
+      <td>10.24</td>
+      <td>10.51</td>
+      <td>10.73</td>
+      <td>10.24</td>
+      <td>2110243</td>
+      <td>2331358288</td>
+      <td>4.80</td>
+      <td>3.04</td>
+      <td>0.31</td>
+      <td>1.23</td>
+      <td>0.31</td>
+      <td>3.04%</td>
+      <td>9.710813</td>
+      <td>0.304713</td>
+      <td>0.231171</td>
+      <td>9.6705</td>
+      <td>10.401454</td>
+      <td>8.939546</td>
+    </tr>
+    <tr>
+      <th>2018-10-31</th>
+      <td>10.41</td>
+      <td>10.37</td>
+      <td>10.45</td>
+      <td>10.21</td>
+      <td>1152684</td>
+      <td>1252156768</td>
+      <td>2.32</td>
+      <td>0.10</td>
+      <td>0.01</td>
+      <td>0.67</td>
+      <td>0.01</td>
+      <td>0.10%</td>
+      <td>10.142958</td>
+      <td>0.229796</td>
+      <td>0.220981</td>
+      <td>10.1165</td>
+      <td>10.920288</td>
+      <td>9.312712</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>9.68</td>
+      <td>9.82</td>
+      <td>9.82</td>
+      <td>9.63</td>
+      <td>594715</td>
+      <td>610571536</td>
+      <td>1.97</td>
+      <td>1.66</td>
+      <td>0.16</td>
+      <td>0.35</td>
+      <td>0.16</td>
+      <td>1.66%</td>
+      <td>9.948735</td>
+      <td>-0.093728</td>
+      <td>-0.044225</td>
+      <td>10.0100</td>
+      <td>10.464498</td>
+      <td>9.555502</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>8.77</td>
+      <td>8.84</td>
+      <td>8.92</td>
+      <td>8.77</td>
+      <td>576604</td>
+      <td>541571008</td>
+      <td>1.72</td>
+      <td>1.14</td>
+      <td>0.10</td>
+      <td>0.34</td>
+      <td>0.10</td>
+      <td>1.14%</td>
+      <td>9.304771</td>
+      <td>-0.303912</td>
+      <td>-0.229095</td>
+      <td>9.4395</td>
+      <td>10.357747</td>
+      <td>8.521253</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>10.44</td>
+      <td>10.56</td>
+      <td>10.66</td>
+      <td>10.40</td>
+      <td>831623</td>
+      <td>922602880</td>
+      <td>2.50</td>
+      <td>1.44</td>
+      <td>0.15</td>
+      <td>0.48</td>
+      <td>0.15</td>
+      <td>1.44%</td>
+      <td>9.937361</td>
+      <td>0.276734</td>
+      <td>0.178894</td>
+      <td>9.8290</td>
+      <td>10.712364</td>
+      <td>8.945636</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>11.90</td>
+      <td>11.82</td>
+      <td>12.07</td>
+      <td>11.73</td>
+      <td>1113100</td>
+      <td>1383110816</td>
+      <td>2.87</td>
+      <td>-0.34</td>
+      <td>-0.04</td>
+      <td>0.65</td>
+      <td>-0.04</td>
+      <td>-0.34%</td>
+      <td>10.935832</td>
+      <td>0.482602</td>
+      <td>0.388196</td>
+      <td>10.8910</td>
+      <td>11.924581</td>
+      <td>9.857419</td>
+    </tr>
+    <tr>
+      <th>2019-03-31</th>
+      <td>11.72</td>
+      <td>12.28</td>
+      <td>12.28</td>
+      <td>11.67</td>
+      <td>1669506</td>
+      <td>2108295392</td>
+      <td>5.22</td>
+      <td>5.14</td>
+      <td>0.60</td>
+      <td>0.97</td>
+      <td>0.60</td>
+      <td>5.14%</td>
+      <td>11.849661</td>
+      <td>0.183377</td>
+      <td>0.260493</td>
+      <td>12.0355</td>
+      <td>12.653424</td>
+      <td>11.417576</td>
+    </tr>
+    <tr>
+      <th>2019-04-30</th>
+      <td>13.45</td>
+      <td>13.31</td>
+      <td>13.51</td>
+      <td>13.05</td>
+      <td>1116570</td>
+      <td>1542958576</td>
+      <td>3.39</td>
+      <td>-1.84</td>
+      <td>-0.25</td>
+      <td>0.65</td>
+      <td>-0.25</td>
+      <td>-1.84%</td>
+      <td>13.292738</td>
+      <td>0.336437</td>
+      <td>0.423715</td>
+      <td>13.4270</td>
+      <td>14.208041</td>
+      <td>12.645959</td>
+    </tr>
+    <tr>
+      <th>2019-05-31</th>
+      <td>11.62</td>
+      <td>11.64</td>
+      <td>11.86</td>
+      <td>11.57</td>
+      <td>686794</td>
+      <td>839375712</td>
+      <td>2.48</td>
+      <td>-0.34</td>
+      <td>-0.04</td>
+      <td>0.40</td>
+      <td>-0.04</td>
+      <td>-0.34%</td>
+      <td>12.069663</td>
+      <td>-0.265725</td>
+      <td>-0.246701</td>
+      <td>11.9550</td>
+      <td>12.445306</td>
+      <td>11.464694</td>
+    </tr>
+    <tr>
+      <th>2019-06-30</th>
+      <td>13.33</td>
+      <td>13.38</td>
+      <td>13.39</td>
+      <td>13.18</td>
+      <td>498094</td>
+      <td>682679968</td>
+      <td>1.58</td>
+      <td>0.53</td>
+      <td>0.07</td>
+      <td>0.29</td>
+      <td>0.07</td>
+      <td>0.53%</td>
+      <td>12.589743</td>
+      <td>0.313734</td>
+      <td>0.167801</td>
+      <td>12.3020</td>
+      <td>13.738188</td>
+      <td>10.865812</td>
+    </tr>
+    <tr>
+      <th>2019-07-31</th>
+      <td>13.90</td>
+      <td>13.73</td>
+      <td>13.92</td>
+      <td>13.68</td>
+      <td>634723</td>
+      <td>899227872</td>
+      <td>1.72</td>
+      <td>-1.72</td>
+      <td>-0.24</td>
+      <td>0.37</td>
+      <td>-0.24</td>
+      <td>-1.72%</td>
+      <td>13.504316</td>
+      <td>0.245858</td>
+      <td>0.241181</td>
+      <td>13.5060</td>
+      <td>14.024800</td>
+      <td>12.987200</td>
+    </tr>
+    <tr>
+      <th>2019-08-31</th>
+      <td>13.89</td>
+      <td>13.76</td>
+      <td>13.99</td>
+      <td>13.70</td>
+      <td>798501</td>
+      <td>1136119664</td>
+      <td>2.11</td>
+      <td>0.22</td>
+      <td>0.03</td>
+      <td>0.47</td>
+      <td>0.03</td>
+      <td>0.22%</td>
+      <td>13.955094</td>
+      <td>0.071912</td>
+      <td>0.170015</td>
+      <td>14.0210</td>
+      <td>15.087581</td>
+      <td>12.954419</td>
+    </tr>
+    <tr>
+      <th>2019-09-30</th>
+      <td>15.35</td>
+      <td>15.19</td>
+      <td>15.49</td>
+      <td>15.17</td>
+      <td>1046363</td>
+      <td>1645828528</td>
+      <td>2.06</td>
+      <td>-2.00</td>
+      <td>-0.31</td>
+      <td>0.54</td>
+      <td>-0.31</td>
+      <td>-2.00%</td>
+      <td>14.642265</td>
+      <td>0.347402</td>
+      <td>0.242229</td>
+      <td>14.4925</td>
+      <td>15.563945</td>
+      <td>13.421055</td>
+    </tr>
+    <tr>
+      <th>2019-10-31</th>
+      <td>16.02</td>
+      <td>15.86</td>
+      <td>16.07</td>
+      <td>15.84</td>
+      <td>862569</td>
+      <td>1407006432</td>
+      <td>1.43</td>
+      <td>-1.06</td>
+      <td>-0.17</td>
+      <td>0.44</td>
+      <td>-0.17</td>
+      <td>-1.06%</td>
+      <td>15.976129</td>
+      <td>0.339469</td>
+      <td>0.446000</td>
+      <td>16.1580</td>
+      <td>16.983963</td>
+      <td>15.332037</td>
+    </tr>
+    <tr>
+      <th>2019-11-30</th>
+      <td>15.14</td>
+      <td>14.89</td>
+      <td>15.15</td>
+      <td>14.78</td>
+      <td>653867</td>
+      <td>1001451104</td>
+      <td>2.45</td>
+      <td>-1.33</td>
+      <td>-0.20</td>
+      <td>0.34</td>
+      <td>-0.20</td>
+      <td>-1.33%</td>
+      <td>15.586805</td>
+      <td>-0.238369</td>
+      <td>-0.106934</td>
+      <td>15.8000</td>
+      <td>16.907829</td>
+      <td>14.692171</td>
+    </tr>
+    <tr>
+      <th>2019-12-31</th>
+      <td>16.17</td>
+      <td>16.05</td>
+      <td>16.23</td>
+      <td>15.91</td>
+      <td>704442</td>
+      <td>1154704352</td>
+      <td>1.98</td>
+      <td>-0.74</td>
+      <td>-0.12</td>
+      <td>0.36</td>
+      <td>-0.12</td>
+      <td>-0.74%</td>
+      <td>15.837680</td>
+      <td>0.168803</td>
+      <td>0.114792</td>
+      <td>15.6875</td>
+      <td>16.658314</td>
+      <td>14.716686</td>
+    </tr>
+    <tr>
+      <th>2020-01-31</th>
+      <td>15.52</td>
+      <td>15.14</td>
+      <td>15.52</td>
+      <td>14.99</td>
+      <td>1100592</td>
+      <td>1723394336</td>
+      <td>3.38</td>
+      <td>-3.51</td>
+      <td>-0.55</td>
+      <td>0.57</td>
+      <td>-0.55</td>
+      <td>-3.51%</td>
+      <td>15.975078</td>
+      <td>-0.075053</td>
+      <td>0.071022</td>
+      <td>16.1800</td>
+      <td>16.985377</td>
+      <td>15.374623</td>
+    </tr>
+    <tr>
+      <th>2020-02-29</th>
+      <td>14.45</td>
+      <td>14.10</td>
+      <td>14.64</td>
+      <td>14.06</td>
+      <td>1300644</td>
+      <td>1906892416</td>
+      <td>3.94</td>
+      <td>-4.15</td>
+      <td>-0.61</td>
+      <td>0.67</td>
+      <td>-0.61</td>
+      <td>-4.15%</td>
+      <td>14.789529</td>
+      <td>-0.222628</td>
+      <td>-0.237305</td>
+      <td>14.5100</td>
+      <td>15.312417</td>
+      <td>13.707583</td>
+    </tr>
+    <tr>
+      <th>2020-03-31</th>
+      <td>12.65</td>
+      <td>12.40</td>
+      <td>12.69</td>
+      <td>12.38</td>
+      <td>513370</td>
+      <td>662915472</td>
+      <td>2.47</td>
+      <td>-1.12</td>
+      <td>-0.14</td>
+      <td>0.26</td>
+      <td>-0.14</td>
+      <td>-1.12%</td>
+      <td>13.061722</td>
+      <td>-0.590896</td>
+      <td>-0.597096</td>
+      <td>13.2205</td>
+      <td>15.311931</td>
+      <td>11.129069</td>
+    </tr>
+    <tr>
+      <th>2020-04-30</th>
+      <td>13.62</td>
+      <td>13.53</td>
+      <td>13.92</td>
+      <td>13.48</td>
+      <td>819540</td>
+      <td>1155968240</td>
+      <td>3.23</td>
+      <td>-0.66</td>
+      <td>-0.09</td>
+      <td>0.42</td>
+      <td>-0.09</td>
+      <td>-0.66%</td>
+      <td>12.911223</td>
+      <td>0.079692</td>
+      <td>-0.091462</td>
+      <td>12.6885</td>
+      <td>13.519689</td>
+      <td>11.857311</td>
+    </tr>
+    <tr>
+      <th>2020-05-31</th>
+      <td>12.83</td>
+      <td>12.82</td>
+      <td>12.86</td>
+      <td>12.74</td>
+      <td>457808</td>
+      <td>594502128</td>
+      <td>0.93</td>
+      <td>-0.54</td>
+      <td>-0.07</td>
+      <td>0.24</td>
+      <td>-0.07</td>
+      <td>-0.54%</td>
+      <td>12.887432</td>
+      <td>-0.075630</td>
+      <td>-0.040344</td>
+      <td>13.0605</td>
+      <td>13.790503</td>
+      <td>12.330497</td>
+    </tr>
+    <tr>
+      <th>2020-06-30</th>
+      <td>12.65</td>
+      <td>12.62</td>
+      <td>12.70</td>
+      <td>12.54</td>
+      <td>937940</td>
+      <td>1199181600</td>
+      <td>1.27</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.48</td>
+      <td>0.00</td>
+      <td>0.00%</td>
+      <td>12.777390</td>
+      <td>-0.131097</td>
+      <td>-0.095965</td>
+      <td>12.9290</td>
+      <td>13.694847</td>
+      <td>12.163153</td>
+    </tr>
+    <tr>
+      <th>2020-07-31</th>
+      <td>13.10</td>
+      <td>13.16</td>
+      <td>13.35</td>
+      <td>13.07</td>
+      <td>1165822</td>
+      <td>1559068288</td>
+      <td>2.12</td>
+      <td>-0.23</td>
+      <td>-0.03</td>
+      <td>0.60</td>
+      <td>-0.03</td>
+      <td>-0.23%</td>
+      <td>13.676416</td>
+      <td>-0.104207</td>
+      <td>0.071230</td>
+      <td>14.1905</td>
+      <td>15.848876</td>
+      <td>12.532124</td>
+    </tr>
+    <tr>
+      <th>2020-08-31</th>
+      <td>15.12</td>
+      <td>14.90</td>
+      <td>15.50</td>
+      <td>14.81</td>
+      <td>1797130</td>
+      <td>2760350320</td>
+      <td>4.62</td>
+      <td>-0.33</td>
+      <td>-0.05</td>
+      <td>0.93</td>
+      <td>-0.05</td>
+      <td>-0.33%</td>
+      <td>14.329986</td>
+      <td>0.232792</td>
+      <td>0.195512</td>
+      <td>14.2745</td>
+      <td>15.226782</td>
+      <td>13.322218</td>
+    </tr>
+    <tr>
+      <th>2020-09-30</th>
+      <td>14.62</td>
+      <td>14.99</td>
+      <td>15.09</td>
+      <td>14.62</td>
+      <td>1217065</td>
+      <td>1838547600</td>
+      <td>3.21</td>
+      <td>2.53</td>
+      <td>0.37</td>
+      <td>0.63</td>
+      <td>0.37</td>
+      <td>2.53%</td>
+      <td>15.043294</td>
+      <td>0.120394</td>
+      <td>0.215259</td>
+      <td>15.1285</td>
+      <td>15.778885</td>
+      <td>14.478115</td>
+    </tr>
+    <tr>
+      <th>2020-10-31</th>
+      <td>17.56</td>
+      <td>17.57</td>
+      <td>18.18</td>
+      <td>17.42</td>
+      <td>1007804</td>
+      <td>1813064336</td>
+      <td>4.32</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>0.52</td>
+      <td>-0.02</td>
+      <td>-0.11%</td>
+      <td>16.799087</td>
+      <td>0.678363</td>
+      <td>0.637274</td>
+      <td>16.5465</td>
+      <td>18.837721</td>
+      <td>14.255279</td>
+    </tr>
+    <tr>
+      <th>2020-11-30</th>
+      <td>19.72</td>
+      <td>19.56</td>
+      <td>20.70</td>
+      <td>19.41</td>
+      <td>1581441</td>
+      <td>3213680464</td>
+      <td>6.61</td>
+      <td>0.20</td>
+      <td>0.04</td>
+      <td>0.81</td>
+      <td>0.04</td>
+      <td>0.20%</td>
+      <td>18.401708</td>
+      <td>0.681858</td>
+      <td>0.583008</td>
+      <td>18.2485</td>
+      <td>19.926711</td>
+      <td>16.570289</td>
+    </tr>
+    <tr>
+      <th>2020-12-31</th>
+      <td>19.03</td>
+      <td>19.16</td>
+      <td>19.40</td>
+      <td>18.84</td>
+      <td>924503</td>
+      <td>1781736288</td>
+      <td>2.94</td>
+      <td>0.74</td>
+      <td>0.14</td>
+      <td>0.48</td>
+      <td>0.14</td>
+      <td>0.74%</td>
+      <td>18.553552</td>
+      <td>0.104339</td>
+      <td>0.051644</td>
+      <td>18.5090</td>
+      <td>19.377584</td>
+      <td>17.640416</td>
+    </tr>
+    <tr>
+      <th>2021-01-31</th>
+      <td>22.63</td>
+      <td>22.91</td>
+      <td>23.36</td>
+      <td>22.53</td>
+      <td>1240258</td>
+      <td>2864101424</td>
+      <td>3.67</td>
+      <td>1.24</td>
+      <td>0.28</td>
+      <td>0.64</td>
+      <td>0.28</td>
+      <td>1.24%</td>
+      <td>21.340373</td>
+      <td>1.021672</td>
+      <td>0.905720</td>
+      <td>21.0670</td>
+      <td>24.103827</td>
+      <td>18.030173</td>
+    </tr>
+    <tr>
+      <th>2021-02-28</th>
+      <td>21.42</td>
+      <td>21.20</td>
+      <td>21.78</td>
+      <td>21.03</td>
+      <td>1124977</td>
+      <td>2424653760</td>
+      <td>3.42</td>
+      <td>-3.24</td>
+      <td>-0.71</td>
+      <td>0.58</td>
+      <td>-0.71</td>
+      <td>-3.24%</td>
+      <td>22.587741</td>
+      <td>0.209554</td>
+      <td>0.673290</td>
+      <td>23.1920</td>
+      <td>25.486934</td>
+      <td>20.897066</td>
+    </tr>
+    <tr>
+      <th>2021-03-31</th>
+      <td>21.59</td>
+      <td>21.83</td>
+      <td>21.89</td>
+      <td>21.42</td>
+      <td>777028</td>
+      <td>1699922176</td>
+      <td>2.16</td>
+      <td>0.37</td>
+      <td>0.08</td>
+      <td>0.40</td>
+      <td>0.08</td>
+      <td>0.37%</td>
+      <td>21.367022</td>
+      <td>-0.159452</td>
+      <td>-0.266009</td>
+      <td>21.2275</td>
+      <td>22.495700</td>
+      <td>19.959300</td>
+    </tr>
+    <tr>
+      <th>2021-04-30</th>
+      <td>23.17</td>
+      <td>23.11</td>
+      <td>23.31</td>
+      <td>22.83</td>
+      <td>561981</td>
+      <td>1308177200</td>
+      <td>2.05</td>
+      <td>-1.28</td>
+      <td>-0.30</td>
+      <td>0.29</td>
+      <td>-0.30</td>
+      <td>-1.28%</td>
+      <td>22.125681</td>
+      <td>0.502633</td>
+      <td>0.272419</td>
+      <td>21.7540</td>
+      <td>24.001248</td>
+      <td>19.506752</td>
+    </tr>
+    <tr>
+      <th>2021-05-31</th>
+      <td>24.33</td>
+      <td>24.20</td>
+      <td>24.53</td>
+      <td>23.91</td>
+      <td>515351</td>
+      <td>1244209040</td>
+      <td>2.53</td>
+      <td>-1.22</td>
+      <td>-0.30</td>
+      <td>0.27</td>
+      <td>-0.30</td>
+      <td>-1.22%</td>
+      <td>23.717712</td>
+      <td>0.590754</td>
+      <td>0.567379</td>
+      <td>23.7655</td>
+      <td>24.919267</td>
+      <td>22.611733</td>
+    </tr>
+    <tr>
+      <th>2021-06-30</th>
+      <td>22.36</td>
+      <td>22.62</td>
+      <td>22.93</td>
+      <td>22.35</td>
+      <td>403435</td>
+      <td>913285184</td>
+      <td>2.60</td>
+      <td>1.25</td>
+      <td>0.28</td>
+      <td>0.21</td>
+      <td>0.28</td>
+      <td>1.25%</td>
+      <td>23.181017</td>
+      <td>-0.243393</td>
+      <td>-0.122945</td>
+      <td>23.3965</td>
+      <td>24.896090</td>
+      <td>21.896910</td>
+    </tr>
+    <tr>
+      <th>2021-07-31</th>
+      <td>17.92</td>
+      <td>17.69</td>
+      <td>18.05</td>
+      <td>17.24</td>
+      <td>950156</td>
+      <td>1679747312</td>
+      <td>4.51</td>
+      <td>-1.50</td>
+      <td>-0.27</td>
+      <td>0.49</td>
+      <td>-0.27</td>
+      <td>-1.50%</td>
+      <td>20.075455</td>
+      <td>-1.246638</td>
+      <td>-0.945724</td>
+      <td>20.4435</td>
+      <td>23.662851</td>
+      <td>17.224149</td>
+    </tr>
+    <tr>
+      <th>2021-08-31</th>
+      <td>17.72</td>
+      <td>17.80</td>
+      <td>17.93</td>
+      <td>17.31</td>
+      <td>1174868</td>
+      <td>2072006848</td>
+      <td>3.50</td>
+      <td>0.45</td>
+      <td>0.08</td>
+      <td>0.61</td>
+      <td>0.08</td>
+      <td>0.45%</td>
+      <td>19.049708</td>
+      <td>-0.464633</td>
+      <td>-0.344565</td>
+      <td>19.0960</td>
+      <td>20.987014</td>
+      <td>17.204986</td>
+    </tr>
+    <tr>
+      <th>2021-09-30</th>
+      <td>20.18</td>
+      <td>19.37</td>
+      <td>20.27</td>
+      <td>19.27</td>
+      <td>1158173</td>
+      <td>2272080160</td>
+      <td>4.95</td>
+      <td>-4.16</td>
+      <td>-0.84</td>
+      <td>0.60</td>
+      <td>-0.84</td>
+      <td>-4.16%</td>
+      <td>19.165606</td>
+      <td>0.024972</td>
+      <td>-0.189281</td>
+      <td>19.0480</td>
+      <td>20.857479</td>
+      <td>17.238521</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>分钟 -&gt; 日<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>按日对 df2 进行重采样，保留每天最后一个数据</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;时间&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>换手率</th>
+    </tr>
+    <tr>
+      <th>时间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-08-03</th>
+      <td>17.92</td>
+      <td>17.89</td>
+      <td>17.94</td>
+      <td>17.89</td>
+      <td>-0.22</td>
+      <td>-0.04</td>
+      <td>20126.0</td>
+      <td>36034747.0</td>
+      <td>0.28</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-04</th>
+      <td>17.81</td>
+      <td>17.81</td>
+      <td>17.82</td>
+      <td>17.80</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>12422.0</td>
+      <td>22122442.0</td>
+      <td>0.11</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-05</th>
+      <td>17.64</td>
+      <td>17.68</td>
+      <td>17.68</td>
+      <td>17.64</td>
+      <td>0.17</td>
+      <td>0.03</td>
+      <td>15602.0</td>
+      <td>27568733.0</td>
+      <td>0.23</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-06</th>
+      <td>17.84</td>
+      <td>17.86</td>
+      <td>17.87</td>
+      <td>17.84</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>13251.0</td>
+      <td>23647402.0</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-07</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-08</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-09</th>
+      <td>19.07</td>
+      <td>19.06</td>
+      <td>19.09</td>
+      <td>19.06</td>
+      <td>-0.16</td>
+      <td>-0.03</td>
+      <td>16831.0</td>
+      <td>32092450.0</td>
+      <td>0.16</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-10</th>
+      <td>19.72</td>
+      <td>19.73</td>
+      <td>19.74</td>
+      <td>19.70</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>14968.0</td>
+      <td>29523092.0</td>
+      <td>0.20</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-11</th>
+      <td>19.74</td>
+      <td>19.81</td>
+      <td>19.81</td>
+      <td>19.74</td>
+      <td>0.35</td>
+      <td>0.07</td>
+      <td>17181.0</td>
+      <td>34015140.0</td>
+      <td>0.35</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-12</th>
+      <td>19.89</td>
+      <td>19.89</td>
+      <td>19.89</td>
+      <td>19.87</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>7066.0</td>
+      <td>14051666.0</td>
+      <td>0.10</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2021-08-13</th>
+      <td>19.87</td>
+      <td>19.89</td>
+      <td>19.89</td>
+      <td>19.85</td>
+      <td>0.20</td>
+      <td>0.04</td>
+      <td>11754.0</td>
+      <td>23367450.0</td>
+      <td>0.20</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-14</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-15</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-16</th>
+      <td>19.91</td>
+      <td>19.95</td>
+      <td>19.95</td>
+      <td>19.89</td>
+      <td>0.20</td>
+      <td>0.04</td>
+      <td>8498.0</td>
+      <td>16936079.0</td>
+      <td>0.30</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2021-08-17</th>
+      <td>19.69</td>
+      <td>19.67</td>
+      <td>19.70</td>
+      <td>19.66</td>
+      <td>-0.15</td>
+      <td>-0.03</td>
+      <td>7809.0</td>
+      <td>15366451.0</td>
+      <td>0.20</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2021-08-18</th>
+      <td>20.66</td>
+      <td>20.62</td>
+      <td>20.69</td>
+      <td>20.62</td>
+      <td>-0.24</td>
+      <td>-0.05</td>
+      <td>25252.0</td>
+      <td>52116616.0</td>
+      <td>0.34</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-19</th>
+      <td>20.32</td>
+      <td>20.34</td>
+      <td>20.34</td>
+      <td>20.31</td>
+      <td>0.15</td>
+      <td>0.03</td>
+      <td>13753.0</td>
+      <td>27959791.0</td>
+      <td>0.15</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-20</th>
+      <td>19.43</td>
+      <td>19.42</td>
+      <td>19.43</td>
+      <td>19.39</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>24246.0</td>
+      <td>47066098.0</td>
+      <td>0.21</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-21</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-22</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-23</th>
+      <td>19.28</td>
+      <td>19.30</td>
+      <td>19.30</td>
+      <td>19.28</td>
+      <td>0.16</td>
+      <td>0.03</td>
+      <td>10652.0</td>
+      <td>20550733.0</td>
+      <td>0.10</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-24</th>
+      <td>19.35</td>
+      <td>19.36</td>
+      <td>19.40</td>
+      <td>19.34</td>
+      <td>0.10</td>
+      <td>0.02</td>
+      <td>15313.0</td>
+      <td>29654613.0</td>
+      <td>0.31</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-25</th>
+      <td>19.13</td>
+      <td>19.16</td>
+      <td>19.16</td>
+      <td>19.12</td>
+      <td>0.16</td>
+      <td>0.03</td>
+      <td>13365.0</td>
+      <td>25584226.0</td>
+      <td>0.21</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-26</th>
+      <td>18.49</td>
+      <td>18.46</td>
+      <td>18.50</td>
+      <td>18.46</td>
+      <td>-0.16</td>
+      <td>-0.03</td>
+      <td>19175.0</td>
+      <td>35413342.0</td>
+      <td>0.22</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-27</th>
+      <td>18.37</td>
+      <td>18.39</td>
+      <td>18.39</td>
+      <td>18.33</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>17200.0</td>
+      <td>31599250.0</td>
+      <td>0.33</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-28</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-29</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-08-30</th>
+      <td>17.70</td>
+      <td>17.72</td>
+      <td>17.72</td>
+      <td>17.68</td>
+      <td>0.11</td>
+      <td>0.02</td>
+      <td>21632.0</td>
+      <td>38313644.0</td>
+      <td>0.23</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-08-31</th>
+      <td>17.79</td>
+      <td>17.80</td>
+      <td>17.81</td>
+      <td>17.78</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>31650.0</td>
+      <td>56333592.0</td>
+      <td>0.17</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-09-01</th>
+      <td>17.83</td>
+      <td>17.88</td>
+      <td>17.88</td>
+      <td>17.83</td>
+      <td>0.22</td>
+      <td>0.04</td>
+      <td>36280.0</td>
+      <td>64831004.0</td>
+      <td>0.28</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-09-02</th>
+      <td>18.37</td>
+      <td>18.40</td>
+      <td>18.44</td>
+      <td>18.34</td>
+      <td>0.22</td>
+      <td>0.04</td>
+      <td>53423.0</td>
+      <td>98264475.0</td>
+      <td>0.54</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>2021-09-03</th>
+      <td>18.06</td>
+      <td>18.04</td>
+      <td>18.07</td>
+      <td>18.04</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>24983.0</td>
+      <td>45082686.0</td>
+      <td>0.17</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-04</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-09-05</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-09-06</th>
+      <td>18.46</td>
+      <td>18.45</td>
+      <td>18.47</td>
+      <td>18.45</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>23588.0</td>
+      <td>43525979.0</td>
+      <td>0.11</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-07</th>
+      <td>19.22</td>
+      <td>19.24</td>
+      <td>19.25</td>
+      <td>19.20</td>
+      <td>0.16</td>
+      <td>0.03</td>
+      <td>32054.0</td>
+      <td>61625241.0</td>
+      <td>0.26</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-09-08</th>
+      <td>19.21</td>
+      <td>19.23</td>
+      <td>19.23</td>
+      <td>19.19</td>
+      <td>0.16</td>
+      <td>0.03</td>
+      <td>16550.0</td>
+      <td>31803231.0</td>
+      <td>0.21</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-09</th>
+      <td>18.97</td>
+      <td>19.00</td>
+      <td>19.00</td>
+      <td>18.97</td>
+      <td>0.16</td>
+      <td>0.03</td>
+      <td>19752.0</td>
+      <td>37520759.0</td>
+      <td>0.16</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-10</th>
+      <td>20.60</td>
+      <td>20.57</td>
+      <td>20.62</td>
+      <td>20.57</td>
+      <td>-0.15</td>
+      <td>-0.03</td>
+      <td>38082.0</td>
+      <td>78398933.0</td>
+      <td>0.24</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-09-11</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-09-12</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2021-09-13</th>
+      <td>20.20</td>
+      <td>20.21</td>
+      <td>20.22</td>
+      <td>20.19</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>17593.0</td>
+      <td>35555623.0</td>
+      <td>0.15</td>
+      <td>0.01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id21">
+<h3>低频 -&gt; 高频<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>将 df2 的 5分钟 数据改为 3分钟，缺失数据向前填充</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_3min</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;时间&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;3min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+<span class="n">df_3min</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>开盘</th>
+      <th>收盘</th>
+      <th>最高</th>
+      <th>最低</th>
+      <th>涨跌幅</th>
+      <th>涨跌额</th>
+      <th>成交量</th>
+      <th>成交额</th>
+      <th>振幅</th>
+      <th>换手率</th>
+    </tr>
+    <tr>
+      <th>时间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-08-03 09:33:00</th>
+      <td>17.99</td>
+      <td>17.78</td>
+      <td>18.02</td>
+      <td>17.75</td>
+      <td>-1.28</td>
+      <td>-0.23</td>
+      <td>52807.0</td>
+      <td>94339287.0</td>
+      <td>1.50</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:36:00</th>
+      <td>17.99</td>
+      <td>17.78</td>
+      <td>18.02</td>
+      <td>17.75</td>
+      <td>-1.28</td>
+      <td>-0.23</td>
+      <td>52807.0</td>
+      <td>94339287.0</td>
+      <td>1.50</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:39:00</th>
+      <td>17.77</td>
+      <td>17.76</td>
+      <td>17.83</td>
+      <td>17.66</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>41508.0</td>
+      <td>73683531.0</td>
+      <td>0.96</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:42:00</th>
+      <td>17.77</td>
+      <td>17.76</td>
+      <td>17.83</td>
+      <td>17.66</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>41508.0</td>
+      <td>73683531.0</td>
+      <td>0.96</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>2021-08-03 09:45:00</th>
+      <td>17.77</td>
+      <td>17.77</td>
+      <td>17.83</td>
+      <td>17.73</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>18521.0</td>
+      <td>32915794.0</td>
+      <td>0.56</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021-09-13 14:48:00</th>
+      <td>20.22</td>
+      <td>20.21</td>
+      <td>20.26</td>
+      <td>20.18</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>24419.0</td>
+      <td>49373556.0</td>
+      <td>0.40</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-13 14:51:00</th>
+      <td>20.22</td>
+      <td>20.21</td>
+      <td>20.26</td>
+      <td>20.18</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>24419.0</td>
+      <td>49373556.0</td>
+      <td>0.40</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-13 14:54:00</th>
+      <td>20.21</td>
+      <td>20.20</td>
+      <td>20.23</td>
+      <td>20.19</td>
+      <td>-0.05</td>
+      <td>-0.01</td>
+      <td>20769.0</td>
+      <td>41974013.0</td>
+      <td>0.20</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-13 14:57:00</th>
+      <td>20.21</td>
+      <td>20.20</td>
+      <td>20.23</td>
+      <td>20.19</td>
+      <td>-0.05</td>
+      <td>-0.01</td>
+      <td>20769.0</td>
+      <td>41974013.0</td>
+      <td>0.20</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>2021-09-13 15:00:00</th>
+      <td>20.20</td>
+      <td>20.21</td>
+      <td>20.22</td>
+      <td>20.19</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>17593.0</td>
+      <td>35555623.0</td>
+      <td>0.15</td>
+      <td>0.01</td>
+    </tr>
+  </tbody>
+</table>
+<p>19790 rows × 10 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "liuhuanshuo/zaoqi-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./doc/chapter6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">pandas中的时间操作</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="%E5%88%B6%E4%BD%9CK%E7%BA%BF%E5%9B%BE.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">制作K线图</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021017583号-1</a><br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  
+
+  
+  </body>
+</html>
