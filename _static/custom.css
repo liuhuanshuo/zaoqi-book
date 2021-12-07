@@ -1084,7 +1084,7 @@ div.topbar {
 
 main.bd-content #main-content>div>div>div.section, main.bd-content #main-content .prev-next-bottom {
     padding-right: 1em;
-    padding-left: 1em;
+    // padding-left: 1em;
     padding-top: 0.5em;
 }
 
@@ -1170,10 +1170,17 @@ h1 {
     top: 27px;
 }
 
-img, svg {
+img{
     vertical-align: middle;
-    // height: 21px;
+
 }
+
+svg {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
 
 #navbar-toggler i {
     transition: opacity .3s, transform .3s;
@@ -1421,3 +1428,8 @@ blockquote div>p {
     margin-bottom: 0.5em;
     color: #6a737d;
 }
+
+@media (min-width: 720px){
+.pl-md-3, .px-md-3 {
+    padding-left: 2.2rem!important;
+}}
