@@ -1242,3 +1242,31 @@ div.bd-sidebar>ul {
     }
 
 }
+
+
+.show-for-sr {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0)
+}
+
+.topbar .topbar-main>a.btn__qelogo{
+	display: block;
+	overflow: hidden;
+	height: 30px;
+	width: 105px;
+	background: url(https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112092026460.png) no-repeat left top;
+	background-size: 105px 30px;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    left: 110px;
+    top: 11px;
+    opacity: 0.8;
+}
+
+.topbar .topbar-main>a.btn__qelogo:hover, .topbar .topbar-main>a.btn__qelogo.btn-active {
+	opacity: 1;
+	transform: scale(1.1)
+}
