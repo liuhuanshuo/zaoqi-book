@@ -1242,3 +1242,24 @@ div.bd-sidebar>ul {
     }
 
 }
+
+
+.show-for-sr {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0)
+}
+
+.topbar .topbar-main>a.btn__qelogo{
+	display: block;
+	overflow: hidden;
+	height: 30px;
+	width: 105px;
+	background: url(https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112091454477.png) no-repeat left top;
+	background-size: 105px 30px;
+    position: absolute;
+    left: 110px;
+    top: 11px;
+}
