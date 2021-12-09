@@ -1257,9 +1257,16 @@ div.bd-sidebar>ul {
 	overflow: hidden;
 	height: 30px;
 	width: 105px;
-	background: url(https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112091454477.png) no-repeat left top;
+	background: url(https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112092026460.png) no-repeat left top;
 	background-size: 105px 30px;
+    transition: all 0.2s ease-in-out;
     position: absolute;
     left: 110px;
     top: 11px;
+    opacity: 0.8;
+}
+
+.topbar .topbar-main>a.btn__qelogo:hover, .topbar .topbar-main>a.btn__qelogo.btn-active {
+	opacity: 1;
+	transform: scale(1.1)
 }
