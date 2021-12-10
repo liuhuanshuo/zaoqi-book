@@ -29,12 +29,6 @@ plt.rcParams['axes.unicode_minus']=False
 
 # ## 箱线图
 
-# In[170]:
-
-
-
-
-
 # In[2]:
 
 

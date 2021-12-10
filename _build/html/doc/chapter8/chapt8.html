@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>数据加载与存储</title>
+    <title>个性化显示</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -502,8 +502,8 @@
             
 
 
-            <a href="https://pandas.liuzaoqi.com"><button  class="btn btn-secondary topbarbtn" style="position: absolute;left: 57px;bottom: 7px;"><i data-feather="home" color = '#5A5A5A'></i></button></a>
 
+            <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
             <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
 
 
@@ -559,6 +559,8 @@
             
 
         <div class="qe-page__toc-footer">
+            <img src="https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112101114946.png" style="width: 105px;height: 105px">
+            <p style="font-size: 0.8em;color: #444444;">扫码关注我的公众号</p>
             <p style="font-size: 0.8em;color: #444444;">Powered by <a href="https://jupyterbook.org/" style="color: #004979;">Jupyter Book</a></p>
             <p><a href="#top"><strong>Back to top</strong></a></p>
         </div>
@@ -575,7 +577,7 @@
 
     <div class="qe-page__header-copy">
         <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
-        <p class="qe-page__header-subheading"> 数据加载与存储</p>
+        <p class="qe-page__header-subheading"> 个性化显示</p>
     </div>
     <p class="qe-page__header-authors"><a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
 
@@ -588,15 +590,14 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>数据加载与存储<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>个性化显示<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
 <p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
 </div>
-<p>加载数据是所有 Python 数据分析的第一步，也是常常容易被忽略的一个操作。</p>
-<p>在一次数据分析的过程中，我们可能频繁的读取不同数据并对其进行处理。</p>
-<p>若能灵活掌握数据读取的各项设置，在读取阶段就将<strong>数据筛选、匹配、格式指定</strong>等操作完成，有时可以节省大量时间。</p>
-<p>以下是本章全部内容，你可以点击下方链接或从左侧目录进入对应内容。</p>
+<p>在使用 pandas 时，有时默认的配置方案并不能让我们舒服的进行数据分析。</p>
+<p>幸运的是，pandas 也支持我们通过使用 <code class="docutils literal notranslate"><span class="pre">option</span></code> 和 <code class="docutils literal notranslate"><span class="pre">style</span></code> 相关功能进行 <strong>自定义显示、样式</strong>等个性化操作。</p>
+<p>当然需要注意的是，这两个功能均未对原始数据产生影响，仅是在输出端进行相关配置！</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="option.html">option</a></li>
@@ -661,7 +662,7 @@
     <div class="container">
       <p style="font-size: 0.8em">
         
-          By test 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021017583号-1</a><br/>
+          By 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021017583号-1</a><br/>
         
       </p>
     </div>

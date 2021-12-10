@@ -1177,8 +1177,9 @@ img{
 
 svg {
     vertical-align: middle;
-    height: 22px;
-    width: 22px;
+    height: 21px;
+    width: 21px;
+    outline:none;
 }
 
 
@@ -1433,3 +1434,11 @@ blockquote div>p {
 .pl-md-3, .px-md-3 {
     padding-left: 2.2rem!important;
 }}
+
+
+.bd-sidebar label i {
+    display: inline-block;
+    font-size: .75rem;
+    text-align: center;
+    opacity: 0.7;
+}

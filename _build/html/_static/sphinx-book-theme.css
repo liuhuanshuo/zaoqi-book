@@ -1268,5 +1268,20 @@ div.bd-sidebar>ul {
 
 .topbar .topbar-main>a.btn__qelogo:hover, .topbar .topbar-main>a.btn__qelogo.btn-active {
 	opacity: 1;
+	transform: scale(1.09)
+}
+
+.topbar .topbar-main>a.btn__qehome{
+    position: absolute;
+    left: 71px;
+    top: 9.5px;
+    opacity: 0.9;
+    text-decoration: none;
+    transition: all 0.15s linear;
+    overflow-wrap: break-word;
+}
+
+.topbar .topbar-main>a.btn__qehome:hover, .topbar .topbar-main>a.btn__qehome.btn-active {
+	opacity: 1;
 	transform: scale(1.1)
 }

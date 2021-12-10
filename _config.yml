@@ -3,7 +3,7 @@
 #######################################################################################
 # Book settings
 title                       : ""  # The title of the book. Will be placed in the left navbar.
-author                      : test 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021017583号-1</a>
+author                      : 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021017583号-1</a>
 copyright                   : "2020-2021"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
 email                       : "huanshuo0801@gmail.com"
