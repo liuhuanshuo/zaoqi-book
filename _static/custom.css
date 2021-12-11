@@ -1092,6 +1092,7 @@ p {
     text-align: justify;
     font-size: 0.92em;
     color: #444;
+    line-height: 1.8rem;
 }
 
 div.cell_output table.dataframe {
@@ -1108,6 +1109,7 @@ h2 {
 
     font-size: 1.9em;
     font-weight: 500;
+    margin-bottom: 1.2em;
 }
 
 h1 {
@@ -1115,6 +1117,7 @@ h1 {
     color: #0072BC;
     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;
     font-weight: 500;
+    margin-bottom: 1em;
 }
 
 .qe-sidebar {

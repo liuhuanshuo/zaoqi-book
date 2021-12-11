@@ -8,6 +8,8 @@ parts:
   chapters:
   - file: doc/指引/使用说明
   - file: doc/指引/在线执行
+  - file: doc/chapter0/Python安装
+  - file: doc/chapter0/入门pandas
 
 
 - caption: 图解Pandas 📖
