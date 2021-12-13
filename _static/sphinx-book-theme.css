@@ -870,14 +870,14 @@ button.topbarbtn img {
 }
 
 .bd-toc div.onthispage, .bd-toc .toc-entry a {
-    color: #5a5a5a
+    color: #5a5a5a;
 }
 
 .bd-toc nav {
     opacity: 0;
-    max-height: 0;
+    // max-height: 0;
     transition: opacity 0.2s ease, max-height .7s ease;
-    overflow-y: hidden;
+    // overflow-y: hidden;
     background: white;
     scrollbar-width: thin
 }
@@ -930,9 +930,9 @@ button.topbarbtn img {
 }
 
 .bd-toc:hover nav, .bd-toc.show nav {
-    max-height: 90vh;
+    // max-height: 90vh;
     opacity: 1;
-    overflow-y: auto
+    // overflow-y: auto
 }
 
 .bd-toc:hover .tocsection:after, .bd-toc.show .tocsection:after {
@@ -1268,5 +1268,163 @@ div.bd-sidebar>ul {
 
 .topbar .topbar-main>a.btn__qelogo:hover, .topbar .topbar-main>a.btn__qelogo.btn-active {
 	opacity: 1;
+	transform: scale(1.09)
+}
+
+.topbar .topbar-main>a.btn__qehome{
+    position: absolute;
+    left: 71px;
+    top: 13px;
+    opacity: 0.9;
+    text-decoration: none;
+    transition: all 0.15s linear;
+    overflow-wrap: break-word;
+    display: flex;
+}
+
+.topbar .topbar-main>a.btn__qehome:hover, .topbar .topbar-main>a.btn__qehome.btn-active {
+	opacity: 1;
 	transform: scale(1.1)
+}
+
+.topbar .topbar-main>ul>li:hover, .topbar .topbar-main>ul>li.btn-active {
+	opacity: 1;
+	transform: scale(1.1)
+}
+
+.topbar .topbar-main>ul>li.btn__minus {
+	opacity: 0.5
+}
+
+.topbar .topbar-main>ul>li.btn__plus {
+	opacity: 0.5
+}
+
+.font-plus .topbar .topbar-main>ul>li.btn__plus {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.font-minus .topbar .topbar-main>ul>li.btn__minus {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.topbar .topbar-main>ul>li.btn__fullscreen {
+	opacity: 0.5
+}
+
+.bd-toc {
+    overflow-y: unset;
+    margin-left: 3em;
+    margin-top: -8.5em;
+}
+
+.qe-page__toc-header {
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+
+.toc-h2 {
+    font-size: .8rem;
+}
+
+.bd-toc nav ul li a {
+    color: #444 !important;
+    opacity: 0.8;
+}
+
+.inner {
+	height: 100%
+}
+
+.bd-toc .toc-entry a:hover {
+    color: rgba(var(--pst-color-toc-link-hover),1) !important;
+    text-decoration: none;
+}
+
+
+.topbar-main>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    float: right;
+    padding-top: 0.38rem;
+    padding-bottom: 0.1rem;
+    padding-right: 0.8em;
+}
+
+.topbar-main>ul>li {
+    margin: 0 13px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+}
+
+
+
+
+html.font-plus {
+	font-size: 1.1rem
+}
+
+html.font-minus {
+	font-size: 0.9rem
+}
+
+/*@media (min-width:768px) {*/
+/*	html {*/
+/*		font-size: 14px*/
+/*	}*/
+
+/*	html.font-plus {*/
+/*		font-size: calc(14px * 1.2)*/
+/*	}*/
+
+/*	html.font-minus {*/
+/*		font-size: calc(14px * 0.9)*/
+/*	}*/
+
+/*}*/
+
+/*@media (min-width:992px) {*/
+/*	html {*/
+/*		font-size: 16px*/
+/*	}*/
+
+/*	html.font-plus {*/
+/*		font-size: calc(16px * 1.2)*/
+/*	}*/
+
+/*	html.font-minus {*/
+/*		font-size: calc(16px * 0.9)*/
+/*	}*/
+
+/*}*/
+
+/*@media (min-width:1200px) {*/
+/*	html {*/
+/*		font-size: 16px*/
+/*	}*/
+
+/*	html.font-plus {*/
+/*		font-size: calc(16px * 1.2)*/
+/*	}*/
+
+/*	html.font-minus {*/
+/*		font-size: calc(16px * 0.9)*/
+/*	}*/
+
+/*}*/
+
+@media (max-width:576px) {
+	.topbar-main>ul>li.btn__plus, .topbar-main>ul>li.btn__minus, .topbar-main>ul>li.btn__fullscreen {
+		display: none
+	}
+
 }
