@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var $window = $(window),
         $head = $('head'),
         $body = $('body'),
-        $sidebar = $('.qe-sidebar'),
-        $sidebarToggle = $('.btn__sidebar');
+        $sidebar = $('#site-navigation'),
+        $sidebarToggle = $('navbar-toggler');
 
     function setContrast() { var setContrast = localStorage.setContrast; if (setContrast == 1) { $body.addClass('dark-theme');
             $('.btn__contrast').addClass('btn-active'); } }
@@ -123,3 +123,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     tippy('[data-tippy-content]', { touch: false, });
 });
+
+
+
+
+    $(document).click(function () {
+        if(window.innerWidth <= 1340){
+        if (document.getElementById("site-navigation").getAttribute("class") == 'col-12 col-md-3 bd-sidebar site-navigation show' || document.getElementById("site-navigation").getAttribute("class") == 'col-12 col-md-3 bd-sidebar site-navigation collapse show'){
+            $("#navbar-toggler").trigger('click');
+        }}
+    })

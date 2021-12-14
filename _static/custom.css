@@ -391,8 +391,8 @@ div.firstCol div.d-block {
         padding-left: 0 !important;
     }
     div#site-navigation {
-        max-width: 320px;
-        padding: 40px 20px 20px 20px;
+        max-width: 350px;
+        padding: 2rem;
         transition: all 0.2s ease 0s;
     }
     div#site-navigation {
@@ -1182,8 +1182,8 @@ img{
 
 svg {
     vertical-align: middle;
-    height: 21px;
-    width: 21px;
+    height: 20px;
+    width: 20px;
     outline:none;
 }
 
@@ -1194,7 +1194,7 @@ svg {
     top: 13%;
     left: 0;
     display: block;
-    font-size: 1.15em;
+    font-size: 1.02em;
     padding-top: inherit;
 }
 
@@ -1228,7 +1228,7 @@ svg {
 
 @media (min-width: 768px){
 .bd-sidebar {
-    max-width: 300px;
+    max-width: 320px;
 }}
 
 
@@ -1240,12 +1240,12 @@ svg {
 }
 
 footer {
-    width: 72.2%;
+    // width: 72.2%;
     // border-top: 1.5px solid gray;
     border-top: 5px solid #0072bc;
     padding: 1rem 0 0 0;
     opacity: 0.9;
-    margin: 2rem;
+    // margin: 2rem;
 }
 
 #site-navigation div.navbar_extra_footer {
@@ -1270,6 +1270,7 @@ footer {
     margin-left: 0;
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
+    transition: all 0.2s ease 0s;
 }
 
 /*收回目录折叠*/
@@ -1346,8 +1347,8 @@ cite, code, tt {
 
 .qe-page__header {
     border-bottom: 5px solid #0072bc;
-    width: 72.2%;
-    margin: 2rem;
+    // width: 72.2%;
+    // margin: 2rem;
     margin-bottom: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -1410,6 +1411,7 @@ cite, code, tt {
 
 }
 
+
 main.bd-content #main-content {
     padding-top: 1em;
 }
@@ -1437,7 +1439,9 @@ blockquote div>p {
 
 @media (min-width: 720px){
 .pl-md-3, .px-md-3 {
-    padding-left: 2.2rem!important;
+    padding-left: 2rem!important;
+    padding-right: 5rem !important;
+    padding-top: 1rem;
 }}
 
 

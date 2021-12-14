@@ -1022,11 +1022,14 @@ button.topbarbtn img {
 
 }
 
-@media (max-width:768px) {
+@media (max-width:1340px) {
     #site-navigation {
         position: fixed;
         margin-top: 3em;
-        border-right: 1px solid rgba(0, 0, 0, 0.1)
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 10px 10px 5px 9999px rgb(255 255 255 / 80%);
+        width: 300px;
+        transition: all 0.2s ease 0s;
     }
 
     #site-navigation.single-page {
@@ -1261,8 +1264,8 @@ div.bd-sidebar>ul {
 	background-size: 105px 30px;
     transition: all 0.2s ease-in-out;
     position: absolute;
-    left: 110px;
-    top: 11px;
+    left: 109px;
+    top: 10px;
     opacity: 0.8;
 }
 
@@ -1273,7 +1276,7 @@ div.bd-sidebar>ul {
 
 .topbar .topbar-main>a.btn__qehome{
     position: absolute;
-    left: 71px;
+    left: 70px;
     top: 13px;
     opacity: 0.9;
     text-decoration: none;
@@ -1316,14 +1319,14 @@ div.bd-sidebar>ul {
 
 .bd-toc {
     overflow-y: unset;
-    margin-left: 3em;
-    margin-top: -8.5em;
+    // margin-left: 3em;
+    margin-top: 3em;
 }
 
 .qe-page__toc-header {
     font-weight: 700;
     margin: 0 0 1rem 0;
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
 }
 
 
@@ -1428,3 +1431,15 @@ html.font-minus {
 	}
 
 }
+
+.navbar-toggler.inactive {
+	transform: translate3d(-100%, 0px, 0px);
+	visibility: visible;
+	box-shadow: none
+}
+
+@media (min-width: 720px){
+.col-md-3 {
+    flex: 0 0 25%;
+    /* max-width: 25%; */
+}}
