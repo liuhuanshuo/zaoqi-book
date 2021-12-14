@@ -31,7 +31,7 @@ repository:
 # HTML-specific settings
 html:
   comments:
-    hypothesis: true
+    hypothesis: false
   favicon                   : "images/logo-square.svg"  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages.
   use_repository_button     : true  # Whether to add a link to your repository button
@@ -74,3 +74,4 @@ extra_extensions:
     - sphinx_proof
     - myst_nb
     - sphinx_thebe
+    - html_image

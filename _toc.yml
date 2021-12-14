@@ -8,9 +8,19 @@ parts:
   chapters:
   - file: doc/指引/使用说明
   - file: doc/指引/在线执行
-  - file: doc/chapter0/Python安装
-  - file: doc/chapter0/入门pandas
-
+  - title: 入门教程
+    file: doc/chapter0/入门教程
+    sections:
+      - title: Python安装与配置
+        file: doc/chapter0/Python安装
+      - title: Pandas入门
+        file: doc/chapter0/入门pandas
+      - title: Pandas对比Excel
+        file: doc/chapter0/Pandas对比Excel
+      - title: Pandas对比R
+        file: doc/chapter0/Pandas对比R
+      - title: 十分钟入门Pandas
+        file: doc/chapter0/10分钟入门pandas
 
 - caption: 图解Pandas 📖
   chapters:
