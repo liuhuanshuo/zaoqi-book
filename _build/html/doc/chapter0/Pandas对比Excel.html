@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>入门教程</title>
+    <title>Pandas 对比 Excel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -552,7 +552,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/doc/chapter0/Pandas对比Excel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/doc/chapter0/Pandas对比Excel.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -583,6 +586,26 @@
 
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter0/Pandas对比Excel.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
 
                         <ul class="qe-toolbar__links">
@@ -646,7 +669,7 @@
 
     <div class="qe-page__header-copy">
         <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
-        <p class="qe-page__header-subheading"> 入门教程</p>
+        <p class="qe-page__header-subheading"> Pandas 对比 Excel</p>
     </div>
     <p class="qe-page__header-authors"><a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
 
@@ -654,9 +677,321 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>入门教程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>这是一个入门教程</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-excel">
+<span id="content-pandasvsexcel"></span><h1>Pandas 对比 Excel<a class="headerlink" href="#pandas-excel" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>为了方便长期使用 Excel 的用户转到 Pandas，我将结合官方文档对部分操作进行对比</p>
+</div></blockquote>
+<div class="seealso admonition">
+<p class="admonition-title">在线刷题</p>
+<p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
+</div>
+<div class="section" id="id1">
+<h2>数据结构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>通用术语对比<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>pandas            </p></th>
+<th class="head"><p>Excel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DataFrame</p></td>
+<td><p>工作表</p></td>
+</tr>
+<tr class="row-odd"><td><p>Series</p></td>
+<td><p>列</p></td>
+</tr>
+<tr class="row-even"><td><p>Index</p></td>
+<td><p>索引</p></td>
+</tr>
+<tr class="row-odd"><td><p>row</p></td>
+<td><p>行</p></td>
+</tr>
+<tr class="row-even"><td><p>NaN</p></td>
+<td><p>空值</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="dataframe">
+<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> 类似于<code class="docutils literal notranslate"><span class="pre">Excel</span></code> 工作表。虽然一个 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 工作簿可以包含多个工作表，但通常情况下 <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>是独立存在的。</p>
+</div>
+<div class="section" id="series">
+<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>是表示 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>一列的数据结构。使用 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 类似于引用电子表格中的一列。</p>
+</div>
+<div class="section" id="index">
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<p>每个 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 都有一个 <code class="docutils literal notranslate"><span class="pre">Index</span></code>，它是数据行的标签。在<code class="docutils literal notranslate"><span class="pre">pandas</span></code>中，如果没有指定索引，则默认使用RangeIndex(第一行= 0，第二行= 1，等等)，类似于电子表格中的行标题/数字。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中，索引可以设置为一个(或多个)惟一值，这就像在工作表中有一列用作行标识符一样。与大多数电子表格不同，这些Index值实际上可以用来引用行。(注意，这可以在Excel的结构化引用中完成。)例如，在电子表格中，您可以引用第一行为 <code class="docutils literal notranslate"><span class="pre">A1:Z1</span></code>，而在 pandas 中，您可以使用<code class="docutils literal notranslate"><span class="pre">population</span> <span class="pre">.loc['Chicago']</span></code>。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>常见操作对比<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>数据读取<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="excel">
+<h4>Excel<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h4>
+<p>Excel读取本地数据需要打开目标文件夹选中该文件并打开</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/2GcSFhuAFlBtFJ5icGS87d9XrWRWhshFmgiammrwwf1KPMuyon5JESMPqvJ7dOqvawgjNAJ4lkZTNnUO993nHBEA/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" /></p>
+</div>
+<div class="section" id="pandas">
+<h4>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h4>
+<p>Pandas支持读取本地Excel、txt文件，也支持从网页直接读取表格数据，只用一行代码即可，例如读取上述本地Excel数据可以使用<code class="docutils literal notranslate"><span class="pre">pd.read_excel(&quot;示例数据.xlsx&quot;)</span></code></p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;示例数据.xlsx&quot;</span><span class="p">)</span> <span class="c1">#将示例数据.xlsx放在该Notebook同一文件夹下</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>创建时间</th>
+      <th>地址</th>
+      <th>岗位</th>
+      <th>学历</th>
+      <th>技能要求</th>
+      <th>工作经验</th>
+      <th>薪资水平</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-03-16 12:28:11</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hive', '数据挖掘', '数据分析']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-03-16 12:39:03</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '数据库']</td>
+      <td>1-3年</td>
+      <td>13000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-03-16 12:01:37</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '商业']</td>
+      <td>应届毕业生</td>
+      <td>8000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-03-16 11:19:51</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据分析', '数据库']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-03-16 11:18:49</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['数据分析']</td>
+      <td>1-3年</td>
+      <td>8000.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>820</th>
+      <td>2020-03-16 11:20:44</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1年以下</td>
+      <td>11500.0</td>
+    </tr>
+    <tr>
+      <th>821</th>
+      <td>2020-03-16 11:20:42</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>应届毕业生</td>
+      <td>4500.0</td>
+    </tr>
+    <tr>
+      <th>822</th>
+      <td>2020-03-16 10:33:46</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SQL', '数据库']</td>
+      <td>3-5年</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>823</th>
+      <td>2020-03-16 11:20:43</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>11500.0</td>
+    </tr>
+    <tr>
+      <th>824</th>
+      <td>2020-03-16 10:37:24</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>3000.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>825 rows × 7 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>数据生成<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>Excel<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>以生成<strong>10*2的0—1均匀分布随机数矩阵</strong>为例，在Excel中需要使用<code class="docutils literal notranslate"><span class="pre">rand()</span></code>函数生成随机数，并手动拉取指定范围</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/2GcSFhuAFlBtFJ5icGS87d9XrWRWhshFmH7v9mibQIU7Cm7JdAhQLIcPzLnBeG5aBlhZ6U8LOWCibfh5ocCOK1vmQ/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" /></p>
+</div>
+<div class="section" id="id7">
+<h4>Pandas<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中可以结合NumPy生成由指定随机数(均匀分布、正态分布等)生成的矩阵，例如同样生成<strong>10*2的0—1均匀分布随机数矩阵</strong>为，使用一行代码即可：<code class="docutils literal notranslate"><span class="pre">pd.DataFrame(np.random.rand(10,2))</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.707877</td>
+      <td>0.734127</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.388418</td>
+      <td>0.822934</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.231120</td>
+      <td>0.715326</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.452778</td>
+      <td>0.758992</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.297916</td>
+      <td>0.473018</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.533477</td>
+      <td>0.373415</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.270263</td>
+      <td>0.965171</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.805758</td>
+      <td>0.056766</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.656652</td>
+      <td>0.062285</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.289735</td>
+      <td>0.656668</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -713,7 +1048,7 @@
     <div class="container">
       <p style="font-size: 0.8em">
         
-          By 刘早起@<a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" >微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021017583号-1</a><br/>
+          By 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a><br/>
         
       </p>
     </div>
@@ -722,6 +1057,85 @@
             <div class="d-none d-md-block col-md-2 bd-toc show">
                 <div class="inner">
                     
+                    <div class="qe-page__toc-header">
+                                    On this page
+                                </div>
+                    <nav id="bd-toc-nav" aria-label="Page">
+                        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   数据结构
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     通用术语对比
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframe">
+     DataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index">
+     Index
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   常见操作对比
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     数据读取
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#excel">
+       Excel
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pandas">
+       Pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     数据生成
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Excel
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                                <img src="https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112101114946.png" style="width: 105px;height: 105px;margin-top: 2em">
+                    <p style="font-size: 0.8em;color: #444444;margin-bottom: 0.5rem;">扫码关注我的公众号</p>
+                    <p style="font-size: 0.8em;color: #444444;">Powered by <a href="https://jupyterbook.org/" style="color: #004979;">Jupyter Book</a></p>
+                    </nav>
 
                     <div class="qe-page__toc-footer">
                     <p><a href="#top" style="

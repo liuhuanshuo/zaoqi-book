@@ -391,7 +391,7 @@ div.firstCol div.d-block {
         padding-left: 0 !important;
     }
     div#site-navigation {
-        max-width: 350px;
+        max-width: 330px;
         padding: 2rem;
         transition: all 0.2s ease 0s;
     }
@@ -1228,9 +1228,14 @@ svg {
 
 @media (min-width: 768px){
 .bd-sidebar {
-    max-width: 320px;
+    // max-width: 320px;
 }}
 
+
+@media (min-width: 1600px){
+div#site-navigation {
+    max-width: 350px;
+}}
 
 #site-navigation nav ul.nav li a, #site-navigation nav ul.nav ul li a {
     font-size: 0.88rem;

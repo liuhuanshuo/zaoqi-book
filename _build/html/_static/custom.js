@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $sidebar.addClass('inactive');
         $(".qe-toolbar svg.feather.feather-x").replaceWith(feather.icons.menu.toSvg());
         localStorage.setSidebar = 0; }
+
     $(document).on('click', '.btn__sidebar', function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -127,9 +128,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    $(document).click(function () {
+    // $(document).click(function () {
+    //     if(window.innerWidth <= 1340){
+    //     if (document.getElementById("site-navigation").getAttribute("class") == 'col-12 col-md-3 bd-sidebar site-navigation show' || document.getElementById("site-navigation").getAttribute("class") == 'col-12 col-md-3 bd-sidebar site-navigation collapse show'){
+    //         $("#navbar-toggler").trigger('click');
+    //     }}
+    // })
+
+    $(document).click(function (e) {
+
+         e = window.event || e; // 兼容IE7
+        obj = $(e.srcElement || e.target);
+
         if(window.innerWidth <= 1340){
+
+        if (!$(obj).is("#site-navigation *")) {
+
         if (document.getElementById("site-navigation").getAttribute("class") == 'col-12 col-md-3 bd-sidebar site-navigation show' || document.getElementById("site-navigation").getAttribute("class") == 'col-12 col-md-3 bd-sidebar site-navigation collapse show'){
-            $("#navbar-toggler").trigger('click');
-        }}
+            $("#navbar-toggler").trigger('click');}
+
+        }
+        }
     })
