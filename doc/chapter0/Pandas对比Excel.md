@@ -27,18 +27,15 @@ kernelspec:
 
 ### 通用术语对比
 
-```{table}
-:width: 200px
 
-| pandas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Excel  |
-| ----------- | ------ |
-| DataFrame | 工作表 |
-| Series   | 列     |
-| Index     | 索引   |
+
+| pandas | Excel  |
+| :-----------: | :------: |
+| `DataFrame` | 工作表 |
+| `Series`   | 列     |
+| `Index`     | 索引   |
 | row         | 行     |
-| NaN       | 空值   |
-
-```
+| `NaN`       | 空值   |
 
 ### DataFrame
 
@@ -62,13 +59,16 @@ kernelspec:
 
 ### 数据读取
 
-#### Excel
+#### `Excel`
 
 Excel读取本地数据需要打开目标文件夹选中该文件并打开
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/2GcSFhuAFlBtFJ5icGS87d9XrWRWhshFmgiammrwwf1KPMuyon5JESMPqvJ7dOqvawgjNAJ4lkZTNnUO993nHBEA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+```{figure} gif/读取数据.gif
+:width: 600px
+:align: center
+```
 
- #### Pandas
+ #### `Pandas`
 
 
 
@@ -84,14 +84,16 @@ pd.read_excel("示例数据.xlsx") #将示例数据.xlsx放在该Notebook同一�
 ### 数据生成
 
 
-#### Excel
+#### `Excel`
 
 
 以生成**10\*2的0—1均匀分布随机数矩阵**为例，在Excel中需要使用`rand()`函数生成随机数，并手动拉取指定范围
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/2GcSFhuAFlBtFJ5icGS87d9XrWRWhshFmH7v9mibQIU7Cm7JdAhQLIcPzLnBeG5aBlhZ6U8LOWCibfh5ocCOK1vmQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+```{figure} gif/生成数据.gif
+:align: center
+```
 
-#### Pandas
+#### `Pandas`
 
 
 在Pandas中可以结合NumPy生成由指定随机数(均匀分布、正态分布等)生成的矩阵，例如同样生成**10\*2的0—1均匀分布随机数矩阵**为，使用一行代码即可：`pd.DataFrame(np.random.rand(10,2))`
@@ -101,3 +103,228 @@ import numpy  as np
 pd.DataFrame(np.random.rand(10,2))
 ```
 
+### 数据存储
+
+
+#### `Excel`
+
+在Excel中需要点击保存并设置格式/文件名
+
+```{figure} gif/保存数据.gif
+:align: center
+```
+
+#### `Pandas`
+
+在Pandas中可以使用`pd.to_excel("filename.xlsx")`来将当前工作表格保存至当前目录下，当然也可以使用`to_csv`保存为csv等其他格式，也可以使用绝对路径来指定保存位置
+```{code-cell} ipython3
+# data.to_excel("测试数据.xlsx")
+```
+
+### 数据筛选
+
+
+#### `Excel`
+
+
+
+使用我们之前的示例数据，在Excel中筛选出`薪资大于5000`的数据步骤如下
+
+
+```{figure} gif/数据筛选.gif
+:align: center
+```
+
+#### `Pandas`
+
+在Pandas中，可直接对数据框进行条件筛选，例如同样进行单个条件(薪资大于5000)的筛选可以使用`df[df['薪资水平']>5000]`，如果使用多个条件的筛选只需要使用`&`(并)与`|`(或)操作符实现
+
+```{code-cell} ipython3
+df = pd.read_excel("示例数据.xlsx")
+df[df['薪资水平']>5000]
+```
+
+### 数据插入
+
+#### `Excel`
+
+
+
+在Excel中我们可以将光标放在指定位置并右键增加一行/列，当然也可以在添加时对数据进行一些计算，比如我们就可以使用IF函数(`=IF(G2>10000,"高","低")`)，将薪资大于10000的设为高，低于10000的设为低，**添加一列**在最后
+
+```{figure} gif/插入数据.gif
+:align: center
+```
+
+#### `Pandas`
+
+在 pandas 中，如果不借助自定义函数的话，我们可以使用`cut`方法来实现同样操作
+```{code-cell} ipython3
+bins = [0,10000,max(df['薪资水平'])]
+group_names = ['低','高']
+df['new_col'] = pd.cut(df['薪资水平'], bins, labels=group_names)
+```
+
+### 数据删除
+
+
+#### `Excel`
+
+
+
+在Excel删除数据十分简单，找到需要删除的数据**右键删除**即可，比如删除刚刚生成的最后一列
+
+```{figure} gif/数据删除.gif
+:align: center
+```
+
+
+
+#### `Pandas`
+在pandas中删除数据也很简单，比如删除最后一列使用`del df['new_col']`即可
+
+### 数据排序
+  
+#### `Excel`
+
+
+
+在Excel中可以点击排序按钮进行排序，例如将示例数据按照薪资从高到低进行排序可以按照下面的步骤进行
+
+```{figure} gif/数据排序.gif
+:align: center
+```
+
+#### `Pandas`
+
+在pandas中可以使用`sort_values`进行排序，使用`ascending`来控制升降序，例如将示例数据按照薪资从高到低进行排序可以使用`df.sort_values("薪资水平",ascending=False,inplace=True)`
+```{code-cell} ipython3
+:tags: [output_scroll]
+
+df1 = df
+df1.sort_values("薪资水平",ascending=False)
+df1
+```
+
+### 缺失值处理
+
+#### `Excel`
+
+
+
+在Excel中可以按照**查找—>定位条件—>空值**来快速定位数据中的空值，接着可以自己定义缺失值的填充方式，比如将缺失值用上一个数据进行填充
+
+```{figure} gif/缺失值处理.gif
+:align: center
+```
+
+#### `Pandas`
+
+在pandas中可以使用 `data.isnull().sum()` 来检查缺失值，之后可以使用多种方法来填充或者删除缺失值，比如我们可以使用`df = df.fillna(axis=0,method='ffill')` 来横向/纵向用缺失值前面的值替换缺失值
+
+```{code-cell} ipython3
+df.isnull().sum()
+```
+
+### 数据去重
+
+#### `Excel`
+
+在Excel中可以通过点击**数据—>删除重复值**按钮并选择需要去重的列即可，例如对示例数据按照创建时间列进行去重，可以发现去掉了196 个重复值，保留了 629 个唯一值。
+
+```{figure} gif/数据去重.gif
+:align: center
+```
+#### `Pandas`
+
+
+
+在pandas中可以使用`drop_duplicates`来对数据进行去重，并且可以指定列以及保留顺序，例如对示例数据按照创建时间列进行去重`df.drop_duplicates(['创建时间'],inplace=True)`，可以发现和Excel处理的结果一致，保留了 629 个唯一值。
+```{code-cell} ipython3
+:tags: [output_scroll]
+
+df.drop_duplicates(['创建时间'],inplace=True)
+df
+```
+
+### 格式修改
+
+
+#### `Excel`
+
+在Excel中可以选中需要转换格式的数据之后**右键—>修改单元格格式**来选择我们需要的格式
+
+```{figure} gif/格式修改.gif
+:align: center
+```
+
+#### `Pandas`
+
+在Pandas中没有一个固定修改格式的方法，不同的数据格式有着不同的修改方法，比如类似Excel中将创建时间修改为年-月-日可以使用`df['创建时间'] = df['创建时间'].dt.strftime('%Y-%m-%d')`
+
+```{code-cell} ipython3
+df1 = df
+df1['创建时间'] = df1['创建时间'].dt.strftime('%Y-%m-%d')
+```
+
+
+### 数据交换
+
+
+#### `Excel`
+
+
+
+在Excel中交换数据是很常用的操作，以交换示例数据中地址与岗位两列为例，可以选中地址列，按住shift键并拖动边缘至下一列松开即可
+
+```{figure} gif/数据交换.gif
+:align: center
+```
+
+#### `Pandas`
+
+在 pandas 中交换两列也有很多方法，以交换示例数据中地址与岗位两列为例，可以通过修改列号来实现
+```{code-cell} ipython3
+cols = df.columns[[0,2,1,3,4,5,6]]
+df1 = df[cols]
+```
+
+
+### 数据合并
+
+
+#### Excel
+
+在Excel中可以使用公式也可以使用Ctrl+E快捷键完成多列合并，以公式为例，合并示例数据中的地址+岗位列步骤如下
+
+```{figure} gif/数据合并.gif
+:align: center
+```
+#### `Pandas`
+
+在Pandas中合并多列比较简单，类似于之前的数据插入操作，例如合并示例数据中的地址+岗位列使用`df['合并列'] = df['地址'] + df['岗位']`
+```{code-cell} ipython3
+df['合并列'] = df['地址'] + df['岗位']
+```
+
+### 数据拆分
+
+
+#### `Excel`
+
+在Excel中可以通过点击**数据—>分列**并按照提示的选项设置相关参数完成分列，但是由于该列含有[]等特殊字符，所以需要先使用查找替换去掉
+
+
+```{figure} gif/数据拆分.gif
+:align: center
+```
+
+#### **Pandas**
+
+
+
+在Pandas中可以使用`.split`来完成分列，但是在分列完毕后需要使用 `merge` 来将分列完的数据添加至原DataFrame，对于分列完的数据含有`[]`字符，我们可以使用正则或者字符串`lstrip`方法进行处理，但因不是pandas特性，此处不再展开。
+
+```{code-cell} ipython3
+df['技能要求'].str.split(',',expand=True)
+```
