@@ -1,0 +1,3302 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pandas 对比 Excel</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pandas 对比 R/R libraries" href="Pandas%E5%AF%B9%E6%AF%94R.html" />
+    <link rel="prev" title="Pandas 入门" href="%E5%85%A5%E9%97%A8pandas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  指引 📌
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">
+   使用说明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
+   如何在线执行代码
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B.html">
+   入门教程
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python%E5%AE%89%E8%A3%85.html">
+     Python安装与配置
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="%E5%85%A5%E9%97%A8pandas.html">
+     Pandas入门
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Pandas对比Excel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Pandas%E5%AF%B9%E6%AF%94R.html">
+     Pandas对比R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
+     十分钟入门Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  图解Pandas 📖
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/chapt1.html">
+   数据加载与存储
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter1/%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html">
+     常见格式读取
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
+       读取 Excel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96TXT.html">
+       读取 TXT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96JSON.html">
+       读取 JSON
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96SQL.html">
+       读取 SQL
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96HDF5.html">
+       读取 HDF5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5.html">
+       读取网页
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html">
+       读取剪贴板
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html">
+     常见数据创建
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.html">
+     数据存储
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter2/chapt2.html">
+   数据预览与预处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E6%95%B0%E6%8D%AE%E9%A2%84%E8%A7%88.html">
+     数据信息预览
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5.html">
+     缺失值检查与处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E9%87%8D%E5%A4%8D%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html">
+     重复值检查与处理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter2-2/%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%88%86%E6%9E%90.html">
+   数据统计与描述性统计分析
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter3/chapt3.html">
+   数据修改与筛选
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9.html">
+     数据修改
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E7%AD%9B%E9%80%89.html">
+     数据筛选
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E4%B8%8E%E8%81%9A%E5%90%88.html">
+   数据分组与聚合
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84.html">
+     数据分组
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88.html">
+     数据聚合
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86%E4%B8%8E%E5%90%88%E5%B9%B6.html">
+   数据透视与合并
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86.html">
+     数据透视
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html">
+     数据合并
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/concat.html">
+       concat - 数据拼接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/merge.html">
+       merge - 数据连接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/join.html">
+       join - 数据组合
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter6/chapt6.html">
+   金融数据与时间处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html">
+     时间处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E8%82%A1%E7%A5%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html">
+     股票数据分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E5%88%B6%E4%BD%9CK%E7%BA%BF%E5%9B%BE.html">
+     制作K线图
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter7/chapt7.html">
+   数据可视化
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%8A%98%E7%BA%BF%E5%9B%BE.html">
+     折线图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9D%A1%E5%BD%A2%E5%9B%BE.html">
+     条形图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E7%9B%B4%E6%96%B9%E5%9B%BE.html">
+     直方图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%95%A3%E7%82%B9%E5%9B%BE.html">
+     散点图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E5%9B%BE%E5%BD%A2.html">
+     更多图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E6%A0%B7%E5%BC%8F.html">
+     更多样式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter8/chapt8.html">
+   个性化显示
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/option.html">
+     option
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/style.html">
+     style
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter9/chapt9.html">
+   更多未提及操作
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/map%E4%B8%8Eapplymap.html">
+     map与applymap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/stack%E4%B8%8Eunstack.html">
+     stack与unstack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/isin%E7%AD%9B%E9%80%89.html">
+     isin - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/select_dtypes%E7%AD%9B%E9%80%89.html">
+     select_dtypes - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/explode%E6%95%B0%E6%8D%AE%E5%B1%95%E5%BC%80.html">
+     explode - 数据展开
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/cusum%E7%B4%AF%E5%8A%A0%E8%AE%A1%E7%AE%97.html">
+     cusum - 累加计算
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/nunique-%E7%BB%9F%E8%AE%A1.html">
+     nunique - 统计
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/append.html">
+     append - 数据添加
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/compare.html">
+     compare - 数据比较
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  彩蛋 🎉
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter10/chapt10.html">
+   Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+
+
+
+
+</div>
+
+
+          
+
+
+          
+
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+
+<div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+               <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
+               <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
+
+
+
+
+
+
+
+
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            data-feather="download-cloud"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/doc/chapter0/Pandas对比Excel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/doc/chapter0/Pandas对比Excel.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i data-feather="github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter0/Pandas对比Excel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter0/Pandas对比Excel.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+
+                        <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                </ul>
+
+        </div>
+
+        <!-- Table of contents -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        <div class="qe-page__header">
+
+    <div class="qe-page__header-copy">
+        <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
+        <p class="qe-page__header-subheading"> Pandas 对比 Excel</p>
+    </div>
+    <p class="qe-page__header-authors"><a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
+
+</div>
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-excel">
+<span id="content-pandasvsexcel"></span><h1>Pandas 对比 Excel<a class="headerlink" href="#pandas-excel" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>为了方便长期使用 Excel 的用户转到 Pandas，我将结合官方文档对部分操作进行对比</p>
+</div></blockquote>
+<div class="seealso admonition">
+<p class="admonition-title">在线刷题</p>
+<p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
+</div>
+<div class="section" id="id1">
+<h2>数据结构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>通用术语对比<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>pandas</p></th>
+<th class="text-align:center head"><p>Excel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></td>
+<td class="text-align:center"><p>工作表</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">Series</span></code></p></td>
+<td class="text-align:center"><p>列</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">Index</span></code></p></td>
+<td class="text-align:center"><p>索引</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>row</p></td>
+<td class="text-align:center"><p>行</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td class="text-align:center"><p>空值</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="dataframe">
+<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> 类似于<code class="docutils literal notranslate"><span class="pre">Excel</span></code> 工作表。虽然一个 <code class="docutils literal notranslate"><span class="pre">Excel</span></code> 工作簿可以包含多个工作表，但通常情况下 <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>是独立存在的。</p>
+</div>
+<div class="section" id="series">
+<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>是表示 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>一列的数据结构。使用 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 类似于引用电子表格中的一列。</p>
+</div>
+<div class="section" id="index">
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<p>每个 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 都有一个 <code class="docutils literal notranslate"><span class="pre">Index</span></code>，它是数据行的标签。在<code class="docutils literal notranslate"><span class="pre">pandas</span></code>中，如果没有指定索引，则默认使用RangeIndex(第一行= 0，第二行= 1，等等)，类似于电子表格中的行标题/数字。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中，索引可以设置为一个(或多个)惟一值，这就像在工作表中有一列用作行标识符一样。与大多数电子表格不同，这些Index值实际上可以用来引用行。(注意，这可以在Excel的结构化引用中完成。)例如，在电子表格中，您可以引用第一行为 <code class="docutils literal notranslate"><span class="pre">A1:Z1</span></code>，而在 pandas 中，您可以使用<code class="docutils literal notranslate"><span class="pre">population</span> <span class="pre">.loc['Chicago']</span></code>。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>常见操作对比<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>为了更方便介绍 Pandas 相关功能，方便长期使用 Excel 进行数据分析的用户学习，下面是常见操作的 Excel 与 Pandas 实现对比。</p>
+<div class="section" id="id4">
+<h3>1 - 数据读取<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="excel">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h4>
+<p>Excel读取本地数据需要打开目标文件夹选中该文件并打开</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/读取数据.gif"><img alt="../../_images/读取数据.gif" src="../../_images/读取数据.gif" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="pandas">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h4>
+<p>Pandas支持读取本地Excel、txt文件，也支持从网页直接读取表格数据，只用一行代码即可，例如读取上述本地Excel数据可以使用<code class="docutils literal notranslate"><span class="pre">pd.read_excel(&quot;示例数据.xlsx&quot;)</span></code></p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;示例数据.xlsx&quot;</span><span class="p">)</span> <span class="c1">#将示例数据.xlsx放在该Notebook同一文件夹下</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>创建时间</th>
+      <th>地址</th>
+      <th>岗位</th>
+      <th>学历</th>
+      <th>技能要求</th>
+      <th>工作经验</th>
+      <th>薪资水平</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-03-16 12:28:11</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hive', '数据挖掘', '数据分析']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-03-16 12:39:03</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '数据库']</td>
+      <td>1-3年</td>
+      <td>13000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-03-16 12:01:37</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '商业']</td>
+      <td>应届毕业生</td>
+      <td>8000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-03-16 11:19:51</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据分析', '数据库']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-03-16 11:18:49</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['数据分析']</td>
+      <td>1-3年</td>
+      <td>8000.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>820</th>
+      <td>2020-03-16 11:20:44</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1年以下</td>
+      <td>11500.0</td>
+    </tr>
+    <tr>
+      <th>821</th>
+      <td>2020-03-16 11:20:42</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>应届毕业生</td>
+      <td>4500.0</td>
+    </tr>
+    <tr>
+      <th>822</th>
+      <td>2020-03-16 10:33:46</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SQL', '数据库']</td>
+      <td>3-5年</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>823</th>
+      <td>2020-03-16 11:20:43</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>11500.0</td>
+    </tr>
+    <tr>
+      <th>824</th>
+      <td>2020-03-16 10:37:24</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>3000.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>825 rows × 7 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>2 - 数据生成<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>以生成<strong>10*2的0—1均匀分布随机数矩阵</strong>为例，在Excel中需要使用<code class="docutils literal notranslate"><span class="pre">rand()</span></code>函数生成随机数，并手动拉取指定范围</p>
+<div class="figure align-center">
+<img alt="../../_images/生成数据.gif" src="../../_images/生成数据.gif" />
+</div>
+</div>
+<div class="section" id="id7">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中可以结合NumPy生成由指定随机数(均匀分布、正态分布等)生成的矩阵，例如同样生成<strong>10*2的0—1均匀分布随机数矩阵</strong>为，使用一行代码即可：<code class="docutils literal notranslate"><span class="pre">pd.DataFrame(np.random.rand(10,2))</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.982922</td>
+      <td>0.567818</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.779210</td>
+      <td>0.723262</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.065471</td>
+      <td>0.388341</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.508993</td>
+      <td>0.489563</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.008230</td>
+      <td>0.199126</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.898085</td>
+      <td>0.123965</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.246458</td>
+      <td>0.200298</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.961304</td>
+      <td>0.089421</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.149687</td>
+      <td>0.683804</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.602683</td>
+      <td>0.467462</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>3 - 数据存储<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中需要点击保存并设置格式/文件名</p>
+<div class="figure align-center">
+<img alt="../../_images/保存数据.gif" src="../../_images/保存数据.gif" />
+</div>
+</div>
+<div class="section" id="id10">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中可以使用<code class="docutils literal notranslate"><span class="pre">pd.to_excel(&quot;filename.xlsx&quot;)</span></code>来将当前工作表格保存至当前目录下，当然也可以使用<code class="docutils literal notranslate"><span class="pre">to_csv</span></code>保存为csv等其他格式，也可以使用绝对路径来指定保存位置</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data.to_excel(&quot;测试数据.xlsx&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>4 - 数据筛选<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>使用我们之前的示例数据，在Excel中筛选出<code class="docutils literal notranslate"><span class="pre">薪资大于5000</span></code>的数据步骤如下</p>
+<div class="figure align-center">
+<img alt="../../_images/数据筛选.gif" src="../../_images/数据筛选.gif" />
+</div>
+</div>
+<div class="section" id="id13">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中，可直接对数据框进行条件筛选，例如同样进行单个条件(薪资大于5000)的筛选可以使用<code class="docutils literal notranslate"><span class="pre">df[df['薪资水平']&gt;5000]</span></code>，如果使用多个条件的筛选只需要使用<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>(并)与<code class="docutils literal notranslate"><span class="pre">|</span></code>(或)操作符实现</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;示例数据.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;薪资水平&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">5000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>创建时间</th>
+      <th>地址</th>
+      <th>岗位</th>
+      <th>学历</th>
+      <th>技能要求</th>
+      <th>工作经验</th>
+      <th>薪资水平</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-03-16 12:28:11</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hive', '数据挖掘', '数据分析']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-03-16 12:39:03</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '数据库']</td>
+      <td>1-3年</td>
+      <td>13000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-03-16 12:01:37</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '商业']</td>
+      <td>应届毕业生</td>
+      <td>8000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-03-16 11:19:51</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据分析', '数据库']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-03-16 11:18:49</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['数据分析']</td>
+      <td>1-3年</td>
+      <td>8000.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>817</th>
+      <td>2020-03-16 11:20:42</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1-3年</td>
+      <td>11500.0</td>
+    </tr>
+    <tr>
+      <th>819</th>
+      <td>2020-03-16 11:20:44</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1-3年</td>
+      <td>15000.0</td>
+    </tr>
+    <tr>
+      <th>820</th>
+      <td>2020-03-16 11:20:44</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1年以下</td>
+      <td>11500.0</td>
+    </tr>
+    <tr>
+      <th>822</th>
+      <td>2020-03-16 10:33:46</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SQL', '数据库']</td>
+      <td>3-5年</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>823</th>
+      <td>2020-03-16 11:20:43</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>11500.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>776 rows × 7 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>5 - 数据插入<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中我们可以将光标放在指定位置并右键增加一行/列，当然也可以在添加时对数据进行一些计算，比如我们就可以使用IF函数(<code class="docutils literal notranslate"><span class="pre">=IF(G2&gt;10000,&quot;高&quot;,&quot;低&quot;)</span></code>)，将薪资大于10000的设为高，低于10000的设为低，<strong>添加一列</strong>在最后</p>
+<div class="figure align-center">
+<img alt="../../_images/插入数据.gif" src="../../_images/插入数据.gif" />
+</div>
+</div>
+<div class="section" id="id16">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>在 pandas 中，如果不借助自定义函数的话，我们可以使用<code class="docutils literal notranslate"><span class="pre">cut</span></code>方法来实现同样操作</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;薪资水平&#39;</span><span class="p">])]</span>
+<span class="n">group_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;低&#39;</span><span class="p">,</span><span class="s1">&#39;高&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;薪资水平&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">group_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>6 - 数据删除<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>在Excel删除数据十分简单，找到需要删除的数据<strong>右键删除</strong>即可，比如删除刚刚生成的最后一列</p>
+<div class="figure align-center">
+<img alt="../../_images/数据删除.gif" src="../../_images/数据删除.gif" />
+</div>
+</div>
+<div class="section" id="id19">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p>在pandas中删除数据也很简单，比如删除最后一列使用<code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">df['new_col']</span></code>即可</p>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>7 - 数据排序<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以点击排序按钮进行排序，例如将示例数据按照薪资从高到低进行排序可以按照下面的步骤进行</p>
+<div class="figure align-center">
+<img alt="../../_images/数据排序.gif" src="../../_images/数据排序.gif" />
+</div>
+</div>
+<div class="section" id="id22">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<p>在pandas中可以使用<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>进行排序，使用<code class="docutils literal notranslate"><span class="pre">ascending</span></code>来控制升降序，例如将示例数据按照薪资从高到低进行排序可以使用<code class="docutils literal notranslate"><span class="pre">df.sort_values(&quot;薪资水平&quot;,ascending=False,inplace=True)</span></code></p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;薪资水平&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>创建时间</th>
+      <th>地址</th>
+      <th>岗位</th>
+      <th>学历</th>
+      <th>技能要求</th>
+      <th>工作经验</th>
+      <th>薪资水平</th>
+      <th>new_col</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-03-16 12:28:11</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hive', '数据挖掘', '数据分析']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-03-16 12:39:03</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '数据库']</td>
+      <td>1-3年</td>
+      <td>13000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-03-16 12:01:37</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '商业']</td>
+      <td>应届毕业生</td>
+      <td>8000.0</td>
+      <td>低</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-03-16 11:19:51</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据分析', '数据库']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-03-16 11:18:49</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['数据分析']</td>
+      <td>1-3年</td>
+      <td>8000.0</td>
+      <td>低</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>820</th>
+      <td>2020-03-16 11:20:44</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1年以下</td>
+      <td>11500.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>821</th>
+      <td>2020-03-16 11:20:42</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>应届毕业生</td>
+      <td>4500.0</td>
+      <td>低</td>
+    </tr>
+    <tr>
+      <th>822</th>
+      <td>2020-03-16 10:33:46</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SQL', '数据库']</td>
+      <td>3-5年</td>
+      <td>16500.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>823</th>
+      <td>2020-03-16 11:20:43</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>11500.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>824</th>
+      <td>2020-03-16 10:37:24</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>3000.0</td>
+      <td>低</td>
+    </tr>
+  </tbody>
+</table>
+<p>825 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>8 - 缺失值处理<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以按照<strong>查找—&gt;定位条件—&gt;空值</strong>来快速定位数据中的空值，接着可以自己定义缺失值的填充方式，比如将缺失值用上一个数据进行填充</p>
+<div class="figure align-center">
+<img alt="../../_images/缺失值处理.gif" src="../../_images/缺失值处理.gif" />
+</div>
+</div>
+<div class="section" id="id25">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<p>在pandas中可以使用 <code class="docutils literal notranslate"><span class="pre">data.isnull().sum()</span></code> 来检查缺失值，之后可以使用多种方法来填充或者删除缺失值，比如我们可以使用<code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">df.fillna(axis=0,method='ffill')</span></code> 来横向/纵向用缺失值前面的值替换缺失值</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>创建时间       0
+地址         0
+岗位         0
+学历         0
+技能要求       0
+工作经验       0
+薪资水平       2
+new_col    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>9 - 数据去重<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以通过点击<strong>数据—&gt;删除重复值</strong>按钮并选择需要去重的列即可，例如对示例数据按照创建时间列进行去重，可以发现去掉了196 个重复值，保留了 629 个唯一值。</p>
+<div class="figure align-center">
+<img alt="../../_images/数据去重.gif" src="../../_images/数据去重.gif" />
+</div>
+</div>
+<div class="section" id="id28">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<p>在pandas中可以使用<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>来对数据进行去重，并且可以指定列以及保留顺序，例如对示例数据按照创建时间列进行去重<code class="docutils literal notranslate"><span class="pre">df.drop_duplicates(['创建时间'],inplace=True)</span></code>，可以发现和Excel处理的结果一致，保留了 629 个唯一值。</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s1">&#39;创建时间&#39;</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>创建时间</th>
+      <th>地址</th>
+      <th>岗位</th>
+      <th>学历</th>
+      <th>技能要求</th>
+      <th>工作经验</th>
+      <th>薪资水平</th>
+      <th>new_col</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-03-16 12:28:11</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hive', '数据挖掘', '数据分析']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-03-16 12:39:03</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '数据库']</td>
+      <td>1-3年</td>
+      <td>13000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-03-16 12:01:37</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', '商业']</td>
+      <td>应届毕业生</td>
+      <td>8000.0</td>
+      <td>低</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-03-16 11:19:51</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据分析', '数据库']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-03-16 11:18:49</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['数据分析']</td>
+      <td>1-3年</td>
+      <td>8000.0</td>
+      <td>低</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>811</th>
+      <td>2020-03-16 11:03:17</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hive', '数据分析', '数据仓库', '信息安全']</td>
+      <td>3-5年</td>
+      <td>37000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>812</th>
+      <td>2020-03-16 11:03:03</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据挖掘', '数据分析']</td>
+      <td>不限</td>
+      <td>30000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>815</th>
+      <td>2020-03-16 11:00:56</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SQL', '数据库']</td>
+      <td>5-10年</td>
+      <td>45000.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>817</th>
+      <td>2020-03-16 11:20:42</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1-3年</td>
+      <td>11500.0</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>824</th>
+      <td>2020-03-16 10:37:24</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>不限</td>
+      <td>3000.0</td>
+      <td>低</td>
+    </tr>
+  </tbody>
+</table>
+<p>629 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id29">
+<h3>10 - 格式修改<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以选中需要转换格式的数据之后<strong>右键—&gt;修改单元格格式</strong>来选择我们需要的格式</p>
+<div class="figure align-center">
+<img alt="../../_images/格式转换.gif" src="../../_images/格式转换.gif" />
+</div>
+</div>
+<div class="section" id="id31">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中没有一个固定修改格式的方法，不同的数据格式有着不同的修改方法，比如类似Excel中将创建时间修改为年-月-日可以使用<code class="docutils literal notranslate"><span class="pre">df['创建时间']</span> <span class="pre">=</span> <span class="pre">df['创建时间'].dt.strftime('%Y-%m-%d')</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span>
+<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;创建时间&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;创建时间&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id32">
+<h3>11 - 数据交换<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id33">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中交换数据是很常用的操作，以交换示例数据中地址与岗位两列为例，可以选中地址列，按住shift键并拖动边缘至下一列松开即可</p>
+<div class="figure align-center">
+<img alt="../../_images/数据交换.gif" src="../../_images/数据交换.gif" />
+</div>
+</div>
+<div class="section" id="id34">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<p>在 pandas 中交换两列也有很多方法，以交换示例数据中地址与岗位两列为例，可以通过修改列号来实现</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h3>12 - 数据合并<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id36">
+<h4>Excel<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以使用公式也可以使用Ctrl+E快捷键完成多列合并，以公式为例，合并示例数据中的地址+岗位列步骤如下</p>
+<div class="figure align-center">
+<img alt="../../_images/数据合并.gif" src="../../_images/数据合并.gif" />
+</div>
+</div>
+<div class="section" id="id37">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中合并多列比较简单，类似于之前的数据插入操作，例如合并示例数据中的地址+岗位列使用<code class="docutils literal notranslate"><span class="pre">df['合并列']</span> <span class="pre">=</span> <span class="pre">df['地址']</span> <span class="pre">+</span> <span class="pre">df['岗位']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;合并列&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;地址&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;岗位&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id38">
+<h3>13 - 数据拆分<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以通过点击<strong>数据—&gt;分列</strong>并按照提示的选项设置相关参数完成分列，但是由于该列含有[]等特殊字符，所以需要先使用查找替换去掉</p>
+<div class="figure align-center">
+<img alt="../../_images/数据拆分.gif" src="../../_images/数据拆分.gif" />
+</div>
+</div>
+<div class="section" id="id40">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中可以使用<code class="docutils literal notranslate"><span class="pre">.split</span></code>来完成分列，但是在分列完毕后需要使用 <code class="docutils literal notranslate"><span class="pre">merge</span></code> 来将分列完的数据添加至原DataFrame，对于分列完的数据含有<code class="docutils literal notranslate"><span class="pre">[]</span></code>字符，我们可以使用正则或者字符串<code class="docutils literal notranslate"><span class="pre">lstrip</span></code>方法进行处理，但因不是pandas特性，此处不再展开。</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;技能要求&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>['Hive'</td>
+      <td>'数据挖掘'</td>
+      <td>'数据分析']</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>['数据分析'</td>
+      <td>'数据库']</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>['数据分析'</td>
+      <td>'商业']</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>['SQL'</td>
+      <td>'数据分析'</td>
+      <td>'数据库']</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>['数据分析']</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>811</th>
+      <td>['Hive'</td>
+      <td>'数据分析'</td>
+      <td>'数据仓库'</td>
+      <td>'信息安全']</td>
+    </tr>
+    <tr>
+      <th>812</th>
+      <td>['数据挖掘'</td>
+      <td>'数据分析']</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>815</th>
+      <td>['BI'</td>
+      <td>'数据分析'</td>
+      <td>'SQL'</td>
+      <td>'数据库']</td>
+    </tr>
+    <tr>
+      <th>817</th>
+      <td>[]</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>824</th>
+      <td>[]</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>629 rows × 4 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id41">
+<h3>14 - 数据分组<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id42">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中对数据进行分组计算需要先对需要分组的字段进行排序，之后可以通过点击分类汇总并设置相关参数完成，比如对示例数据的学历进行分组并求不同学历的平均薪资</p>
+<div class="figure align-center">
+<img alt="../../_images/数据分组.gif" src="../../_images/数据分组.gif" />
+</div>
+</div>
+<div class="section" id="id43">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中对数据进行分组计算可以使用groupby轻松搞定，比如使用<code class="docutils literal notranslate"><span class="pre">df.groupby(&quot;学历&quot;).mean()</span></code>一行代码即可对示例数据的学历进行分组并求不同学历的平均薪资，结果与Excel一致</p>
+</div>
+</div>
+<div class="section" id="id44">
+<h3>15 - 数据计算<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id45">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中有很多计算相关的公式，比如可以使用<code class="docutils literal notranslate"><span class="pre">COUNTIFS</span></code>来统计薪资大于10000的岗位数量有518个</p>
+<div class="figure align-center">
+<img alt="../../_images/生成数据.gif" src="../../_images/生成数据.gif" />
+</div>
+</div>
+<div class="section" id="id46">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中可以直接使用类似数据筛选的方法来统计薪资大于10000的岗位数量<code class="docutils literal notranslate"><span class="pre">len(df[df[&quot;薪资水平&quot;]&gt;10000])</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;薪资水平&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">10000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>518
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id47">
+<h3>16 - 数据统计<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id48">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中有很多统计相关的公式，也有现成的分析工具，比如对薪资水平列进行描述性统计分析，可以通过添加工具库之后点击数据分析按钮并设置相关参数</p>
+<div class="figure align-center">
+<img alt="../../_images/数据统计.gif" src="../../_images/数据统计.gif" />
+</div>
+</div>
+<div class="section" id="id49">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h4>
+<p>在pandas中也有现成的函数describe快速完成对数据的描述性统计，比如使用<code class="docutils literal notranslate"><span class="pre">df[&quot;薪资水平&quot;].describe()</span></code>即可得到薪资列的描述性统计结果</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;薪资水平&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count      627.000000
+mean     19019.138756
+std       9696.823558
+min       1000.000000
+25%      12500.000000
+50%      17500.000000
+75%      25000.000000
+max      60000.000000
+Name: 薪资水平, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id50">
+<h3>17 - 数据可视化<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id51">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中可以通过点击插入并选择图表来快速完成对数据的可视化，比如制作薪资的直方图，并且有很多样式可以直接使用</p>
+<div class="figure align-center">
+<img alt="../../_images/数据可视化.gif" src="../../_images/数据可视化.gif" />
+</div>
+</div>
+<div class="section" id="id52">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中也支持直接对数据绘制不同可视化图表，例如直方图，可以使用plot或者直接使用hist来制作df[“薪资水平”].hist()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;薪资水平&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Pandas对比Excel_29_1.png" src="../../_images/Pandas对比Excel_29_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id53">
+<h3>18 - 数据抽样<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id54">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h4>
+<p>在Excel中抽样可以使用公式也可以使用分析工具库中的抽样，但是仅支持对<strong>数值型</strong>的列抽样，比如随机抽20个示例数据中薪资的样本</p>
+<div class="figure align-center">
+<img alt="../../_images/数据抽样.gif" src="../../_images/数据抽样.gif" />
+</div>
+</div>
+<div class="section" id="id55">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h4>
+<p>在pandas中有抽样函数sample可以直接抽样，并且支持任意格式的数据抽样，可以按照数量/比例抽样，比如随机抽20个示例数据中的样本</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>创建时间</th>
+      <th>地址</th>
+      <th>岗位</th>
+      <th>学历</th>
+      <th>技能要求</th>
+      <th>工作经验</th>
+      <th>薪资水平</th>
+      <th>new_col</th>
+      <th>合并列</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>260</th>
+      <td>2020-03-11</td>
+      <td>杭州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据仓库', '数据分析', '数据处理']</td>
+      <td>不限</td>
+      <td>27500.0</td>
+      <td>高</td>
+      <td>杭州数据开发</td>
+    </tr>
+    <tr>
+      <th>565</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据库', '数据分析', '数据运营']</td>
+      <td>3-5年</td>
+      <td>14000.0</td>
+      <td>高</td>
+      <td>上海数据分析</td>
+    </tr>
+    <tr>
+      <th>338</th>
+      <td>2020-03-16</td>
+      <td>北京</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>5-10年</td>
+      <td>32500.0</td>
+      <td>高</td>
+      <td>北京数据分析</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>2020-03-16</td>
+      <td>北京</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>5-10年</td>
+      <td>30000.0</td>
+      <td>高</td>
+      <td>北京数据分析</td>
+    </tr>
+    <tr>
+      <th>716</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hadoop', 'Hive']</td>
+      <td>1-3年</td>
+      <td>10500.0</td>
+      <td>高</td>
+      <td>深圳数据开发</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2020-03-16</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>5-10年</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>广州数据开发</td>
+    </tr>
+    <tr>
+      <th>458</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据仓库']</td>
+      <td>3-5年</td>
+      <td>22500.0</td>
+      <td>高</td>
+      <td>上海数据开发</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>2020-03-13</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据分析', '数据挖掘']</td>
+      <td>3-5年</td>
+      <td>17500.0</td>
+      <td>高</td>
+      <td>广州数据开发</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>2020-03-15</td>
+      <td>杭州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['BI', '数据分析', '数据运营', 'SPSS']</td>
+      <td>3-5年</td>
+      <td>30000.0</td>
+      <td>高</td>
+      <td>杭州数据分析</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>产品经理</td>
+      <td>本科</td>
+      <td>['数据分析', '手游']</td>
+      <td>5-10年</td>
+      <td>25000.0</td>
+      <td>高</td>
+      <td>上海产品经理</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2020-03-16</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>不限</td>
+      <td>17500.0</td>
+      <td>高</td>
+      <td>广州数据开发</td>
+    </tr>
+    <tr>
+      <th>699</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据分析', 'Hive', 'SQLServer', '数据挖掘']</td>
+      <td>5-10年</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>深圳数据开发</td>
+    </tr>
+    <tr>
+      <th>620</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1-3年</td>
+      <td>15000.0</td>
+      <td>高</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>2020-03-16</td>
+      <td>广州</td>
+      <td>财务</td>
+      <td>大专</td>
+      <td>['分析', '统计']</td>
+      <td>3-5年</td>
+      <td>11500.0</td>
+      <td>高</td>
+      <td>广州财务</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2020-03-15</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>不限</td>
+      <td>['数据运营', '数据分析']</td>
+      <td>应届毕业生</td>
+      <td>8000.0</td>
+      <td>低</td>
+      <td>广州数据分析</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>2020-03-16</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>5-10年</td>
+      <td>22500.0</td>
+      <td>高</td>
+      <td>广州数据开发</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>2020-03-15</td>
+      <td>杭州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据挖掘', '数据仓库', '数据分析', 'ETL']</td>
+      <td>5-10年</td>
+      <td>50500.0</td>
+      <td>高</td>
+      <td>杭州数据开发</td>
+    </tr>
+    <tr>
+      <th>554</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Oracle', '数据挖掘', '数据分析', 'ETL']</td>
+      <td>3-5年</td>
+      <td>18500.0</td>
+      <td>高</td>
+      <td>上海数据开发</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>2020-02-28</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', 'SQL', '商业']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>741</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>保险</td>
+      <td>本科</td>
+      <td>['保险']</td>
+      <td>1年以下</td>
+      <td>15000.0</td>
+      <td>高</td>
+      <td>深圳保险</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id56">
+<h3>19 - 数据透视表<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id57">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h4>
+<p>数据透视表是一个非常强大的工具，在Excel中有现成的工具，只需要<strong>选中数据—&gt;点击插入—&gt;数据透视表</strong>即可生成，并且支持<strong>字段的拖取</strong>实现不同的透视表，非常方便，比如制作地址、学历、薪资的透视表</p>
+<div class="figure align-center">
+<img alt="../../_images/数据透视表.gif" src="../../_images/数据透视表.gif" />
+</div>
+</div>
+<div class="section" id="id58">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中制作数据透视表可以使用pivot_table函数，例如制作地址、学历、薪资的透视表<code class="docutils literal notranslate"><span class="pre">pd.pivot_table(df,index=[&quot;地址&quot;,&quot;学历&quot;],values=[&quot;薪资水平&quot;])</span></code>，虽然结果一样，但是并没有Excel一样方便调整与多样</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;地址&quot;</span><span class="p">,</span><span class="s2">&quot;学历&quot;</span><span class="p">],</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;薪资水平&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>薪资水平</th>
+    </tr>
+    <tr>
+      <th>地址</th>
+      <th>学历</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">上海</th>
+      <th>不限</th>
+      <td>17000.000000</td>
+    </tr>
+    <tr>
+      <th>大专</th>
+      <td>10000.000000</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>19464.285714</td>
+    </tr>
+    <tr>
+      <th>硕士</th>
+      <td>20642.857143</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">北京</th>
+      <th>不限</th>
+      <td>22833.333333</td>
+    </tr>
+    <tr>
+      <th>大专</th>
+      <td>19000.000000</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>23726.086957</td>
+    </tr>
+    <tr>
+      <th>硕士</th>
+      <td>27500.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">广州</th>
+      <th>不限</th>
+      <td>17750.000000</td>
+    </tr>
+    <tr>
+      <th>大专</th>
+      <td>10700.000000</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>14916.666667</td>
+    </tr>
+    <tr>
+      <th>硕士</th>
+      <td>7666.666667</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">杭州</th>
+      <th>不限</th>
+      <td>17733.333333</td>
+    </tr>
+    <tr>
+      <th>大专</th>
+      <td>16625.000000</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>20753.623188</td>
+    </tr>
+    <tr>
+      <th>硕士</th>
+      <td>14000.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">深圳</th>
+      <th>不限</th>
+      <td>18833.333333</td>
+    </tr>
+    <tr>
+      <th>大专</th>
+      <td>10437.500000</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>19313.793103</td>
+    </tr>
+    <tr>
+      <th>硕士</th>
+      <td>23150.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="vlookup">
+<h3>20 - vlookup<a class="headerlink" href="#vlookup" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id59">
+<h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h4>
+<p>VLOOKUP算是EXCEL中最核心的功能之一了，我们用一个简单的数据来进行示例</p>
+<div class="figure align-center">
+<img alt="../../_images/vlookup.gif" src="../../_images/vlookup.gif" />
+</div>
+</div>
+<div class="section" id="id60">
+<h4><code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h4>
+<p>在Pandas中没有现成的vlookup函数，所以实现匹配查找需要一些步骤，首先我们读取该表格</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;vlookup.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>序号</th>
+      <th>科目</th>
+      <th>成绩</th>
+      <th>排名</th>
+      <th>Unnamed: 4</th>
+      <th>序号.1</th>
+      <th>科目.1</th>
+      <th>成绩.1</th>
+      <th>排名.1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>语文</td>
+      <td>80</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>数学</td>
+      <td>70</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>英语</td>
+      <td>60</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D</td>
+      <td>政治</td>
+      <td>50</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E</td>
+      <td>地理</td>
+      <td>90</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>F</td>
+      <td>化学</td>
+      <td>100</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>G</td>
+      <td>生物</td>
+      <td>77</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>接着将该dataframe切分为两个</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[[</span><span class="s2">&quot;序号&quot;</span><span class="p">,</span><span class="s2">&quot;科目&quot;</span><span class="p">,</span><span class="s2">&quot;成绩&quot;</span><span class="p">,</span><span class="s2">&quot;排名&quot;</span><span class="p">]]</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>序号</th>
+      <th>科目</th>
+      <th>成绩</th>
+      <th>排名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>语文</td>
+      <td>80</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>数学</td>
+      <td>70</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>英语</td>
+      <td>60</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D</td>
+      <td>政治</td>
+      <td>50</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E</td>
+      <td>地理</td>
+      <td>90</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>F</td>
+      <td>化学</td>
+      <td>100</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>G</td>
+      <td>生物</td>
+      <td>77</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[[</span><span class="s2">&quot;序号.1&quot;</span><span class="p">,</span><span class="s2">&quot;科目.1&quot;</span><span class="p">,</span><span class="s2">&quot;成绩.1&quot;</span><span class="p">,</span><span class="s2">&quot;排名.1&quot;</span><span class="p">]]</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;序号&quot;</span><span class="p">,</span><span class="s2">&quot;科目&quot;</span><span class="p">,</span><span class="s2">&quot;成绩&quot;</span><span class="p">,</span><span class="s2">&quot;排名&quot;</span><span class="p">]</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>序号</th>
+      <th>科目</th>
+      <th>成绩</th>
+      <th>排名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>最后修改索引并使用update进行两表的匹配</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;序号&quot;</span><span class="p">)</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;序号&quot;</span><span class="p">)</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>科目</th>
+      <th>成绩</th>
+      <th>排名</th>
+    </tr>
+    <tr>
+      <th>序号</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C</th>
+      <td>英语</td>
+      <td>60.0</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "liuhuanshuo/zaoqi-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./doc/chapter0"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="%E5%85%A5%E9%97%A8pandas.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Pandas 入门</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Pandas%E5%AF%B9%E6%AF%94R.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Pandas 对比 R/R libraries</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        <footer class="footer">
+    <div class="container">
+      <p style="font-size: 0.8em">
+        
+          By 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a><br/>
+        
+      </p>
+    </div>
+  </footer>
+        </div>
+            <div class="d-none d-md-block col-md-2 bd-toc show">
+                <div class="inner">
+                    
+                    <div class="qe-page__toc-header">
+                                    On this page
+                                </div>
+                    <nav id="bd-toc-nav" aria-label="Page">
+                        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   数据结构
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     通用术语对比
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframe">
+     DataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index">
+     Index
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   常见操作对比
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1 - 数据读取
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#excel">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pandas">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     2 - 数据生成
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     3 - 数据存储
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4 - 数据筛选
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     5 - 数据插入
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     6 - 数据删除
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     7 - 数据排序
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     8 - 缺失值处理
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id25">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     9 - 数据去重
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id27">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id28">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     10 - 格式修改
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id30">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id32">
+     11 - 数据交换
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id33">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id34">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id35">
+     12 - 数据合并
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       Excel
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id37">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id38">
+     13 - 数据拆分
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id39">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id40">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id41">
+     14 - 数据分组
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id42">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id43">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id44">
+     15 - 数据计算
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id45">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id46">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id47">
+     16 - 数据统计
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id48">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id49">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id50">
+     17 - 数据可视化
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id51">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id52">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id53">
+     18 - 数据抽样
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id54">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id55">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id56">
+     19 - 数据透视表
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id57">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id58">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vlookup">
+     20 - vlookup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id59">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Excel
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id60">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Pandas
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                                <img src="https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112101114946.png" style="width: 105px;height: 105px;margin-top: 2em">
+                    <p style="font-size: 0.8em;color: #444444;margin-bottom: 0.5rem;">扫码关注我的公众号</p>
+                    <p style="font-size: 0.8em;color: #444444;">Powered by <a href="https://jupyterbook.org/" style="color: #004979;">Jupyter Book</a></p>
+                    </nav>
+
+                    <div class="qe-page__toc-footer">
+                    <p><a href="#top" style="
+            color: #444;
+        "><strong>Back to top</strong></a></p>
+                </div>
+                </div>
+            </div>
+
+    </div>
+    
+
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-214732125-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

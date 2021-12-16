@@ -1,0 +1,2511 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据分组</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="数据聚合" href="%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88.html" />
+    <link rel="prev" title="数据分组与聚合" href="%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E4%B8%8E%E8%81%9A%E5%90%88.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  指引 📌
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">
+   使用说明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
+   如何在线执行代码
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter0/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B.html">
+   入门教程
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/Python%E5%AE%89%E8%A3%85.html">
+     Python安装与配置
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/%E5%85%A5%E9%97%A8pandas.html">
+     Pandas入门
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/Pandas%E5%AF%B9%E6%AF%94Excel.html">
+     Pandas对比Excel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/Pandas%E5%AF%B9%E6%AF%94R.html">
+     Pandas对比R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
+     十分钟入门Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  图解Pandas 📖
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/chapt1.html">
+   数据加载与存储
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter1/%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html">
+     常见格式读取
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
+       读取 Excel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96TXT.html">
+       读取 TXT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96JSON.html">
+       读取 JSON
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96SQL.html">
+       读取 SQL
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96HDF5.html">
+       读取 HDF5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5.html">
+       读取网页
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html">
+       读取剪贴板
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html">
+     常见数据创建
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.html">
+     数据存储
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter2/chapt2.html">
+   数据预览与预处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E6%95%B0%E6%8D%AE%E9%A2%84%E8%A7%88.html">
+     数据信息预览
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5.html">
+     缺失值检查与处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E9%87%8D%E5%A4%8D%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html">
+     重复值检查与处理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter2-2/%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%88%86%E6%9E%90.html">
+   数据统计与描述性统计分析
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter3/chapt3.html">
+   数据修改与筛选
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9.html">
+     数据修改
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E7%AD%9B%E9%80%89.html">
+     数据筛选
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E4%B8%8E%E8%81%9A%E5%90%88.html">
+   数据分组与聚合
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     数据分组
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88.html">
+     数据聚合
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86%E4%B8%8E%E5%90%88%E5%B9%B6.html">
+   数据透视与合并
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86.html">
+     数据透视
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html">
+     数据合并
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/concat.html">
+       concat - 数据拼接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/merge.html">
+       merge - 数据连接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/join.html">
+       join - 数据组合
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter6/chapt6.html">
+   金融数据与时间处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html">
+     时间处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E8%82%A1%E7%A5%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html">
+     股票数据分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E5%88%B6%E4%BD%9CK%E7%BA%BF%E5%9B%BE.html">
+     制作K线图
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter7/chapt7.html">
+   数据可视化
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%8A%98%E7%BA%BF%E5%9B%BE.html">
+     折线图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9D%A1%E5%BD%A2%E5%9B%BE.html">
+     条形图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E7%9B%B4%E6%96%B9%E5%9B%BE.html">
+     直方图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%95%A3%E7%82%B9%E5%9B%BE.html">
+     散点图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E5%9B%BE%E5%BD%A2.html">
+     更多图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E6%A0%B7%E5%BC%8F.html">
+     更多样式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter8/chapt8.html">
+   个性化显示
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/option.html">
+     option
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/style.html">
+     style
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter9/chapt9.html">
+   更多未提及操作
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/map%E4%B8%8Eapplymap.html">
+     map与applymap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/stack%E4%B8%8Eunstack.html">
+     stack与unstack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/isin%E7%AD%9B%E9%80%89.html">
+     isin - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/select_dtypes%E7%AD%9B%E9%80%89.html">
+     select_dtypes - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/explode%E6%95%B0%E6%8D%AE%E5%B1%95%E5%BC%80.html">
+     explode - 数据展开
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/cusum%E7%B4%AF%E5%8A%A0%E8%AE%A1%E7%AE%97.html">
+     cusum - 累加计算
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/nunique-%E7%BB%9F%E8%AE%A1.html">
+     nunique - 统计
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/append.html">
+     append - 数据添加
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/compare.html">
+     compare - 数据比较
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  彩蛋 🎉
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter10/chapt10.html">
+   Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+
+
+
+
+</div>
+
+
+          
+
+
+          
+
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+
+<div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+               <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
+               <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
+
+
+
+
+
+
+
+
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            data-feather="download-cloud"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/doc/chapter4/数据分组.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i data-feather="github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter4/数据分组.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter4/数据分组.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+
+                        <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                </ul>
+
+        </div>
+
+        <!-- Table of contents -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        <div class="qe-page__header">
+
+    <div class="qe-page__header-copy">
+        <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
+        <p class="qe-page__header-subheading"> 数据分组</p>
+    </div>
+    <p class="qe-page__header-authors"><a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
+
+</div>
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>数据分组<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="seealso admonition">
+<p class="admonition-title">在线刷题</p>
+<p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
+</div>
+<div class="section" id="id2">
+<h2>本页数据说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>为了更好的介绍相关操作，本页面使用 <strong>某招聘网站数据.csv</strong> 数据进行展开，你应该对数据<strong>字段、数值、类型</strong>等相关信息做一个大致了解！</p>
+<div class="cell tag_hide-input tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;某招聘网站数据.csv&quot;</span><span class="p">,</span><span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;createTime&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>positionName</th>
+      <th>companySize</th>
+      <th>industryField</th>
+      <th>financeStage</th>
+      <th>companyLabelList</th>
+      <th>firstType</th>
+      <th>secondType</th>
+      <th>thirdType</th>
+      <th>createTime</th>
+      <th>district</th>
+      <th>salary</th>
+      <th>workYear</th>
+      <th>jobNature</th>
+      <th>education</th>
+      <th>positionAdvantage</th>
+      <th>imState</th>
+      <th>score</th>
+      <th>matchScore</th>
+      <th>famousCompany</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>数据分析</td>
+      <td>50-150人</td>
+      <td>移动互联...</td>
+      <td>A轮</td>
+      <td>['绩效...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>余杭区</td>
+      <td>37500</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>五险一金...</td>
+      <td>today</td>
+      <td>233</td>
+      <td>15.1...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>数据建模</td>
+      <td>150-...</td>
+      <td>电商</td>
+      <td>B轮</td>
+      <td>['年终...</td>
+      <td>开发|测...</td>
+      <td>数据开发</td>
+      <td>建模</td>
+      <td>2020-...</td>
+      <td>滨江区</td>
+      <td>15000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>六险一金...</td>
+      <td>disa...</td>
+      <td>176</td>
+      <td>32.5...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>数据分析</td>
+      <td>2000人以上</td>
+      <td>移动互联...</td>
+      <td>上市公司</td>
+      <td>['节日...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>江干区</td>
+      <td>3500</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>五险一金...</td>
+      <td>today</td>
+      <td>80</td>
+      <td>14.9...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>数据分析</td>
+      <td>500-...</td>
+      <td>电商</td>
+      <td>D轮及以上</td>
+      <td>['生日...</td>
+      <td>开发|测...</td>
+      <td>数据开发</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>江干区</td>
+      <td>45000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>年终奖等</td>
+      <td>thre...</td>
+      <td>68</td>
+      <td>12.8...</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>数据分析</td>
+      <td>2000人以上</td>
+      <td>物流丨运输</td>
+      <td>上市公司</td>
+      <td>['技能...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>余杭区</td>
+      <td>30000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>大专</td>
+      <td>五险一金</td>
+      <td>disa...</td>
+      <td>66</td>
+      <td>12.7...</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>分组统计<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>均值<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>计算各区(<code class="docutils literal notranslate"><span class="pre">district</span></code>)的薪资(<code class="docutils literal notranslate"><span class="pre">salary</span></code>)均值</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;district&#39;</span><span class="p">,</span><span class="s1">&#39;salary&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;district&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># df.groupby(&quot;district&quot;)[&#39;salary&#39;].mean()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+    </tr>
+    <tr>
+      <th>district</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>上城区</th>
+      <td>2625...</td>
+    </tr>
+    <tr>
+      <th>下沙</th>
+      <td>3000...</td>
+    </tr>
+    <tr>
+      <th>余杭区</th>
+      <td>3358...</td>
+    </tr>
+    <tr>
+      <th>拱墅区</th>
+      <td>2850...</td>
+    </tr>
+    <tr>
+      <th>江干区</th>
+      <td>2525...</td>
+    </tr>
+    <tr>
+      <th>滨江区</th>
+      <td>3142...</td>
+    </tr>
+    <tr>
+      <th>萧山区</th>
+      <td>3625...</td>
+    </tr>
+    <tr>
+      <th>西湖区</th>
+      <td>3089...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>取消索引<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>重新按照上一题要求进行分组，但不使用 <code class="docutils literal notranslate"><span class="pre">district</span></code> 做为索引</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>district</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>上城区</td>
+      <td>2625...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>下沙</td>
+      <td>3000...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>余杭区</td>
+      <td>3358...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>拱墅区</td>
+      <td>2850...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>江干区</td>
+      <td>2525...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>滨江区</td>
+      <td>3142...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>萧山区</td>
+      <td>3625...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>西湖区</td>
+      <td>3089...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>排序<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>计算并提取平均薪资最高的区</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;district&#39;</span><span class="p">,</span><span class="s1">&#39;salary&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;district&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;salary&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+    </tr>
+    <tr>
+      <th>district</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>萧山区</th>
+      <td>36250.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>频率<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>计算不同行政区(<code class="docutils literal notranslate"><span class="pre">district</span></code>)，不同规模公司(<code class="docutils literal notranslate"><span class="pre">companySize</span></code>)出现的次数</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">)[</span><span class="s1">&#39;companySize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="c1"># df.groupby([&#39;district&#39;,&#39;companySize&#39;]).size()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>companySize</th>
+    </tr>
+    <tr>
+      <th>district</th>
+      <th>companySize</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>上城区</th>
+      <th>50-150人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>下沙</th>
+      <th>150-500人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">余杭区</th>
+      <th>2000人以上</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>150-500人</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">拱墅区</th>
+      <th>500-2000人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2000人以上</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">江干区</th>
+      <th>2000人以上</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">滨江区</th>
+      <th>150-500人</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>2000人以上</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">萧山区</th>
+      <th>500-2000人</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">西湖区</th>
+      <th>2000人以上</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>150-500人</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>15-50人</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>修改索引名<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>将上一题的索引名修改为</p>
+<ul class="simple">
+<li><p>district -&gt; 行政区</p></li>
+<li><p>companySize -&gt; 公司规模</p></li>
+</ul>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">)[</span><span class="s1">&#39;companySize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">([</span><span class="s2">&quot;行政区&quot;</span><span class="p">,</span> <span class="s2">&quot;公司规模&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>companySize</th>
+    </tr>
+    <tr>
+      <th>行政区</th>
+      <th>公司规模</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>上城区</th>
+      <th>50-150人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>下沙</th>
+      <th>150-500人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">余杭区</th>
+      <th>2000人以上</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>150-500人</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">拱墅区</th>
+      <th>500-2000人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2000人以上</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">江干区</th>
+      <th>2000人以上</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">滨江区</th>
+      <th>150-500人</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>2000人以上</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">萧山区</th>
+      <th>500-2000人</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">西湖区</th>
+      <th>2000人以上</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>500-2000人</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>150-500人</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>50-150人</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>15-50人</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>计数<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>在上一个操作的基础上，统计每个区出现的公司数量</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">)[</span><span class="s1">&#39;companySize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>district
+上城区     2
+下沙      1
+余杭区    36
+拱墅区     4
+江干区     4
+滨江区    21
+萧山区     4
+西湖区    33
+Name: companySize, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>分组查看<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>查看各组信息<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>将数据按照 <code class="docutils literal notranslate"><span class="pre">district</span></code>、<code class="docutils literal notranslate"><span class="pre">salary</span></code> 进行分组，并查看各分组内容</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;district&quot;</span><span class="p">,</span><span class="s1">&#39;salary&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">groups</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;上城区&#39;, 22500): [81], (&#39;上城区&#39;, 30000): [97], (&#39;下沙&#39;, 30000): [31], (&#39;余杭区&#39;, 7500): [84], (&#39;余杭区&#39;, 20000): [52, 103], (&#39;余杭区&#39;, 22500): [23, 51], (&#39;余杭区&#39;, 25000): [62], (&#39;余杭区&#39;, 27500): [24, 49], (&#39;余杭区&#39;, 29000): [93], (&#39;余杭区&#39;, 30000): [4, 10, 13, 18, 59, 61, 65, 68, 74, 76, 86, 92, 94], (&#39;余杭区&#39;, 35000): [101], (&#39;余杭区&#39;, 37500): [0, 32, 38, 39, 41], (&#39;余杭区&#39;, 40000): [60, 87], (&#39;余杭区&#39;, 45000): [25], (&#39;余杭区&#39;, 50000): [5, 64, 90], (&#39;余杭区&#39;, 60000): [8, 82], (&#39;拱墅区&#39;, 24000): [72], (&#39;拱墅区&#39;, 30000): [54, 89, 96], (&#39;江干区&#39;, 3500): [2], (&#39;江干区&#39;, 22500): [45], (&#39;江干区&#39;, 30000): [73], (&#39;江干区&#39;, 45000): [3], (&#39;滨江区&#39;, 7500): [83], (&#39;滨江区&#39;, 15000): [1], (&#39;滨江区&#39;, 20000): [21, 40], (&#39;滨江区&#39;, 22500): [37], (&#39;滨江区&#39;, 30000): [22, 53, 55, 58, 67, 80, 102], (&#39;滨江区&#39;, 32500): [26], (&#39;滨江区&#39;, 37500): [17, 28, 57, 77], (&#39;滨江区&#39;, 42500): [91], (&#39;滨江区&#39;, 45000): [43, 47], (&#39;滨江区&#39;, 50000): [44], (&#39;萧山区&#39;, 25000): [100], (&#39;萧山区&#39;, 30000): [6], (&#39;萧山区&#39;, 45000): [66, 69], (&#39;西湖区&#39;, 6500): [71], (&#39;西湖区&#39;, 20000): [12], (&#39;西湖区&#39;, 21500): [104], (&#39;西湖区&#39;, 22500): [48, 70], (&#39;西湖区&#39;, 24000): [42], (&#39;西湖区&#39;, 25000): [56], (&#39;西湖区&#39;, 26500): [78], (&#39;西湖区&#39;, 27000): [75], (&#39;西湖区&#39;, 27500): [15, 20, 50, 63], (&#39;西湖区&#39;, 30000): [11, 27, 33, 34, 85, 88, 98], (&#39;西湖区&#39;, 35000): [7], (&#39;西湖区&#39;, 36500): [99], (&#39;西湖区&#39;, 37500): [14, 16, 19, 30, 36, 79, 95], (&#39;西湖区&#39;, 40000): [9, 35], (&#39;西湖区&#39;, 45000): [29, 46]}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>查看指定条件信息<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>将数据按照 <code class="docutils literal notranslate"><span class="pre">district</span></code>、<code class="docutils literal notranslate"><span class="pre">salary</span></code> 进行分组，并查看西湖区薪资为 30000 的工作</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;district&quot;</span><span class="p">,</span><span class="s1">&#39;salary&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="s2">&quot;西湖区&quot;</span><span class="p">,</span><span class="mi">30000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>positionName</th>
+      <th>companySize</th>
+      <th>industryField</th>
+      <th>financeStage</th>
+      <th>companyLabelList</th>
+      <th>firstType</th>
+      <th>secondType</th>
+      <th>thirdType</th>
+      <th>createTime</th>
+      <th>district</th>
+      <th>salary</th>
+      <th>workYear</th>
+      <th>jobNature</th>
+      <th>education</th>
+      <th>positionAdvantage</th>
+      <th>imState</th>
+      <th>score</th>
+      <th>matchScore</th>
+      <th>famousCompany</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>大数据分...</td>
+      <td>2000人以上</td>
+      <td>移动互联...</td>
+      <td>上市公司</td>
+      <td>['技能...</td>
+      <td>开发|测...</td>
+      <td>数据开发</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>应届毕业生</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>六险一金...</td>
+      <td>today</td>
+      <td>17</td>
+      <td>4.24...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>数据分析经理</td>
+      <td>2000人以上</td>
+      <td>硬件</td>
+      <td>不需要融资</td>
+      <td>['年终...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>5-10年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>股票期权...</td>
+      <td>today</td>
+      <td>6</td>
+      <td>1.16...</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>数据分析...</td>
+      <td>500-...</td>
+      <td>移动互联网</td>
+      <td>上市公司</td>
+      <td>['绩效...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>应届毕业生</td>
+      <td>全职</td>
+      <td>不限</td>
+      <td>16-1...</td>
+      <td>today</td>
+      <td>15</td>
+      <td>1.02...</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>商业数据分析师</td>
+      <td>50-150人</td>
+      <td>移动互联...</td>
+      <td>B轮</td>
+      <td>['定期...</td>
+      <td>市场|商务类</td>
+      <td>市场|营销</td>
+      <td>商业数据分析</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>硕士</td>
+      <td>发挥空间...</td>
+      <td>today</td>
+      <td>5</td>
+      <td>1.09...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>高级数据分析师</td>
+      <td>500-...</td>
+      <td>移动互联网</td>
+      <td>上市公司</td>
+      <td>['包午...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>福利好，...</td>
+      <td>today</td>
+      <td>2</td>
+      <td>0.38...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>资深数据分析师</td>
+      <td>500-...</td>
+      <td>移动互联网</td>
+      <td>A轮</td>
+      <td>['岗位...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>大专</td>
+      <td>六险一金...</td>
+      <td>today</td>
+      <td>1</td>
+      <td>0.50...</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>数据分析...</td>
+      <td>50-150人</td>
+      <td>数据服务...</td>
+      <td>A轮</td>
+      <td>['午餐...</td>
+      <td>开发|测...</td>
+      <td>人工智能</td>
+      <td>机器学习</td>
+      <td>2020-...</td>
+      <td>西湖区</td>
+      <td>30000</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>海量数据...</td>
+      <td>thre...</td>
+      <td>0</td>
+      <td>0.35...</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>分组规则<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>过匿名函数1<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>根据 createTime 列，计算每天不同 行政区 新增的岗位数量</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">createTime</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">day</span><span class="p">)])[</span>
+             <span class="s1">&#39;district&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">([</span><span class="s2">&quot;发布日&quot;</span><span class="p">,</span> <span class="s2">&quot;行政区&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>district</th>
+    </tr>
+    <tr>
+      <th>发布日</th>
+      <th>行政区</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <th>余杭区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <th>拱墅区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">11</th>
+      <th>萧山区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>西湖区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <th>上城区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <th>西湖区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">14</th>
+      <th>西湖区</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>余杭区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>拱墅区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>滨江区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">15</th>
+      <th>余杭区</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>滨江区</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>西湖区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">16</th>
+      <th>余杭区</th>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>西湖区</th>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>滨江区</th>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>江干区</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>萧山区</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>拱墅区</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>上城区</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>下沙</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>通过匿名函数2<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>计算各行政区的企业领域（industryField）包含电商的总数</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;industryField&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;电商&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>district
+余杭区    9
+滨江区    9
+江干区    2
+萧山区    3
+西湖区    4
+下沙     1
+拱墅区    0
+上城区    0
+Name: industryField, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>通过内置函数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>通过 positionName 的长度进行分组，并计算不同长度岗位名称的薪资均值</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;positionName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="nb">len</span><span class="p">)[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4     3012...
+5     3408...
+6     3295...
+7     2981...
+8     3187...
+9     2937...
+10    3000...
+11    3416...
+12    2958...
+13    3883...
+14    4000...
+15    2600...
+16    2875...
+17    4000...
+18    2575...
+19    4500...
+21    2150...
+23    6000...
+Name: salary, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>通过字典<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>将 score 和 matchScore 的和记为总分，与 salary 列同时进行分组，并查看结果</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">({</span><span class="s1">&#39;salary&#39;</span><span class="p">:</span><span class="s1">&#39;薪资&#39;</span><span class="p">,</span><span class="s1">&#39;score&#39;</span><span class="p">:</span><span class="s1">&#39;总分&#39;</span><span class="p">,</span><span class="s1">&#39;matchScore&#39;</span><span class="p">:</span><span class="s1">&#39;总分&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>总分</th>
+      <th>薪资</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>248....</td>
+      <td>37500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>208....</td>
+      <td>15000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>94.9...</td>
+      <td>3500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80.8...</td>
+      <td>45000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>78.7...</td>
+      <td>30000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>0.31...</td>
+      <td>25000</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>0.28...</td>
+      <td>35000</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>0.25...</td>
+      <td>30000</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>0.28...</td>
+      <td>20000</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>0.15...</td>
+      <td>21500</td>
+    </tr>
+  </tbody>
+</table>
+<p>105 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>通过多列<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>计算不同 工作年限（<code class="docutils literal notranslate"><span class="pre">workYear</span></code>）和 学历（<code class="docutils literal notranslate"><span class="pre">education</span></code>）之间的薪资均值</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;workYear&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>salary</th>
+    </tr>
+    <tr>
+      <th>workYear</th>
+      <th>education</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">1-3年</th>
+      <th>不限</th>
+      <td>3625...</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>3100...</td>
+    </tr>
+    <tr>
+      <th>硕士</th>
+      <td>3687...</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">3-5年</th>
+      <th>不限</th>
+      <td>3031...</td>
+    </tr>
+    <tr>
+      <th>大专</th>
+      <td>2812...</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>3182...</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">5-10年</th>
+      <th>不限</th>
+      <td>2625...</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>2842...</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">不限</th>
+      <th>不限</th>
+      <td>3500...</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>3562...</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">应届毕业生</th>
+      <th>不限</th>
+      <td>3250...</td>
+    </tr>
+    <tr>
+      <th>本科</th>
+      <td>3383...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="transform">
+<h2>分组转换（transform）<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h2>
+<p>在原数据框 df 新增一列，数值为该区的平均薪资水平</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;该区平均工资&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;district&#39;</span><span class="p">,</span><span class="s1">&#39;salary&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;district&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filter">
+<h2>分组过滤（filter）<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<p>提取平均工资小于 30000 的行政区的全部数据</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;district&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">30000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>positionName</th>
+      <th>companySize</th>
+      <th>industryField</th>
+      <th>financeStage</th>
+      <th>companyLabelList</th>
+      <th>firstType</th>
+      <th>secondType</th>
+      <th>thirdType</th>
+      <th>createTime</th>
+      <th>district</th>
+      <th>salary</th>
+      <th>workYear</th>
+      <th>jobNature</th>
+      <th>education</th>
+      <th>positionAdvantage</th>
+      <th>imState</th>
+      <th>score</th>
+      <th>matchScore</th>
+      <th>famousCompany</th>
+      <th>该区平均工资</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>数据分析</td>
+      <td>2000人以上</td>
+      <td>移动互联...</td>
+      <td>上市公司</td>
+      <td>['节日...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>江干区</td>
+      <td>3500</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>五险一金...</td>
+      <td>today</td>
+      <td>80</td>
+      <td>14.9...</td>
+      <td>False</td>
+      <td>25250.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>数据分析</td>
+      <td>500-...</td>
+      <td>电商</td>
+      <td>D轮及以上</td>
+      <td>['生日...</td>
+      <td>开发|测...</td>
+      <td>数据开发</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>江干区</td>
+      <td>45000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>年终奖等</td>
+      <td>thre...</td>
+      <td>68</td>
+      <td>12.8...</td>
+      <td>True</td>
+      <td>25250.0</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>金融数据分析师</td>
+      <td>500-...</td>
+      <td>电商</td>
+      <td>D轮及以上</td>
+      <td>['生日...</td>
+      <td>开发|测...</td>
+      <td>数据开发</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>江干区</td>
+      <td>22500</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>平台大,...</td>
+      <td>today</td>
+      <td>5</td>
+      <td>0.99...</td>
+      <td>True</td>
+      <td>25250.0</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>数据分析专家</td>
+      <td>50-150人</td>
+      <td>移动互联...</td>
+      <td>未融资</td>
+      <td>['年底...</td>
+      <td>产品|需...</td>
+      <td>高端产品职位</td>
+      <td>数据分析专家</td>
+      <td>2020-...</td>
+      <td>拱墅区</td>
+      <td>30000</td>
+      <td>5-10年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>领导NICE</td>
+      <td>today</td>
+      <td>5</td>
+      <td>0.96...</td>
+      <td>False</td>
+      <td>28500.0</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>BI数据分析师</td>
+      <td>500-...</td>
+      <td>移动互联...</td>
+      <td>B轮</td>
+      <td>['弹性...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>BI</td>
+      <td>2020-...</td>
+      <td>拱墅区</td>
+      <td>24000</td>
+      <td>5-10年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>带薪年假...</td>
+      <td>thre...</td>
+      <td>4</td>
+      <td>0.82...</td>
+      <td>False</td>
+      <td>28500.0</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>数据分析师</td>
+      <td>2000人以上</td>
+      <td>消费生活,硬件</td>
+      <td>上市公司</td>
+      <td>['定期...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>江干区</td>
+      <td>30000</td>
+      <td>3-5年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>大平台免...</td>
+      <td>today</td>
+      <td>4</td>
+      <td>0.82...</td>
+      <td>True</td>
+      <td>25250.0</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>商业数据...</td>
+      <td>50-150人</td>
+      <td>移动互联...</td>
+      <td>天使轮</td>
+      <td>['节日...</td>
+      <td>市场|商务类</td>
+      <td>市场|营销</td>
+      <td>商业数据分析</td>
+      <td>2020-...</td>
+      <td>上城区</td>
+      <td>22500</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>五险一金...</td>
+      <td>today</td>
+      <td>3</td>
+      <td>0.63...</td>
+      <td>False</td>
+      <td>26250.0</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>数据分析</td>
+      <td>500-...</td>
+      <td>其他</td>
+      <td>未融资</td>
+      <td>[]</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>拱墅区</td>
+      <td>30000</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>数据分析</td>
+      <td>thre...</td>
+      <td>1</td>
+      <td>1.82...</td>
+      <td>False</td>
+      <td>28500.0</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>数据分析专员</td>
+      <td>2000人以上</td>
+      <td>移动互联...</td>
+      <td>上市公司</td>
+      <td>['节日...</td>
+      <td>产品|需...</td>
+      <td>数据分析</td>
+      <td>数据分析</td>
+      <td>2020-...</td>
+      <td>拱墅区</td>
+      <td>30000</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>不限</td>
+      <td>股票期权...</td>
+      <td>thre...</td>
+      <td>1</td>
+      <td>0.46...</td>
+      <td>False</td>
+      <td>28500.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>旅游大数...</td>
+      <td>50-150人</td>
+      <td>数据服务...</td>
+      <td>A轮</td>
+      <td>['年底...</td>
+      <td>开发|测...</td>
+      <td>数据开发</td>
+      <td>数据治理</td>
+      <td>2020-...</td>
+      <td>上城区</td>
+      <td>30000</td>
+      <td>1-3年</td>
+      <td>全职</td>
+      <td>本科</td>
+      <td>管理扁平...</td>
+      <td>seve...</td>
+      <td>1</td>
+      <td>0.82...</td>
+      <td>False</td>
+      <td>26250.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>微信搜索公众号「早起Python」，关注后可以获得更多资源！</p>
+</div>
+<div class="section" id="id19">
+<h2>分组可视化<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>对杭州市各区公司数量进行分组，并使用柱状图进行可视化</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Songti SC&#39;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">)[</span><span class="s1">&#39;positionName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#5172F0&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;公司数量&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;杭州市各区&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/数据分组_42_0.png" src="../../_images/数据分组_42_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "liuhuanshuo/zaoqi-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./doc/chapter4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E4%B8%8E%E8%81%9A%E5%90%88.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">数据分组与聚合</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">数据聚合</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        <footer class="footer">
+    <div class="container">
+      <p style="font-size: 0.8em">
+        
+          By 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a><br/>
+        
+      </p>
+    </div>
+  </footer>
+        </div>
+            <div class="d-none d-md-block col-md-2 bd-toc show">
+                <div class="inner">
+                    
+                    <div class="qe-page__toc-header">
+                                    On this page
+                                </div>
+                    <nav id="bd-toc-nav" aria-label="Page">
+                        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   本页数据说明
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   分组统计
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     均值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     取消索引
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     排序
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     频率
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     修改索引名
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     计数
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   分组查看
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     查看各组信息
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     查看指定条件信息
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   分组规则
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     过匿名函数1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     通过匿名函数2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     通过内置函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     通过字典
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     通过多列
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transform">
+   分组转换（transform）
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter">
+   分组过滤（filter）
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   分组可视化
+  </a>
+ </li>
+</ul>
+
+                                <img src="https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112101114946.png" style="width: 105px;height: 105px;margin-top: 2em">
+                    <p style="font-size: 0.8em;color: #444444;margin-bottom: 0.5rem;">扫码关注我的公众号</p>
+                    <p style="font-size: 0.8em;color: #444444;">Powered by <a href="https://jupyterbook.org/" style="color: #004979;">Jupyter Book</a></p>
+                    </nav>
+
+                    <div class="qe-page__toc-footer">
+                    <p><a href="#top" style="
+            color: #444;
+        "><strong>Back to top</strong></a></p>
+                </div>
+                </div>
+            </div>
+
+    </div>
+    
+
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-214732125-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
