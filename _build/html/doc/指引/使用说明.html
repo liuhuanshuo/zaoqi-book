@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="如何在线执行代码" href="%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html" />
+    <link rel="next" title="在线执行代码" href="%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html" />
     <link rel="prev" title="Welcome👏" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,7 +100,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
-   如何在线执行代码
+   在线执行代码
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -120,7 +120,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter0/%E5%85%A5%E9%97%A8pandas.html">
-     Pandas入门
+     Pandas快速开始
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
+     十分钟入门Pandas
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,11 +136,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter0/Pandas%E5%AF%B9%E6%AF%94R.html">
      Pandas对比R
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter0/10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
-     十分钟入门Pandas
     </a>
    </li>
   </ul>
@@ -552,7 +552,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/doc/指引/使用说明.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/doc/指引/使用说明.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -583,6 +586,26 @@
 
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/指引/使用说明.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
 
                         <ul class="qe-toolbar__links">
@@ -654,44 +677,12 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>使用说明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="content-document">
+<span id="id1"></span><h1>使用说明<a class="headerlink" href="#content-document" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here’s your note
-Here is a note!</p>
-</div>
-<div class="admonition-here-s-your-admonition admonition">
-<p class="admonition-title">Here’s your admonition</p>
-<p>Here’s the admonition content</p>
-</div>
-<p>Some <strong>text</strong>!</p>
-<div class="seealso admonition">
-<p class="admonition-title">在线刷题</p>
-<p>Here’s my admonition content</p>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">在线刷题</p>
-<p>Here’s my admonition content</p>
-</div>
-<div class="error admonition">
-<p class="admonition-title">在线刷题</p>
-<p>Here’s my admonition content</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">在线刷题</p>
-<p>Here’s my admonition content</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This is an example
-of a tip directive.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Top Tip</p>
-<p><em>The Turing Way</em> is not meant to be read from start to finish.
-Start with a concept, tool or method that you need now, in your current work.
-Browse the different guides that make up the book, or use the search box to search for whatever you would like to learn about first.</p>
+<p>Here’s my figure:
+<a href="#id2"><span class="problematic" id="id3">:glue:figure:`sorted_means_fig`</span></a></p>
 </div>
 </div>
 
@@ -737,7 +728,7 @@ Browse the different guides that make up the book, or use the search box to sear
         <a class="right-next" href="%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">如何在线执行代码</p>
+                <p class="prevnext-title">在线执行代码</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

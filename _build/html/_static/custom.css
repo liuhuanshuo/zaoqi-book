@@ -1466,5 +1466,14 @@ blockquote div>p {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
-    width: 300px;
+    width: 400px;
+}
+
+th > :last-child, td > :last-child {
+    margin-bottom: 0px;
+}
+
+div.figure> a > img{
+    border: 2px solid #6C6C6C;
+    border-radius: 10px;
 }

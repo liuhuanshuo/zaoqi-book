@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="官方教程 - 10分钟入门pandas" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html" />
+    <link rel="next" title="数据加载与存储" href="../chapter1/chapt1.html" />
     <link rel="prev" title="Pandas 对比 Excel" href="Pandas%E5%AF%B9%E6%AF%94Excel.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,7 +100,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
-   如何在线执行代码
+   在线执行代码
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -120,7 +120,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="%E5%85%A5%E9%97%A8pandas.html">
-     Pandas入门
+     Pandas快速开始
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
+     十分钟入门Pandas
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,11 +136,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Pandas对比R
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
-     十分钟入门Pandas
     </a>
    </li>
   </ul>
@@ -657,7 +657,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="pandas-r-r-libraries">
 <h1>Pandas 对比 R/R libraries<a class="headerlink" href="#pandas-r-r-libraries" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>为了方便长期使用 Excel 的用户转到 Pandas，我将结合官方文档对部分操作进行对比</p>
+<div><p>为了方便长期使用 R 的用户转到 Pandas，我将结合官方文档对部分操作进行对比</p>
 </div></blockquote>
 <div class="seealso admonition">
 <p class="admonition-title">在线刷题</p>
@@ -735,8 +735,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="transforming">
-<h2>Transforming<a class="headerlink" href="#transforming" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>数据修改<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>R</p></th>
@@ -756,8 +756,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id3">
-<h2>数据分组<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>数据分组<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>R</p></th>
@@ -779,6 +779,247 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="id5">
+<h2>常见操作对比<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>数据切片<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="02650a4b-537c-4da4-bbcb-4dfb3dd7122f" name="91373364-3869-4c85-82c8-fe5615ca45e5" type="radio">
+</input><label class="tabbed-label" for="02650a4b-537c-4da4-bbcb-4dfb3dd7122f">
+R</label><div class="tabbed-content docutils">
+<p>在 R 中使用 data.frame按名称访问列</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">e</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>或者使用列号来选择</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="m">100</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="m">25</span><span class="o">:</span><span class="m">30</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">50</span><span class="o">:</span><span class="m">100</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<input id="10ae80b1-84db-46ac-936a-48a1c75820f3" name="91373364-3869-4c85-82c8-fe5615ca45e5" type="radio">
+</input><label class="tabbed-label" for="10ae80b1-84db-46ac-936a-48a1c75820f3">
+pandas</label><div class="tabbed-content docutils">
+<p>在 pandas 中同样可以使用列名来访问对应列</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>或者使用 loc 访问</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>通过结合使用iloc，可以按整数位置选择多个不连续的列。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">named</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="n">named</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">named</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">24</span><span class="p">:</span><span class="mi">30</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>数据聚合<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="ec548b07-74ce-4889-9da4-c03af2c04858" name="299e250e-d8dc-4d80-886d-95445bd19830" type="radio">
+</input><label class="tabbed-label" for="ec548b07-74ce-4889-9da4-c03af2c04858">
+R</label><div class="tabbed-content docutils">
+<p>在R中，可以按如下形式将 dataframe 分成两组并计算均值</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
+  <span class="n">v1</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="kc">NA</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">9</span><span class="p">),</span>
+  <span class="n">v2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="m">33</span><span class="p">,</span><span class="m">55</span><span class="p">,</span><span class="m">77</span><span class="p">,</span><span class="m">88</span><span class="p">,</span><span class="m">33</span><span class="p">,</span><span class="m">55</span><span class="p">,</span><span class="kc">NA</span><span class="p">,</span><span class="m">44</span><span class="p">,</span><span class="m">55</span><span class="p">,</span><span class="m">77</span><span class="p">,</span><span class="m">99</span><span class="p">),</span>
+  <span class="n">by1</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="s">&quot;big&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span>
+  <span class="n">by2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;wet&quot;</span><span class="p">,</span> <span class="s">&quot;dry&quot;</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="s">&quot;damp&quot;</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">))</span>
+<span class="nf">aggregate</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;v1&quot;</span><span class="p">,</span> <span class="s">&quot;v2&quot;</span><span class="p">)],</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">mydf2</span><span class="o">$</span><span class="n">by1</span><span class="p">,</span> <span class="n">mydf2</span><span class="o">$</span><span class="n">by2</span><span class="p">),</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="a1087f78-a8e6-4f9b-8cc1-14b5a426cd4b" name="299e250e-d8dc-4d80-886d-95445bd19830" type="radio">
+</input><label class="tabbed-label" for="a1087f78-a8e6-4f9b-8cc1-14b5a426cd4b">
+pandas</label><div class="tabbed-content docutils">
+<p>在 pandas 中同样可以使用 groupby 来实现</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;v1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="s2">&quot;v2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span>
+        <span class="s2">&quot;by1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+        <span class="s2">&quot;by2&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;wet&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dry&quot;</span><span class="p">,</span>
+            <span class="mi">99</span><span class="p">,</span>
+            <span class="mi">95</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+            <span class="s2">&quot;damp&quot;</span><span class="p">,</span>
+            <span class="mi">95</span><span class="p">,</span>
+            <span class="mi">99</span><span class="p">,</span>
+            <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+            <span class="mi">99</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;by1&quot;</span><span class="p">,</span> <span class="s2">&quot;by2&quot;</span><span class="p">])</span>
+<span class="n">g</span><span class="p">[[</span><span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v2&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="match-in">
+<h3>match / %in%<a class="headerlink" href="#match-in" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="c6e3b8dc-3557-429e-8a5b-b411a2c84dbd" name="161faad6-c82e-4c2f-8661-07712450c98f" type="radio">
+</input><label class="tabbed-label" for="c6e3b8dc-3557-429e-8a5b-b411a2c84dbd">
+R</label><div class="tabbed-content docutils">
+<p>在R中选择数据的一种常见方法是使用%in%，它是使用函数match来定义的。%in%用于返回一个逻辑向量，表示是否存在匹配</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="m">4</span>
+<span class="n">s</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="cb3c9a1a-5d97-40c0-8aa3-35c9f4accbe2" name="161faad6-c82e-4c2f-8661-07712450c98f" type="radio">
+</input><label class="tabbed-label" for="cb3c9a1a-5d97-40c0-8aa3-35c9f4accbe2">
+pandas</label><div class="tabbed-content docutils">
+<p>在 pandas 中可以通过 isin 实现</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tapply">
+<h3>tapply<a class="headerlink" href="#tapply" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="7d397c42-31d3-4436-a428-d2a4a9c7670c" name="21cc2bce-3190-4a98-9b6f-c216cd070750" type="radio">
+</input><label class="tabbed-label" for="7d397c42-31d3-4436-a428-d2a4a9c7670c">
+R</label><div class="tabbed-content docutils">
+<p>Tapply类似于聚合，但数据可能是不规则的，例如使用一个名为 <code class="docutils literal notranslate"><span class="pre">baseball</span></code> 的 <code class="docutils literal notranslate"><span class="pre">data.frame</span></code>，并获得相关统计信息</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">baseball</span> <span class="o">&lt;-</span>
+  <span class="nf">data.frame</span><span class="p">(</span><span class="n">team</span> <span class="o">=</span> <span class="nf">gl</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span>
+             <span class="n">labels</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Team&quot;</span><span class="p">,</span> <span class="kc">LETTERS</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])),</span>
+             <span class="n">player</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="kc">letters</span><span class="p">,</span> <span class="m">25</span><span class="p">),</span>
+             <span class="n">batting.average</span> <span class="o">=</span> <span class="nf">runif</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="n">.</span><span class="m">200</span><span class="p">,</span> <span class="n">.</span><span class="m">400</span><span class="p">))</span>
+
+<span class="nf">tapply</span><span class="p">(</span><span class="n">baseball</span><span class="o">$</span><span class="n">batting.average</span><span class="p">,</span> <span class="n">baseball.example</span><span class="o">$</span><span class="n">team</span><span class="p">,</span>
+       <span class="n">max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="2c93840d-d93a-4a52-8713-6de2129b8fda" name="21cc2bce-3190-4a98-9b6f-c216cd070750" type="radio">
+</input><label class="tabbed-label" for="2c93840d-d93a-4a52-8713-6de2129b8fda">
+pandas</label><div class="tabbed-content docutils">
+<p>在 pandas 中可以通过 pivot_table 实现</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="n">baseball</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;team&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;team </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;player&quot;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">),</span> <span class="mi">25</span><span class="p">),</span>
+        <span class="s2">&quot;batting avg&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.200</span><span class="p">,</span> <span class="mf">0.400</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">baseball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s2">&quot;batting avg&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;team&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="subset">
+<h3>subset<a class="headerlink" href="#subset" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="5bb342c6-9587-43b1-a1e7-b66fb81aeb33" name="8c055ff3-0967-4f2c-a640-b3cae92850e6" type="radio">
+</input><label class="tabbed-label" for="5bb342c6-9587-43b1-a1e7-b66fb81aeb33">
+R</label><div class="tabbed-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">query()</span></code>方法类似于基R子集函数。在R中，你可能想要得到 <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> 的某行，其中一列的值小于另一列的值:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
+<span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">df</span><span class="o">$</span><span class="n">b</span><span class="p">,]</span>  <span class="c1"># note the comma</span>
+</pre></div>
+</div>
+</div>
+<input id="eef1c9ca-83d0-4e7d-8aab-197eb68ec254" name="8c055ff3-0967-4f2c-a640-b3cae92850e6" type="radio">
+</input><label class="tabbed-label" for="eef1c9ca-83d0-4e7d-8aab-197eb68ec254">
+pandas</label><div class="tabbed-content docutils">
+<p>在 pandas 中可以通过 <code class="docutils literal notranslate"><span class="pre">query</span></code> 来实现</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="nf">pd.DataFrame</span><span class="p">({</span><span class="s">&quot;a&quot;</span><span class="o">:</span> <span class="nf">np.random.randn</span><span class="p">(</span><span class="m">10</span><span class="p">),</span> <span class="s">&quot;b&quot;</span><span class="o">:</span> <span class="nf">np.random.randn</span><span class="p">(</span><span class="m">10</span><span class="p">)})</span>
+<span class="nf">df.query</span><span class="p">(</span><span class="s">&quot;a &lt;= b&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plyr">
+<h3>plyr<a class="headerlink" href="#plyr" title="Permalink to this headline">¶</a></h3>
+<p>plyr是一个R库，用于数据分析的分离-应用-组合策略。这些函数围绕着三种数据结构R, a代表数组，l代表列表，d代表data.frame。下表显示了如何在Python中映射这些数据结构。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>R</p></th>
+<th class="head"><p>Python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>array</p></td>
+<td><p>list</p></td>
+</tr>
+<tr class="row-odd"><td><p>lists</p></td>
+<td><p>dictionary or list of objects</p></td>
+</tr>
+<tr class="row-even"><td><p>data.frame</p></td>
+<td><p>dataframe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ddply">
+<h3>ddply<a class="headerlink" href="#ddply" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="60cd3acb-47c4-4dfa-bc98-e888f1f5b4f6" name="a7ef5391-5d61-400a-ab30-633b5310607b" type="radio">
+</input><label class="tabbed-label" for="60cd3acb-47c4-4dfa-bc98-e888f1f5b4f6">
+R</label><div class="tabbed-content docutils">
+<p>在 R 中还可以使用 ddply 来实现类似聚合的功能</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="nf">runif</span><span class="p">(</span><span class="m">120</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">168</span><span class="p">),</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="nf">runif</span><span class="p">(</span><span class="m">120</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">334</span><span class="p">),</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="nf">runif</span><span class="p">(</span><span class="m">120</span><span class="p">,</span> <span class="m">1.7</span><span class="p">,</span> <span class="m">20.7</span><span class="p">),</span>
+  <span class="n">month</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">),</span><span class="m">30</span><span class="p">),</span>
+  <span class="n">week</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">120</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nf">ddply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">.</span><span class="p">(</span><span class="n">month</span><span class="p">,</span> <span class="n">week</span><span class="p">),</span> <span class="n">summarize</span><span class="p">,</span>
+      <span class="n">mean</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="m">2</span><span class="p">),</span>
+      <span class="n">sd</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">sd</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="m">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<input id="b376531f-5ca9-4858-9cec-c018483ec613" name="a7ef5391-5d61-400a-ab30-633b5310607b" type="radio">
+</input><label class="tabbed-label" for="b376531f-5ca9-4858-9cec-c018483ec613">
+pandas</label><div class="tabbed-content docutils">
+<p>在 pandas 同样可以使用 groupby 来实现</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="nf">pd.DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s">&quot;x&quot;</span><span class="o">:</span> <span class="nf">np.random.uniform</span><span class="p">(</span><span class="m">1.0</span><span class="p">,</span> <span class="m">168.0</span><span class="p">,</span> <span class="m">120</span><span class="p">),</span>
+        <span class="s">&quot;y&quot;</span><span class="o">:</span> <span class="nf">np.random.uniform</span><span class="p">(</span><span class="m">7.0</span><span class="p">,</span> <span class="m">334.0</span><span class="p">,</span> <span class="m">120</span><span class="p">),</span>
+        <span class="s">&quot;z&quot;</span><span class="o">:</span> <span class="nf">np.random.uniform</span><span class="p">(</span><span class="m">1.7</span><span class="p">,</span> <span class="m">20.7</span><span class="p">,</span> <span class="m">120</span><span class="p">),</span>
+        <span class="s">&quot;month&quot;</span><span class="o">:</span> <span class="p">[</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">]</span> <span class="o">*</span> <span class="m">30</span><span class="p">,</span>
+        <span class="s">&quot;week&quot;</span><span class="o">:</span> <span class="nf">np.random.randint</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">120</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">grouped</span> <span class="o">=</span> <span class="nf">df.groupby</span><span class="p">([</span><span class="s">&quot;month&quot;</span><span class="p">,</span> <span class="s">&quot;week&quot;</span><span class="p">])</span>
+<span class="n">grouped</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">]</span><span class="nf">.agg</span><span class="p">([</span><span class="n">np.mean</span><span class="p">,</span> <span class="n">np.std</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>现在，你应该可以看出，使用 pandas 和 使用 R 在数据分析上的异同，并可以快速的从 R 转换到 pandas，尽情的享受 Python 生态。</p>
+</div>
 </div>
 </div>
 
@@ -821,10 +1062,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html" title="next page">
+        <a class="right-next" href="../chapter1/chapt1.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">官方教程 - 10分钟入门pandas</p>
+                <p class="prevnext-title">数据加载与存储</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -861,14 +1102,56 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transforming">
-   Transforming
+  <a class="reference internal nav-link" href="#id3">
+   数据修改
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id4">
    数据分组
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   常见操作对比
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     数据切片
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     数据聚合
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#match-in">
+     match / %in%
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tapply">
+     tapply
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subset">
+     subset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plyr">
+     plyr
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ddply">
+     ddply
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 

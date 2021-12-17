@@ -13,7 +13,7 @@ kernelspec:
 
 
 
-本页面将引导各位读者如何在 Windows 下安装配置 Python 环境
+本页面将引导各位读者如何在 Windows 下安装配置 Python 环境（至于 mac 用户，过程类似并且将会更加简单）
 
 - 如何下载安装 Python 
 - 如何下载安装 Anaconda
