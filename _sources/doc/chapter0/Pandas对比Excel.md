@@ -57,6 +57,8 @@ kernelspec:
 
 ## 常见操作对比
 
+为了更方便介绍 Pandas 相关功能，方便长期使用 Excel 进行数据分析的用户学习，下面是常见操作的 Excel 与 Pandas 实现对比。
+
 ### 1 - 数据读取
 
 #### `Excel`
@@ -90,6 +92,7 @@ pd.read_excel("示例数据.xlsx") #将示例数据.xlsx放在该Notebook同一�
 以生成**10\*2的0—1均匀分布随机数矩阵**为例，在Excel中需要使用`rand()`函数生成随机数，并手动拉取指定范围
 
 ```{figure} gif/生成数据.gif
+:width: 600px
 :align: center
 ```
 
@@ -111,6 +114,7 @@ pd.DataFrame(np.random.rand(10,2))
 在Excel中需要点击保存并设置格式/文件名
 
 ```{figure} gif/保存数据.gif
+:width: 600px
 :align: center
 ```
 
@@ -132,6 +136,7 @@ pd.DataFrame(np.random.rand(10,2))
 
 
 ```{figure} gif/数据筛选.gif
+:width: 600px
 :align: center
 ```
 
@@ -153,6 +158,7 @@ df[df['薪资水平']>5000]
 在Excel中我们可以将光标放在指定位置并右键增加一行/列，当然也可以在添加时对数据进行一些计算，比如我们就可以使用IF函数(`=IF(G2>10000,"高","低")`)，将薪资大于10000的设为高，低于10000的设为低，**添加一列**在最后
 
 ```{figure} gif/插入数据.gif
+:width: 600px
 :align: center
 ```
 
@@ -175,6 +181,7 @@ df['new_col'] = pd.cut(df['薪资水平'], bins, labels=group_names)
 在Excel删除数据十分简单，找到需要删除的数据**右键删除**即可，比如删除刚刚生成的最后一列
 
 ```{figure} gif/数据删除.gif
+:width: 600px
 :align: center
 ```
 
@@ -192,6 +199,7 @@ df['new_col'] = pd.cut(df['薪资水平'], bins, labels=group_names)
 在Excel中可以点击排序按钮进行排序，例如将示例数据按照薪资从高到低进行排序可以按照下面的步骤进行
 
 ```{figure} gif/数据排序.gif
+:width: 600px
 :align: center
 ```
 
@@ -215,6 +223,7 @@ df1
 在Excel中可以按照**查找—>定位条件—>空值**来快速定位数据中的空值，接着可以自己定义缺失值的填充方式，比如将缺失值用上一个数据进行填充
 
 ```{figure} gif/缺失值处理.gif
+:width: 600px
 :align: center
 ```
 
@@ -233,6 +242,7 @@ df.isnull().sum()
 在Excel中可以通过点击**数据—>删除重复值**按钮并选择需要去重的列即可，例如对示例数据按照创建时间列进行去重，可以发现去掉了196 个重复值，保留了 629 个唯一值。
 
 ```{figure} gif/数据去重.gif
+:width: 600px
 :align: center
 ```
 #### `Pandas`
@@ -255,6 +265,7 @@ df
 在Excel中可以选中需要转换格式的数据之后**右键—>修改单元格格式**来选择我们需要的格式
 
 ```{figure} gif/格式转换.gif
+:width: 600px
 :align: center
 ```
 
@@ -278,6 +289,7 @@ df1['创建时间'] = df1['创建时间'].dt.strftime('%Y-%m-%d')
 在Excel中交换数据是很常用的操作，以交换示例数据中地址与岗位两列为例，可以选中地址列，按住shift键并拖动边缘至下一列松开即可
 
 ```{figure} gif/数据交换.gif
+:width: 600px
 :align: center
 ```
 
@@ -298,6 +310,7 @@ df1 = df[cols]
 在Excel中可以使用公式也可以使用Ctrl+E快捷键完成多列合并，以公式为例，合并示例数据中的地址+岗位列步骤如下
 
 ```{figure} gif/数据合并.gif
+:width: 600px
 :align: center
 ```
 #### `Pandas`
@@ -316,6 +329,7 @@ df['合并列'] = df['地址'] + df['岗位']
 
 
 ```{figure} gif/数据拆分.gif
+:width: 600px
 :align: center
 ```
 
@@ -340,6 +354,7 @@ df['技能要求'].str.split(',',expand=True)
 在Excel中对数据进行分组计算需要先对需要分组的字段进行排序，之后可以通过点击分类汇总并设置相关参数完成，比如对示例数据的学历进行分组并求不同学历的平均薪资
 
 ```{figure} gif/数据分组.gif
+:width: 600px
 :align: center
 ```
 #### `Pandas`
@@ -358,6 +373,7 @@ df['技能要求'].str.split(',',expand=True)
 在Excel中有很多计算相关的公式，比如可以使用`COUNTIFS`来统计薪资大于10000的岗位数量有518个
 
 ```{figure} gif/生成数据.gif
+:width: 600px
 :align: center
 ```
 #### `Pandas`
@@ -377,6 +393,7 @@ len(df[df["薪资水平"]>10000])
 在Excel中有很多统计相关的公式，也有现成的分析工具，比如对薪资水平列进行描述性统计分析，可以通过添加工具库之后点击数据分析按钮并设置相关参数
 
 ```{figure} gif/数据统计.gif
+:width: 600px
 :align: center
 ```
 
@@ -398,6 +415,7 @@ df["薪资水平"].describe()
 在Excel中可以通过点击插入并选择图表来快速完成对数据的可视化，比如制作薪资的直方图，并且有很多样式可以直接使用
 
 ```{figure} gif/数据可视化.gif
+:width: 600px
 :align: center
 ```
 #### `Pandas`
@@ -416,6 +434,7 @@ df["薪资水平"].hist()
 在Excel中抽样可以使用公式也可以使用分析工具库中的抽样，但是仅支持对**数值型**的列抽样，比如随机抽20个示例数据中薪资的样本
 
 ```{figure} gif/数据抽样.gif
+:width: 600px
 :align: center
 ```
 
@@ -437,6 +456,7 @@ df.sample(20)
 数据透视表是一个非常强大的工具，在Excel中有现成的工具，只需要**选中数据—>点击插入—>数据透视表**即可生成，并且支持**字段的拖取**实现不同的透视表，非常方便，比如制作地址、学历、薪资的透视表
 
 ```{figure} gif/数据透视表.gif
+:width: 600px
 :align: center
 ```
 
@@ -459,6 +479,7 @@ pd.pivot_table(df,index=["地址","学历"],values=["薪资水平"])
 VLOOKUP算是EXCEL中最核心的功能之一了，我们用一个简单的数据来进行示例
 
 ```{figure} gif/vlookup.gif
+:width: 600px
 :align: center
 ```
 

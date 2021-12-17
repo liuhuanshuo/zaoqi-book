@@ -54,8 +54,8 @@
     <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="入门教程" href="Pandas%E5%AF%B9%E6%AF%94R.html" />
-    <link rel="prev" title="Pandas 入门" href="%E5%85%A5%E9%97%A8pandas.html" />
+    <link rel="next" title="Pandas 对比 R/R libraries" href="Pandas%E5%AF%B9%E6%AF%94R.html" />
+    <link rel="prev" title="官方教程 - 10分钟入门pandas" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -100,7 +100,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
-   如何在线执行代码
+   在线执行代码
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -120,7 +120,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="%E5%85%A5%E9%97%A8pandas.html">
-     Pandas入门
+     Pandas快速开始
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
+     十分钟入门Pandas
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -131,11 +136,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Pandas%E5%AF%B9%E6%AF%94R.html">
      Pandas对比R
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
-     十分钟入门Pandas
     </a>
    </li>
   </ul>
@@ -731,6 +731,7 @@
 </div>
 <div class="section" id="id3">
 <h2>常见操作对比<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>为了更方便介绍 Pandas 相关功能，方便长期使用 Excel 进行数据分析的用户学习，下面是常见操作的 Excel 与 Pandas 实现对比。</p>
 <div class="section" id="id4">
 <h3>1 - 数据读取<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="excel">
@@ -902,7 +903,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>以生成<strong>10*2的0—1均匀分布随机数矩阵</strong>为例，在Excel中需要使用<code class="docutils literal notranslate"><span class="pre">rand()</span></code>函数生成随机数，并手动拉取指定范围</p>
 <div class="figure align-center">
-<img alt="../../_images/生成数据.gif" src="../../_images/生成数据.gif" />
+<a class="reference internal image-reference" href="../../_images/生成数据.gif"><img alt="../../_images/生成数据.gif" src="../../_images/生成数据.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id7">
@@ -941,53 +942,53 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.974900</td>
-      <td>0.379701</td>
+      <td>0.130339</td>
+      <td>0.111125</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.627675</td>
-      <td>0.888371</td>
+      <td>0.489910</td>
+      <td>0.353618</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.199391</td>
-      <td>0.346442</td>
+      <td>0.561130</td>
+      <td>0.238085</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.366639</td>
-      <td>0.367113</td>
+      <td>0.734724</td>
+      <td>0.422079</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.169608</td>
-      <td>0.562362</td>
+      <td>0.211299</td>
+      <td>0.602802</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.323396</td>
-      <td>0.146846</td>
+      <td>0.435620</td>
+      <td>0.120783</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.799988</td>
-      <td>0.820283</td>
+      <td>0.305955</td>
+      <td>0.250959</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.160625</td>
-      <td>0.885217</td>
+      <td>0.721622</td>
+      <td>0.787445</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.931773</td>
-      <td>0.513422</td>
+      <td>0.522592</td>
+      <td>0.407474</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.902145</td>
-      <td>0.164769</td>
+      <td>0.554118</td>
+      <td>0.772677</td>
     </tr>
   </tbody>
 </table>
@@ -1001,7 +1002,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中需要点击保存并设置格式/文件名</p>
 <div class="figure align-center">
-<img alt="../../_images/保存数据.gif" src="../../_images/保存数据.gif" />
+<a class="reference internal image-reference" href="../../_images/保存数据.gif"><img alt="../../_images/保存数据.gif" src="../../_images/保存数据.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id10">
@@ -1022,7 +1023,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p>使用我们之前的示例数据，在Excel中筛选出<code class="docutils literal notranslate"><span class="pre">薪资大于5000</span></code>的数据步骤如下</p>
 <div class="figure align-center">
-<img alt="../../_images/数据筛选.gif" src="../../_images/数据筛选.gif" />
+<a class="reference internal image-reference" href="../../_images/数据筛选.gif"><img alt="../../_images/数据筛选.gif" src="../../_images/数据筛选.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id13">
@@ -1187,7 +1188,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中我们可以将光标放在指定位置并右键增加一行/列，当然也可以在添加时对数据进行一些计算，比如我们就可以使用IF函数(<code class="docutils literal notranslate"><span class="pre">=IF(G2&gt;10000,&quot;高&quot;,&quot;低&quot;)</span></code>)，将薪资大于10000的设为高，低于10000的设为低，<strong>添加一列</strong>在最后</p>
 <div class="figure align-center">
-<img alt="../../_images/插入数据.gif" src="../../_images/插入数据.gif" />
+<a class="reference internal image-reference" href="../../_images/插入数据.gif"><img alt="../../_images/插入数据.gif" src="../../_images/插入数据.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id16">
@@ -1210,7 +1211,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <p>在Excel删除数据十分简单，找到需要删除的数据<strong>右键删除</strong>即可，比如删除刚刚生成的最后一列</p>
 <div class="figure align-center">
-<img alt="../../_images/数据删除.gif" src="../../_images/数据删除.gif" />
+<a class="reference internal image-reference" href="../../_images/数据删除.gif"><img alt="../../_images/数据删除.gif" src="../../_images/数据删除.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id19">
@@ -1224,7 +1225,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以点击排序按钮进行排序，例如将示例数据按照薪资从高到低进行排序可以按照下面的步骤进行</p>
 <div class="figure align-center">
-<img alt="../../_images/数据排序.gif" src="../../_images/数据排序.gif" />
+<a class="reference internal image-reference" href="../../_images/数据排序.gif"><img alt="../../_images/数据排序.gif" src="../../_images/数据排序.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id22">
@@ -1402,7 +1403,7 @@
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以按照<strong>查找—&gt;定位条件—&gt;空值</strong>来快速定位数据中的空值，接着可以自己定义缺失值的填充方式，比如将缺失值用上一个数据进行填充</p>
 <div class="figure align-center">
-<img alt="../../_images/缺失值处理.gif" src="../../_images/缺失值处理.gif" />
+<a class="reference internal image-reference" href="../../_images/缺失值处理.gif"><img alt="../../_images/缺失值处理.gif" src="../../_images/缺失值处理.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id25">
@@ -1436,7 +1437,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以通过点击<strong>数据—&gt;删除重复值</strong>按钮并选择需要去重的列即可，例如对示例数据按照创建时间列进行去重，可以发现去掉了196 个重复值，保留了 629 个唯一值。</p>
 <div class="figure align-center">
-<img alt="../../_images/数据去重.gif" src="../../_images/数据去重.gif" />
+<a class="reference internal image-reference" href="../../_images/数据去重.gif"><img alt="../../_images/数据去重.gif" src="../../_images/数据去重.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id28">
@@ -1613,7 +1614,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以选中需要转换格式的数据之后<strong>右键—&gt;修改单元格格式</strong>来选择我们需要的格式</p>
 <div class="figure align-center">
-<img alt="../../_images/格式转换.gif" src="../../_images/格式转换.gif" />
+<a class="reference internal image-reference" href="../../_images/格式转换.gif"><img alt="../../_images/格式转换.gif" src="../../_images/格式转换.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id31">
@@ -1635,7 +1636,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中交换数据是很常用的操作，以交换示例数据中地址与岗位两列为例，可以选中地址列，按住shift键并拖动边缘至下一列松开即可</p>
 <div class="figure align-center">
-<img alt="../../_images/数据交换.gif" src="../../_images/数据交换.gif" />
+<a class="reference internal image-reference" href="../../_images/数据交换.gif"><img alt="../../_images/数据交换.gif" src="../../_images/数据交换.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id34">
@@ -1657,7 +1658,7 @@ dtype: int64
 <h4>Excel<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以使用公式也可以使用Ctrl+E快捷键完成多列合并，以公式为例，合并示例数据中的地址+岗位列步骤如下</p>
 <div class="figure align-center">
-<img alt="../../_images/数据合并.gif" src="../../_images/数据合并.gif" />
+<a class="reference internal image-reference" href="../../_images/数据合并.gif"><img alt="../../_images/数据合并.gif" src="../../_images/数据合并.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id37">
@@ -1678,7 +1679,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以通过点击<strong>数据—&gt;分列</strong>并按照提示的选项设置相关参数完成分列，但是由于该列含有[]等特殊字符，所以需要先使用查找替换去掉</p>
 <div class="figure align-center">
-<img alt="../../_images/数据拆分.gif" src="../../_images/数据拆分.gif" />
+<a class="reference internal image-reference" href="../../_images/数据拆分.gif"><img alt="../../_images/数据拆分.gif" src="../../_images/数据拆分.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id40">
@@ -1806,7 +1807,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中对数据进行分组计算需要先对需要分组的字段进行排序，之后可以通过点击分类汇总并设置相关参数完成，比如对示例数据的学历进行分组并求不同学历的平均薪资</p>
 <div class="figure align-center">
-<img alt="../../_images/数据分组.gif" src="../../_images/数据分组.gif" />
+<a class="reference internal image-reference" href="../../_images/数据分组.gif"><img alt="../../_images/数据分组.gif" src="../../_images/数据分组.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id43">
@@ -1820,7 +1821,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中有很多计算相关的公式，比如可以使用<code class="docutils literal notranslate"><span class="pre">COUNTIFS</span></code>来统计薪资大于10000的岗位数量有518个</p>
 <div class="figure align-center">
-<img alt="../../_images/生成数据.gif" src="../../_images/生成数据.gif" />
+<a class="reference internal image-reference" href="../../_images/生成数据.gif"><img alt="../../_images/生成数据.gif" src="../../_images/生成数据.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id46">
@@ -1846,7 +1847,7 @@ dtype: int64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中有很多统计相关的公式，也有现成的分析工具，比如对薪资水平列进行描述性统计分析，可以通过添加工具库之后点击数据分析按钮并设置相关参数</p>
 <div class="figure align-center">
-<img alt="../../_images/数据统计.gif" src="../../_images/数据统计.gif" />
+<a class="reference internal image-reference" href="../../_images/数据统计.gif"><img alt="../../_images/数据统计.gif" src="../../_images/数据统计.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id49">
@@ -1880,7 +1881,7 @@ Name: 薪资水平, dtype: float64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中可以通过点击插入并选择图表来快速完成对数据的可视化，比如制作薪资的直方图，并且有很多样式可以直接使用</p>
 <div class="figure align-center">
-<img alt="../../_images/数据可视化.gif" src="../../_images/数据可视化.gif" />
+<a class="reference internal image-reference" href="../../_images/数据可视化.gif"><img alt="../../_images/数据可视化.gif" src="../../_images/数据可视化.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id52">
@@ -1907,7 +1908,7 @@ Name: 薪资水平, dtype: float64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h4>
 <p>在Excel中抽样可以使用公式也可以使用分析工具库中的抽样，但是仅支持对<strong>数值型</strong>的列抽样，比如随机抽20个示例数据中薪资的样本</p>
 <div class="figure align-center">
-<img alt="../../_images/数据抽样.gif" src="../../_images/数据抽样.gif" />
+<a class="reference internal image-reference" href="../../_images/数据抽样.gif"><img alt="../../_images/数据抽样.gif" src="../../_images/数据抽样.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id55">
@@ -1951,136 +1952,208 @@ Name: 薪资水平, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>304</th>
-      <td>2020-03-16</td>
-      <td>北京</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析', 'SQL', '数据运营']</td>
-      <td>3-5年</td>
-      <td>25000.0</td>
-      <td>高</td>
-      <td>北京数据分析</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>2020-03-11</td>
-      <td>广州</td>
-      <td>数据开发</td>
-      <td>本科</td>
-      <td>['数据挖掘', '数据分析', '数据处理']</td>
-      <td>1-3年</td>
-      <td>8000.0</td>
-      <td>低</td>
-      <td>广州数据开发</td>
-    </tr>
-    <tr>
-      <th>516</th>
+      <th>494</th>
       <td>2020-03-16</td>
       <td>上海</td>
       <td>数据分析</td>
       <td>本科</td>
-      <td>['BI', '数据分析', 'SQL']</td>
+      <td>['数据运营', '增长黑客', 'BI', '数据分析']</td>
       <td>1-3年</td>
-      <td>16000.0</td>
+      <td>22500.0</td>
       <td>高</td>
       <td>上海数据分析</td>
     </tr>
     <tr>
-      <th>717</th>
-      <td>2020-03-10</td>
+      <th>435</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SPSS']</td>
+      <td>5-10年</td>
+      <td>27500.0</td>
+      <td>高</td>
+      <td>上海数据分析</td>
+    </tr>
+    <tr>
+      <th>734</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>不限</td>
+      <td>['商业', '数据分析', '可视化', 'SPSS']</td>
+      <td>3-5年</td>
+      <td>22500.0</td>
+      <td>高</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>1-3年</td>
+      <td>17500.0</td>
+      <td>高</td>
+      <td>杭州数据分析</td>
+    </tr>
+    <tr>
+      <th>636</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['可视化', '数据分析', 'BI']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>584</th>
+      <td>2020-03-16</td>
       <td>深圳</td>
       <td>数据开发</td>
-      <td>本科</td>
-      <td>['数据挖掘', '数据分析', 'SQLServer']</td>
-      <td>3-5年</td>
-      <td>27000.0</td>
+      <td>大专</td>
+      <td>['数据分析', 'Hadoop', 'MySQL']</td>
+      <td>不限</td>
+      <td>11500.0</td>
       <td>高</td>
       <td>深圳数据开发</td>
     </tr>
     <tr>
-      <th>142</th>
-      <td>2020-03-13</td>
-      <td>广州</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析', '数据库', '数据运营']</td>
-      <td>3-5年</td>
-      <td>20000.0</td>
-      <td>高</td>
-      <td>广州数据分析</td>
-    </tr>
-    <tr>
-      <th>347</th>
-      <td>2020-03-13</td>
-      <td>北京</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析']</td>
-      <td>1-3年</td>
-      <td>12500.0</td>
-      <td>高</td>
-      <td>北京数据分析</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>2020-03-16</td>
-      <td>广州</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析', '数据运营', 'SPSS']</td>
-      <td>3-5年</td>
-      <td>15000.0</td>
-      <td>高</td>
-      <td>广州数据分析</td>
-    </tr>
-    <tr>
-      <th>660</th>
+      <th>583</th>
       <td>2020-03-16</td>
       <td>深圳</td>
-      <td>产品经理</td>
+      <td>运营</td>
       <td>本科</td>
-      <td>['产品设计', '数据分析', '需求分析']</td>
+      <td>['运营', '产品运营', '数据分析']</td>
+      <td>3-5年</td>
+      <td>21500.0</td>
+      <td>高</td>
+      <td>深圳运营</td>
+    </tr>
+    <tr>
+      <th>768</th>
+      <td>2020-03-13</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>不限</td>
+      <td>['数据库', '数据分析']</td>
+      <td>不限</td>
+      <td>15000.0</td>
+      <td>高</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>213</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['数据分析', 'SPSS', 'SQL', '数据库']</td>
+      <td>3-5年</td>
+      <td>7500.0</td>
+      <td>低</td>
+      <td>杭州数据分析</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据开发</td>
+      <td>不限</td>
+      <td>['数据分析', 'MySQL']</td>
+      <td>3-5年</td>
+      <td>30000.0</td>
+      <td>高</td>
+      <td>杭州数据开发</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '数据分析', 'SQL']</td>
       <td>3-5年</td>
       <td>22500.0</td>
       <td>高</td>
-      <td>深圳产品经理</td>
+      <td>杭州数据分析</td>
     </tr>
     <tr>
-      <th>468</th>
+      <th>387</th>
       <td>2020-03-16</td>
-      <td>上海</td>
-      <td>数据开发</td>
+      <td>北京</td>
+      <td>数据分析</td>
       <td>本科</td>
       <td>['数据分析']</td>
       <td>5-10年</td>
       <td>30000.0</td>
       <td>高</td>
-      <td>上海数据开发</td>
+      <td>北京数据分析</td>
     </tr>
     <tr>
-      <th>173</th>
+      <th>374</th>
       <td>2020-03-16</td>
-      <td>杭州</td>
+      <td>北京</td>
       <td>数据分析</td>
       <td>本科</td>
-      <td>['数据分析', '数据运营']</td>
-      <td>5-10年</td>
-      <td>37500.0</td>
+      <td>['BI']</td>
+      <td>3-5年</td>
+      <td>40000.0</td>
       <td>高</td>
-      <td>杭州数据分析</td>
+      <td>北京数据分析</td>
     </tr>
     <tr>
-      <th>57</th>
+      <th>35</th>
       <td>2020-03-16</td>
       <td>广州</td>
       <td>数据分析</td>
       <td>本科</td>
-      <td>['数据分析', '数据运营', '数据库', 'DBA']</td>
+      <td>['数据分析', 'SQL']</td>
       <td>1-3年</td>
-      <td>6000.0</td>
-      <td>低</td>
+      <td>11500.0</td>
+      <td>高</td>
       <td>广州数据分析</td>
+    </tr>
+    <tr>
+      <th>214</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>财务</td>
+      <td>本科</td>
+      <td>['会计', '分析']</td>
+      <td>3-5年</td>
+      <td>9500.0</td>
+      <td>低</td>
+      <td>杭州财务</td>
+    </tr>
+    <tr>
+      <th>416</th>
+      <td>2020-03-16</td>
+      <td>北京</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['增长黑客', '数据分析', '数据运营', 'SQL']</td>
+      <td>1年以下</td>
+      <td>21000.0</td>
+      <td>高</td>
+      <td>北京数据分析</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>2020-03-16</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>不限</td>
+      <td>['数据分析']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>广州数据开发</td>
     </tr>
     <tr>
       <th>507</th>
@@ -2095,100 +2168,28 @@ Name: 薪资水平, dtype: float64
       <td>上海数据分析</td>
     </tr>
     <tr>
-      <th>631</th>
-      <td>2020-03-16</td>
-      <td>深圳</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>[]</td>
-      <td>3-5年</td>
-      <td>20000.0</td>
-      <td>高</td>
-      <td>深圳数据分析</td>
-    </tr>
-    <tr>
-      <th>638</th>
-      <td>2020-03-16</td>
-      <td>深圳</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析']</td>
-      <td>3-5年</td>
-      <td>17500.0</td>
-      <td>高</td>
-      <td>深圳数据分析</td>
-    </tr>
-    <tr>
-      <th>471</th>
-      <td>2020-03-16</td>
-      <td>上海</td>
-      <td>数据开发</td>
-      <td>本科</td>
-      <td>[]</td>
-      <td>1-3年</td>
-      <td>22500.0</td>
-      <td>高</td>
-      <td>上海数据开发</td>
-    </tr>
-    <tr>
-      <th>808</th>
-      <td>2020-03-16</td>
-      <td>深圳</td>
-      <td>互联网金融</td>
-      <td>本科</td>
-      <td>['风控', '跨境支付/结算']</td>
-      <td>5-10年</td>
-      <td>45000.0</td>
-      <td>高</td>
-      <td>深圳互联网金融</td>
-    </tr>
-    <tr>
-      <th>448</th>
-      <td>2020-03-16</td>
-      <td>上海</td>
-      <td>产品经理</td>
-      <td>本科</td>
-      <td>['数据分析', '手游']</td>
-      <td>5-10年</td>
-      <td>25000.0</td>
-      <td>高</td>
-      <td>上海产品经理</td>
-    </tr>
-    <tr>
-      <th>56</th>
+      <th>109</th>
       <td>2020-03-16</td>
       <td>广州</td>
       <td>数据分析</td>
-      <td>大专</td>
-      <td>['数据分析', '数据运营', 'SPSS', '数据库']</td>
+      <td>硕士</td>
+      <td>['数据分析', '可视化', 'SQL']</td>
       <td>3-5年</td>
-      <td>15000.0</td>
-      <td>高</td>
+      <td>2500.0</td>
+      <td>低</td>
       <td>广州数据分析</td>
     </tr>
     <tr>
-      <th>431</th>
+      <th>44</th>
       <td>2020-03-16</td>
-      <td>北京</td>
-      <td>数据开发</td>
+      <td>广州</td>
+      <td>数据分析</td>
       <td>本科</td>
-      <td>['数据分析', '数据仓库']</td>
-      <td>5-10年</td>
-      <td>37500.0</td>
+      <td>['数据分析', '商业']</td>
+      <td>1-3年</td>
+      <td>11500.0</td>
       <td>高</td>
-      <td>北京数据开发</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>2020-03-16</td>
-      <td>杭州</td>
-      <td>数据开发</td>
-      <td>本科</td>
-      <td>['数据分析']</td>
-      <td>应届毕业生</td>
-      <td>10500.0</td>
-      <td>高</td>
-      <td>杭州数据开发</td>
+      <td>广州数据分析</td>
     </tr>
   </tbody>
 </table>
@@ -2202,7 +2203,7 @@ Name: 薪资水平, dtype: float64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h4>
 <p>数据透视表是一个非常强大的工具，在Excel中有现成的工具，只需要<strong>选中数据—&gt;点击插入—&gt;数据透视表</strong>即可生成，并且支持<strong>字段的拖取</strong>实现不同的透视表，非常方便，比如制作地址、学历、薪资的透视表</p>
 <div class="figure align-center">
-<img alt="../../_images/数据透视表.gif" src="../../_images/数据透视表.gif" />
+<a class="reference internal image-reference" href="../../_images/数据透视表.gif"><img alt="../../_images/数据透视表.gif" src="../../_images/数据透视表.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id58">
@@ -2340,7 +2341,7 @@ Name: 薪资水平, dtype: float64
 <h4><code class="docutils literal notranslate"><span class="pre">Excel</span></code><a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h4>
 <p>VLOOKUP算是EXCEL中最核心的功能之一了，我们用一个简单的数据来进行示例</p>
 <div class="figure align-center">
-<img alt="../../_images/vlookup.gif" src="../../_images/vlookup.gif" />
+<a class="reference internal image-reference" href="../../_images/vlookup.gif"><img alt="../../_images/vlookup.gif" src="../../_images/vlookup.gif" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="id60">
@@ -2691,11 +2692,11 @@ Name: 薪资水平, dtype: float64
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="%E5%85%A5%E9%97%A8pandas.html" title="previous page">
+        <a class="left-prev" href="10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Pandas 入门</p>
+                <p class="prevnext-title">官方教程 - 10分钟入门pandas</p>
             </div>
         </a>
     </div>
@@ -2703,7 +2704,7 @@ Name: 薪资水平, dtype: float64
         <a class="right-next" href="Pandas%E5%AF%B9%E6%AF%94R.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">入门教程</p>
+                <p class="prevnext-title">Pandas 对比 R/R libraries</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
