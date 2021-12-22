@@ -12,6 +12,21 @@
 # ```{note} 
 # 本页面代码可以[在线编辑、执行](../指引/在线执行.md)！
 # ```
+# 
+# 
+# `merge`  是 `pandas` 中 `SQL` 风格的合并方法，虽然它有多个参数，但大多情况下我们只需要了解如何使用 `how（LEFT、RIGHT、OUTER、INNER）` 参数，下面是图解
+# 
+# 
+# ```{figure} https://pic.liuzaoqi.com/picgo/202112222202212.png
+# :width: 100%
+# :align: center
+# ```
+
+# In[ ]:
+
+
+
+
 
 # ## 按单键连接
 # 
