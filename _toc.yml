@@ -101,11 +101,11 @@ parts:
       - title: 数据合并
         file: doc/chapter5/数据合并
         sections:
-        - title: concat - 数据拼接
-          file: doc/chapter5/concat
         - title: merge - 数据连接
           file: doc/chapter5/merge
-        - title: join - 数据组合
+        - title: concat - 数据拼接
+          file: doc/chapter5/concat
+        - title: join - 横向连接
           file: doc/chapter5/join
 
 #######################################################################################

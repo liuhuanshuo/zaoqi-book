@@ -1,7 +1,7 @@
 # 数据修改与筛选
 
 
-
+<!-- #region -->
 ```{admonition} 在线刷题
 :class: seealso
 
@@ -9,6 +9,8 @@
 ```
 
 现在，终于来到 `pandas` 数据分析中最**高频**的操作，**「数据的增删改查」**
+
+下面是官方文档中的案例，你可以修改相关代码来验证自己的想法！
 
 在后面的**分组、聚合、透视、可视化**等多个操作中，数据的筛选、修改操作也会不断出现。
 
@@ -18,3 +20,10 @@
 
 ```{tableofcontents}
 ```
+
+
+```{figure} https://pic.liuzaoqi.com/picgo/202112242146499.png
+:width: 80%
+:align: center
+```
+<!-- #endregion -->

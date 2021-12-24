@@ -8,10 +8,20 @@
 # 
 # 检查 or 强化 `Pandas` 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a>
 # ```
-
+# 
 # ```{note} 
 # 本页面代码可以[在线编辑、执行](../指引/在线执行.md)！
 # ```
+# 
+# 数据分组是 `pandas` 数据分析的核心功能，可以将一个 `DataFrame` 根据一定的规则拆分为多个组合，并应用不同的函数进行计算，`pd.groupby`接收多个参数（`DataFrame.groupby(by=None, axis=0, level=None, as_index=True, sort=True, group_keys=True, squeeze=NoDefault.no_default, observed=False, dropna=True)`），但整体思想如下图简单的过程所示，即**分组 + 计算** 输出不同地区员工的平均薪资
+# 
+# 
+# ```{figure} https://pic.liuzaoqi.com/picgo/202112231751376.png
+# :width: 100%
+# :align: center
+# ```
+# 
+# 当然上面的过程还有其他的实现方法，例如写成 `df.groupby("地区", as_index=False)['薪资'].mean()`，如果你想进一步了解，下面是更多数据分组的案例，你可以修改相关代码来验证自己的想法！
 
 # ## 本页数据说明
 # 
@@ -213,10 +223,10 @@ get_ipython().run_line_magic('config', "InlineBackend.figure_format = 'retina'")
 plt.rcParams['font.sans-serif'] = ['Songti SC']
 
 df.groupby("district")['positionName'].count().plot(
-    kind='bar', figsize=(10, 6), color='#5172F0', fontsize=12)
+    kind='bar', figsize=(4, 2), color='#5172F0', fontsize=6)
 
-plt.ylabel("公司数量",fontsize = 14)
-plt.xlabel("杭州市各区",fontsize = 14)
+plt.ylabel("公司数量",fontsize = 8)
+plt.xlabel("杭州市各区",fontsize = 8)
 
 plt.show()
 

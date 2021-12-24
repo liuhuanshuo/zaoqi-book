@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # join - 数据组合
+# # join - 横向连接
 # 
 # `DataFrame.join`是一种将两个可能具有不同索引的 `DataFrame` 的列组合成单个 `DataFrame` 的便捷方法。
 # 
@@ -14,6 +14,23 @@
 # ```{note} 
 # 本页面代码可以[在线编辑、执行](../指引/在线执行.md)！
 # ```
+# 
+# 
+# `join` 本质上和 [merge](merge.ipynb) 类似，或者说是 `merge` 的特殊情况，所以也是一种 `SQL` 风格的合并方法。
+# 
+# 但和 `merge` 不一样的地方在于，`join` **只能按照行索引去合并数据，因此我翻译成 「横向连接」**。
+# 
+# 有关 `join` 的基本用法可以通过下图大致了解，至于 `how` 参数中的 `inner、outer` 可以参考 [merge](merge.ipynb) 中的图解。
+# 
+# 
+# ```{figure} https://pic.liuzaoqi.com/picgo/202112242051282.png
+# :width: 100%
+# :align: center
+# ```
+# 
+# 需要注意的是 `df2` 与 `df3` 的连接，如果有重复的列名，需要指定合并后左右的列名后缀，否则会报错。
+# 
+# 下面是官方文档中的案例，你可以修改相关代码来验证自己的想法！
 
 # ## 默认方法
 # 

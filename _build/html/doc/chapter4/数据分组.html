@@ -684,6 +684,11 @@
 <p class="admonition-title">Note</p>
 <p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
 </div>
+<p>数据分组是 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 数据分析的核心功能，可以将一个 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 根据一定的规则拆分为多个组合，并应用不同的函数进行计算，<code class="docutils literal notranslate"><span class="pre">pd.groupby</span></code>接收多个参数（<code class="docutils literal notranslate"><span class="pre">DataFrame.groupby(by=None,</span> <span class="pre">axis=0,</span> <span class="pre">level=None,</span> <span class="pre">as_index=True,</span> <span class="pre">sort=True,</span> <span class="pre">group_keys=True,</span> <span class="pre">squeeze=NoDefault.no_default,</span> <span class="pre">observed=False,</span> <span class="pre">dropna=True)</span></code>），但整体思想如下图简单的过程所示，即<strong>分组 + 计算</strong> 输出不同地区员工的平均薪资</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112231751376.png"><img alt="https://pic.liuzaoqi.com/picgo/202112231751376.png" src="https://pic.liuzaoqi.com/picgo/202112231751376.png" style="width: 100%;" /></a>
+</div>
+<p>当然上面的过程还有其他的实现方法，例如写成 <code class="docutils literal notranslate"><span class="pre">df.groupby(&quot;地区&quot;,</span> <span class="pre">as_index=False)['薪资'].mean()</span></code>，如果你想进一步了解，下面是更多数据分组的案例，你可以修改相关代码来验证自己的想法！</p>
 <div class="section" id="id2">
 <h2>本页数据说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>为了更好的介绍相关操作，本页面使用 <strong>某招聘网站数据.csv</strong> 数据进行展开，你应该对数据<strong>字段、数值、类型</strong>等相关信息做一个大致了解！</p>
@@ -2279,17 +2284,17 @@ Name: salary, dtype: float64
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Songti SC&#39;</span><span class="p">]</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;district&quot;</span><span class="p">)[</span><span class="s1">&#39;positionName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#5172F0&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#5172F0&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;公司数量&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;杭州市各区&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;公司数量&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;杭州市各区&quot;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/数据分组_42_0.png" src="../../_images/数据分组_42_0.png" />
+<img alt="../../_images/数据分组_41_0.png" src="../../_images/数据分组_41_0.png" />
 </div>
 </div>
 </div>

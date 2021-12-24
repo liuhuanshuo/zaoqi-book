@@ -17,10 +17,12 @@
 # `merge`  是 `pandas` 中 `SQL` 风格的合并方法，虽然它有多个参数，但大多情况下我们只需要了解如何使用 `how（LEFT、RIGHT、OUTER、INNER）` 参数，下面是图解
 # 
 # 
-# ```{figure} https://pic.liuzaoqi.com/picgo/202112222202212.png
+# ```{figure} https://pic.liuzaoqi.com/picgo/202112231753690.png
 # :width: 100%
 # :align: center
 # ```
+# 
+# 下面是官方文档中的案例，你可以修改相关代码来验证自己的想法！
 
 # In[ ]:
 
