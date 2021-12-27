@@ -5,7 +5,7 @@
 title                       : ""  # The title of the book. Will be placed in the left navbar.
 author                      : 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a>
 copyright                   : "2020-2021"  # Copyright year to be placed in the footer
-logo                        : logo.png  # A path to the book logo
+logo                        : mylogo.png  # A path to the book logo
 email                       : "huanshuo0801@gmail.com"
 exclude_patterns            : ['README.md']  # Patterns to skip when building the book. Can be glob-style (for example "*skip.ipynb")
 only_build_toc_files          : true
@@ -32,7 +32,7 @@ repository:
 html:
   comments:
     hypothesis: false
-  favicon                   : "images/logo-square.svg"  # A path to a favicon image
+  favicon                   : "images/logo.png"  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages.
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
