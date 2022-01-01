@@ -172,7 +172,9 @@ parts:
 
 #######################################################################################
 #chapt10
-- caption: 彩蛋 🎉
+- caption: 更多内容
   chapters:
   - title: Jupyter Notebook 进阶技巧
-    file: doc/chapter10/chapt10
+    file: doc/chapter10/jupyter-notebook
+  - title: Myst syntax cheat sheet
+    file: doc/chapter10/cheatsheet

@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jupyter Notebook 进阶技巧</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MyST syntax cheat sheet" href="cheatsheet.html" />
+    <link rel="prev" title="compare - 数据比较" href="../chapter9/compare.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/mylogo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  指引 📌
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">
+   使用说明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html">
+   在线执行代码
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter0/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B.html">
+   入门教程
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/Python%E5%AE%89%E8%A3%85.html">
+     Python安装与配置
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/%E5%85%A5%E9%97%A8pandas.html">
+     Pandas快速开始
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/10%E5%88%86%E9%92%9F%E5%85%A5%E9%97%A8pandas.html">
+     十分钟入门Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/Pandas%E5%AF%B9%E6%AF%94Excel.html">
+     Pandas对比Excel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter0/Pandas%E5%AF%B9%E6%AF%94R.html">
+     Pandas对比R
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  图解Pandas 📖
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/chapt1.html">
+   数据加载与存储
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter1/%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.html">
+     常见格式读取
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96Excel%E6%96%87%E4%BB%B6.html">
+       读取 Excel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96TXT.html">
+       读取 TXT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96JSON.html">
+       读取 JSON
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96SQL.html">
+       读取 SQL
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96HDF5.html">
+       读取 HDF5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5.html">
+       读取网页
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter1/%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF.html">
+       读取剪贴板
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA.html">
+     常见数据创建
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8.html">
+     数据存储
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter2/chapt2.html">
+   数据预览与预处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E6%95%B0%E6%8D%AE%E9%A2%84%E8%A7%88.html">
+     数据信息预览
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%9F%A5.html">
+     缺失值检查与处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/%E9%87%8D%E5%A4%8D%E5%80%BC%E6%A3%80%E6%9F%A5%E4%B8%8E%E5%A4%84%E7%90%86.html">
+     重复值检查与处理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter2-2/%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%88%86%E6%9E%90.html">
+   数据统计与描述性统计分析
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter3/chapt3.html">
+   数据修改与筛选
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9.html">
+     数据修改
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter3/%E6%95%B0%E6%8D%AE%E7%AD%9B%E9%80%89.html">
+     数据筛选
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E4%B8%8E%E8%81%9A%E5%90%88.html">
+   数据分组与聚合
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84.html">
+     数据分组
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88.html">
+     数据聚合
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86%E4%B8%8E%E5%90%88%E5%B9%B6.html">
+   数据透视与合并
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86.html">
+     数据透视
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter5/%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html">
+     数据合并
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/merge.html">
+       merge - 数据连接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/concat.html">
+       concat - 数据拼接
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/join.html">
+       join - 横向连接
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter6/chapt6.html">
+   金融数据与时间处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html">
+     时间处理
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E8%82%A1%E7%A5%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html">
+     股票数据分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter6/%E5%88%B6%E4%BD%9CK%E7%BA%BF%E5%9B%BE.html">
+     制作K线图
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter7/chapt7.html">
+   数据可视化
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%8A%98%E7%BA%BF%E5%9B%BE.html">
+     折线图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9D%A1%E5%BD%A2%E5%9B%BE.html">
+     条形图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E7%9B%B4%E6%96%B9%E5%9B%BE.html">
+     直方图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%95%A3%E7%82%B9%E5%9B%BE.html">
+     散点图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E5%9B%BE%E5%BD%A2.html">
+     更多图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter7/%E6%9B%B4%E5%A4%9A%E6%A0%B7%E5%BC%8F.html">
+     更多样式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter8/chapt8.html">
+   个性化显示
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/option.html">
+     option
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter8/style.html">
+     style
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter9/chapt9.html">
+   更多未提及操作
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/map%E4%B8%8Eapplymap.html">
+     map与applymap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/stack%E4%B8%8Eunstack.html">
+     stack与unstack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/isin%E7%AD%9B%E9%80%89.html">
+     isin - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/select_dtypes%E7%AD%9B%E9%80%89.html">
+     select_dtypes - 筛选
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/explode%E6%95%B0%E6%8D%AE%E5%B1%95%E5%BC%80.html">
+     explode - 数据展开
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/cusum%E7%B4%AF%E5%8A%A0%E8%AE%A1%E7%AE%97.html">
+     cusum - 累加计算
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/nunique-%E7%BB%9F%E8%AE%A1.html">
+     nunique - 统计
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/append.html">
+     append - 数据添加
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter9/compare.html">
+     compare - 数据比较
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  更多内容
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cheatsheet.html">
+   Myst syntax cheat sheet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+
+
+
+
+</div>
+
+
+          
+
+
+          
+
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+
+<div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+               <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
+               <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
+
+
+
+
+
+
+
+
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            data-feather="download-cloud"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/doc/chapter10/jupyter-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/doc/chapter10/jupyter-notebook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i data-feather="github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/liuhuanshuo/zaoqi-book/issues/new?title=Issue%20on%20page%20%2Fdoc/chapter10/jupyter-notebook.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i data-feather="play-circle"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/liuhuanshuo/zaoqi-book/main?urlpath=tree/doc/chapter10/jupyter-notebook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+
+                        <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                </ul>
+
+        </div>
+
+        <!-- Table of contents -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        <div class="qe-page__header">
+
+    <div class="qe-page__header-copy">
+        <p class="qe-page__header-heading" ><a href="https://www.baidu.com">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
+        <p class="qe-page__header-subheading"> Jupyter Notebook 进阶技巧</p>
+    </div>
+    <p class="qe-page__header-authors"><a href="https://files.mdnice.com/user/3609/09d05271-d556-4600-b66e-6be76f5a9138.jpg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
+
+</div>
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-notebook">
+<span id="content-jupyter"></span><h1>Jupyter Notebook 进阶技巧<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+<p>无论你之前是使用何种 IDE 来进行 Python 数据分析，我都建议你转到 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>，它是基于网页的用于交互计算的应用程序，支持在网页页面中直接编写代码和运行代码，代码的运行结果也会直接在代码块下显示。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 安装与使用，可以参考 <a class="reference internal" href="../chapter0/Python%E5%AE%89%E8%A3%85.html"><span class="doc std std-doc">anaconda</span></a> 安装与配置，本页面将分享一些常见的快捷键、魔法命令、插件，来帮助你更高效的进行数据分析。</p>
+<div class="section" id="id1">
+<h2>快捷键<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>在使用 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 时，有很多快捷键可以帮助我们更快的进行相关操作，下面是 macos 下的部分快捷键（Windows可以类比）</p>
+<div class="section" id="id2">
+<h3>命令模式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>在任意位置按下 <code class="docutils literal notranslate"><span class="pre">ESC</span></code> 以进入命令模式</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>快捷键</p></th>
+<th class="head"><p>功能</p></th>
+<th class="head"><p>快捷键</p></th>
+<th class="head"><p>功能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>查找并且替换</p></td>
+<td><p>A</p></td>
+<td><p>在上面插入代码块</p></td>
+</tr>
+<tr class="row-odd"><td><p>↩</p></td>
+<td><p>进入编辑模式</p></td>
+<td><p>B</p></td>
+<td><p>在下面插入代码块</p></td>
+</tr>
+<tr class="row-even"><td><p>⌘⇧F</p></td>
+<td><p>打开命令配置</p></td>
+<td><p>X</p></td>
+<td><p>剪切选择的代码块</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌘⇧P</p></td>
+<td><p>打开命令配置</p></td>
+<td><p>C</p></td>
+<td><p>复制选择的代码块</p></td>
+</tr>
+<tr class="row-even"><td><p>P</p></td>
+<td><p>打开命令配置</p></td>
+<td><p>⇧V</p></td>
+<td><p>粘贴到上面</p></td>
+</tr>
+<tr class="row-odd"><td><p>⇧↩</p></td>
+<td><p>运行代码块, 选择下面的代码块</p></td>
+<td><p>V</p></td>
+<td><p>粘贴到下面</p></td>
+</tr>
+<tr class="row-even"><td><p>⌘↩</p></td>
+<td><p>运行选中的代码块</p></td>
+<td><p>Z</p></td>
+<td><p>撤销删除</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌥↩</p></td>
+<td><p>运行代码块并且插入下面</p></td>
+<td><p>D,D</p></td>
+<td><p>删除选中单元格</p></td>
+</tr>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>把代码块变成代码</p></td>
+<td><p>⇧M</p></td>
+<td><p>合并选中单元格</p></td>
+</tr>
+<tr class="row-odd"><td><p>M</p></td>
+<td><p>把代码块变成标签</p></td>
+<td><p>⌘S</p></td>
+<td><p>保存并检查</p></td>
+</tr>
+<tr class="row-even"><td><p>R</p></td>
+<td><p>清除代码块格式</p></td>
+<td><p>S</p></td>
+<td><p>保存并检查</p></td>
+</tr>
+<tr class="row-odd"><td><p>K</p></td>
+<td><p>选择上面的代码块</p></td>
+<td><p>⌃L</p></td>
+<td><p>autopep8 selected  cell(s)</p></td>
+</tr>
+<tr class="row-even"><td><p>↑</p></td>
+<td><p>选择上面的代码块</p></td>
+<td><p>⌃⇧L</p></td>
+<td><p>autopep8 the whole  notebook</p></td>
+</tr>
+<tr class="row-odd"><td><p>↓</p></td>
+<td><p>选择下面的代码块</p></td>
+<td><p>Esc</p></td>
+<td><p>关闭页面</p></td>
+</tr>
+<tr class="row-even"><td><p>J</p></td>
+<td><p>选择下面的代码块</p></td>
+<td><p>Q</p></td>
+<td><p>关闭页面</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h3>编辑模式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>编辑任意单元格以进入编辑模式</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>快捷键</p></th>
+<th class="head"><p>功能</p></th>
+<th class="head"><p>快捷键</p></th>
+<th class="head"><p>功能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>⇥</p></td>
+<td><p>代码完成或缩进</p></td>
+<td><p>⌘↑</p></td>
+<td><p>跳到单元格起始处</p></td>
+</tr>
+<tr class="row-odd"><td><p>⇧⇥</p></td>
+<td><p>工具提示</p></td>
+<td><p>⌘↓</p></td>
+<td><p>跳到单元格最后</p></td>
+</tr>
+<tr class="row-even"><td><p>⌘]</p></td>
+<td><p>缩进</p></td>
+<td><p>⌥←</p></td>
+<td><p>跳到单词左边</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌘[</p></td>
+<td><p>取消缩进</p></td>
+<td><p>⌥→</p></td>
+<td><p>跳到单词右边</p></td>
+</tr>
+<tr class="row-even"><td><p>⌘A</p></td>
+<td><p>全选</p></td>
+<td><p>⌥⌫</p></td>
+<td><p>删除前面的单词</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌘Z</p></td>
+<td><p>撤销</p></td>
+<td><p>⌥⌦</p></td>
+<td><p>删除后面的单词</p></td>
+</tr>
+<tr class="row-even"><td><p>⌘/</p></td>
+<td><p>评论</p></td>
+<td><p>⌘⇧Z</p></td>
+<td><p>重做</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌘D</p></td>
+<td><p>删除整行</p></td>
+<td><p>⌘⇧U</p></td>
+<td><p>重新选择</p></td>
+</tr>
+<tr class="row-even"><td><p>⌘S</p></td>
+<td><p>保存并检查</p></td>
+<td><p>⌃M</p></td>
+<td><p>进入命令行模式</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌃L</p></td>
+<td><p>autopep8 selected  cell(s)</p></td>
+<td><p>Esc</p></td>
+<td><p>进入命令行模式</p></td>
+</tr>
+<tr class="row-even"><td><p>⌃⇧L</p></td>
+<td><p>autopep8 the whole  notebook</p></td>
+<td><p>⌘⇧F</p></td>
+<td><p>打开命令配置</p></td>
+</tr>
+<tr class="row-odd"><td><p>↓</p></td>
+<td><p>光标下移</p></td>
+<td><p>⌘⇧P</p></td>
+<td><p>打开命令配置</p></td>
+</tr>
+<tr class="row-even"><td><p>↑</p></td>
+<td><p>光标上移</p></td>
+<td><p>⇧↩</p></td>
+<td><p>运行代码块, 选择下面的代码块</p></td>
+</tr>
+<tr class="row-odd"><td><p>⌥↩</p></td>
+<td><p>运行代码块并且插入下面</p></td>
+<td><p>⌘↩</p></td>
+<td><p>运行选中的代码块</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>魔法命令<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>在 Jupyter Notebook 中，使用 <code class="docutils literal notranslate"><span class="pre">%lsmagic</span></code> 可以列出全部魔法命令</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011217267.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011217267.png" src="https://pic.liuzaoqi.com/picgo/202201011217267.png" style="width: 80%;" /></a>
+</div>
+<p>下面，我将分享一些好用的 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 魔法命令</p>
+<div class="attention admonition">
+<p class="admonition-title">注意</p>
+<p>以下内容仅限在 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 中使用，将代码打包至命令行或者其他 IDE 则不会生效</p>
+</div>
+<div class="section" id="id5">
+<h3>输出全部变量<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>在单元格内执行 <code class="docutils literal notranslate"><span class="pre">%whos</span></code> 可以输出当前工作环境下的全部</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011517224.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011517224.png" src="https://pic.liuzaoqi.com/picgo/202201011517224.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>计算程序执行时间<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>在单元格开头添加 <code class="docutils literal notranslate"><span class="pre">%%time</span></code> 可以自动计算该单元格内代码执行所需时间</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011525607.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011525607.png" src="https://pic.liuzaoqi.com/picgo/202201011525607.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>输出历史命令<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>如果你删除并忘记了之前执行过的某条代码，可以使用 <code class="docutils literal notranslate"><span class="pre">%history</span></code> 来查看该notebook启动后执行过的全部命令</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011528725.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011528725.png" src="https://pic.liuzaoqi.com/picgo/202201011528725.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>执行本地脚本<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">%run</span></code> 加上脚本路径可以在单元格内执行本地的 Python 脚本。</p>
+</div>
+<div class="section" id="id9">
+<h3>写入本地文件<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">%%writefile</span></code> 加上文件名可以将当前单元格内容保存至本地文件。</p>
+</div>
+<div class="section" id="id10">
+<h3>查询当前工作目录<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">%pwd</span></code> 可以输出当前 <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> 文件所在的绝对路径</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011538607.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011538607.png" src="https://pic.liuzaoqi.com/picgo/202201011538607.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="latex">
+<h3>输出 latex<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">%%latex</span></code> 可以输出 Latex 编译的内容</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011541784.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011541784.png" src="https://pic.liuzaoqi.com/picgo/202201011541784.png" style="width: 80%;" /></a>
+</div>
+<p>上面就是一些我常用的魔法命令，此外如果你对任何命令想进一步了解，都可以在对应命令后添加 <code class="docutils literal notranslate"><span class="pre">?</span></code> 来查看更多使用方法</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202201011535417.png"><img alt="https://pic.liuzaoqi.com/picgo/202201011535417.png" src="https://pic.liuzaoqi.com/picgo/202201011535417.png" style="width: 80%;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>插件<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>除了上面介绍的一些快捷键可以极大的提高工作效率，在 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 中还可以安装第三方插件来提升使用体验。</p>
+<p>若要想使用这些插件，首先需要安装相关依赖，从命令行/终端切换到当前工作环境，并执行下方代码进行安装</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter_contrib_nbextensions</span> <span class="o">&amp;&amp;</span> <span class="n">jupyter</span> <span class="n">contrib</span> <span class="n">nbextension</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>之后重新启动 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 并点击 <code class="docutils literal notranslate"><span class="pre">nbextensions</span></code> 即可进入插件配置页面</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311043443.png"><img alt="https://pic.liuzaoqi.com/picgo/202112311043443.png" src="https://pic.liuzaoqi.com/picgo/202112311043443.png" style="width: 80%;" /></a>
+</div>
+<p>下面，我讲分享一些好用的 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 插件。</p>
+<div class="section" id="table-of-contents">
+<h3>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h3>
+<p>如果你在一个 Jupyter Notebook 中同时开启了十几个单元格，那你想跟踪所有单元格就会有些困难。Table of Contents 通过添加 TOC 链接解决了这个问题，通过 TOC 链接你可以定位到页面中的任何位置。</p>
+<p>并且在使用 <a class="reference external" href="https://mp.weixin.qq.com/s/GW6OxfwIp2X8p2X9fcQZOg">Pandas进阶修炼300题</a>时开启目录插件，可以得到最完美的体验！</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311046107.png"><img alt="https://pic.liuzaoqi.com/picgo/202112311046107.png" src="https://pic.liuzaoqi.com/picgo/202112311046107.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="autopep8">
+<h3>Autopep8<a class="headerlink" href="#autopep8" title="Permalink to this headline">¶</a></h3>
+<p>大多数利用 Jupyter Notebook 进行数据分析的用户并不是专业的 Python 开发，在代码编辑规范上并没有太注意，并且有时代码越写越长并不易于分享别人阅读。</p>
+<p>这时可以使用 <code class="docutils literal notranslate"><span class="pre">Autopep8</span></code> 来快速格式化自己的代码，只需要点击插件按钮即可将代码整理成规范、易于阅读的形式</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311302647.gif"><img alt="https://pic.liuzaoqi.com/picgo/202112311302647.gif" src="https://pic.liuzaoqi.com/picgo/202112311302647.gif" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="executetime">
+<h3>ExecuteTime<a class="headerlink" href="#executetime" title="Permalink to this headline">¶</a></h3>
+<p>在 Python 中有很多方法计算某段代码的执行时间，在 Jupyter Notebook 中也支持直接输出某个单元格的执行耗时，不用写代码也能评估代码效率</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311258263.png"><img alt="https://pic.liuzaoqi.com/picgo/202112311258263.png" src="https://pic.liuzaoqi.com/picgo/202112311258263.png" style="width: 80%;" /></a>
+</div>
+<p>只需要激活 <code class="docutils literal notranslate"><span class="pre">ExecuteTime</span></code> 插件即可</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311257531.png"><img alt="https://pic.liuzaoqi.com/picgo/202112311257531.png" src="https://pic.liuzaoqi.com/picgo/202112311257531.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="nbdime">
+<h3>nbdime<a class="headerlink" href="#nbdime" title="Permalink to this headline">¶</a></h3>
+<p>使用 nbdime 可以快速对比你的 <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> 不同版本之间的差异</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311300451.png"><img alt="https://pic.liuzaoqi.com/picgo/202112311300451.png" src="https://pic.liuzaoqi.com/picgo/202112311300451.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="variable-inspector">
+<h3>Variable Inspector<a class="headerlink" href="#variable-inspector" title="Permalink to this headline">¶</a></h3>
+<p>使用 Variable Inspector 可以让你快速看到当前 Notebook 页面定义了哪些变量以及变量的基本信息</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112311314291.png"><img alt="https://pic.liuzaoqi.com/picgo/202112311314291.png" src="https://pic.liuzaoqi.com/picgo/202112311314291.png" style="width: 80%;" /></a>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "liuhuanshuo/zaoqi-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./doc/chapter10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../chapter9/compare.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">compare - 数据比较</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="cheatsheet.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">MyST syntax cheat sheet</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        <footer class="footer">
+    <div class="container">
+      <p style="font-size: 0.8em">
+        
+          By 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a><br/>
+        
+      </p>
+    </div>
+  </footer>
+        </div>
+            <div class="d-none d-md-block col-md-2 bd-toc show">
+                <div class="inner">
+                    
+                    <div class="qe-page__toc-header">
+                                    On this page
+                                </div>
+                    <nav id="bd-toc-nav" aria-label="Page">
+                        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   快捷键
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     命令模式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     编辑模式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   魔法命令
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     输出全部变量
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     计算程序执行时间
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     输出历史命令
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     执行本地脚本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     写入本地文件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     查询当前工作目录
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latex">
+     输出 latex
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   插件
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autopep8">
+     Autopep8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executetime">
+     ExecuteTime
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbdime">
+     nbdime
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-inspector">
+     Variable Inspector
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                                <img src="https://liuzaoqi.oss-cn-beijing.aliyuncs.com/picgo/202112101114946.png" style="width: 105px;height: 105px;margin-top: 2em">
+                    <p style="font-size: 0.8em;color: #444444;margin-bottom: 0.5rem;">扫码关注我的公众号</p>
+                    <p style="font-size: 0.8em;color: #444444;">Powered by <a href="https://jupyterbook.org/" style="color: #004979;">Jupyter Book</a></p>
+                    </nav>
+
+                    <div class="qe-page__toc-footer">
+                    <p><a href="#top" style="
+            color: #444;
+        "><strong>Back to top</strong></a></p>
+                </div>
+                </div>
+            </div>
+
+    </div>
+    
+
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-214732125-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
