@@ -51,7 +51,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="数据透视" href="%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86.html" />
@@ -78,7 +78,7 @@
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/mylogo.png" class="logo" alt="logo">
       
       
     </a>
@@ -318,18 +318,18 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="concat.html">
-       concat - 数据拼接
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="merge.html">
        merge - 数据连接
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="concat.html">
+       concat - 数据拼接
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="join.html">
-       join - 数据组合
+       join - 横向连接
       </a>
      </li>
     </ul>
@@ -487,13 +487,18 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  彩蛋 🎉
+  更多内容
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../chapter10/chapt10.html">
+  <a class="reference internal" href="../chapter10/jupyter-notebook.html">
    Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter10/cheatsheet.html">
+   Myst syntax cheat sheet
   </a>
  </li>
 </ul>
@@ -535,7 +540,7 @@
                 <i class="fas fa-arrow-up"></i>
             </button>
             
-               <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
+               <a href="../../index.html" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
                <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
 
 
@@ -661,35 +666,20 @@
 <p class="admonition-title">在线刷题</p>
 <p>检查 or 强化 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据分析操作？<a href="https://www.heywhale.com/mw/project/6146c0318447b8001769ff20" target="_blank">👉在线体验「Pandas进阶修炼300题」</a></p>
 </div>
-<p><strong>数据透视</strong> 可以算是利用 Pandas 进行数据分析最核心的操作，在 pandas 中可以通过 <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> ，
-如果你能熟练使用 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 进行数据透视，将会极大提高工作销效率，因为：</p>
-<ul class="simple">
-<li><p>更快的速度，并且可以自动化</p></li>
-<li><p>更易理解（看代码你就知道它做了什么）</p></li>
-<li><p>易于使用以生成报告或电子邮件</p></li>
-<li><p>更灵活，因为您可以定义自定义聚合函数</p></li>
-</ul>
-<p>但其中复杂的参数设置很容易弄混淆，本章第一部分就将通过真实的数据以期望帮助你快速熟悉、使用该函数，在开始之前还是先分享图解来帮助记忆👇</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112201848914.png"><img alt="https://pic.liuzaoqi.com/picgo/202112201848914.png" src="https://pic.liuzaoqi.com/picgo/202112201848914.png" style="width: 800px;" /></a>
-</div>
 <p>对于</p>
 <ul class="simple">
 <li><p>concat</p></li>
 <li><p>merge</p></li>
 <li><p>join</p></li>
 </ul>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112212226073.png"><img alt="https://pic.liuzaoqi.com/picgo/202112212226073.png" src="https://pic.liuzaoqi.com/picgo/202112212226073.png" style="width: 800px;" /></a>
-</div>
 <p>以下是本章全部内容，你可以点击下方链接或从左侧目录进入对应内容。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86.html">数据透视</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html">数据合并</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concat.html">concat - 数据拼接</a></li>
 <li class="toctree-l2"><a class="reference internal" href="merge.html">merge - 数据连接</a></li>
-<li class="toctree-l2"><a class="reference internal" href="join.html">join - 数据组合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concat.html">concat - 数据拼接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join.html">join - 横向连接</a></li>
 </ul>
 </li>
 </ul>

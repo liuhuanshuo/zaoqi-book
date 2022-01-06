@@ -51,7 +51,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="数据透视与合并" href="../chapter5/%E6%95%B0%E6%8D%AE%E9%80%8F%E8%A7%86%E4%B8%8E%E5%90%88%E5%B9%B6.html" />
@@ -78,7 +78,7 @@
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/mylogo.png" class="logo" alt="logo">
       
       
     </a>
@@ -318,18 +318,18 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../chapter5/concat.html">
-       concat - 数据拼接
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../chapter5/merge.html">
        merge - 数据连接
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../chapter5/concat.html">
+       concat - 数据拼接
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../chapter5/join.html">
-       join - 数据组合
+       join - 横向连接
       </a>
      </li>
     </ul>
@@ -487,13 +487,18 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  彩蛋 🎉
+  更多内容
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../chapter10/chapt10.html">
+  <a class="reference internal" href="../chapter10/jupyter-notebook.html">
    Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter10/cheatsheet.html">
+   Myst syntax cheat sheet
   </a>
  </li>
 </ul>
@@ -535,7 +540,7 @@
                 <i class="fas fa-arrow-up"></i>
             </button>
             
-               <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
+               <a href="../../index.html" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
                <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
 
 
@@ -684,6 +689,11 @@
 <p class="admonition-title">Note</p>
 <p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
 </div>
+<p>数据聚合可以在数据分组的基础上，进一步对不同列采取不同的计算规则，例如查看不同地区的员工薪资最大、最小、均值以及工作年限的均值，过程图解如下</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112231931438.png"><img alt="https://pic.liuzaoqi.com/picgo/202112231931438.png" src="https://pic.liuzaoqi.com/picgo/202112231931438.png" style="width: 100%;" /></a>
+</div>
+<p>下面是更多相关案例，你可以修改相关代码来验证自己的想法！</p>
 <div class="section" id="id2">
 <h2>本页数据说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>为了更好的介绍相关操作，本页面使用 <strong>某招聘网站数据.csv</strong> 数据进行展开，你应该对数据<strong>字段、数值、类型</strong>等相关信息做一个大致了解！</p>

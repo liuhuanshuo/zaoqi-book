@@ -51,11 +51,11 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../_static/logo-square.svg"/>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="merge - 数据连接" href="merge.html" />
-    <link rel="prev" title="数据合并" href="%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html" />
+    <link rel="next" title="join - 横向连接" href="join.html" />
+    <link rel="prev" title="merge - 数据连接" href="merge.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -78,7 +78,7 @@
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/mylogo.png" class="logo" alt="logo">
       
       
     </a>
@@ -317,19 +317,19 @@
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="merge.html">
+       merge - 数据连接
+      </a>
+     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        concat - 数据拼接
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="merge.html">
-       merge - 数据连接
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="join.html">
-       join - 数据组合
+       join - 横向连接
       </a>
      </li>
     </ul>
@@ -487,13 +487,18 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  彩蛋 🎉
+  更多内容
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../chapter10/chapt10.html">
+  <a class="reference internal" href="../chapter10/jupyter-notebook.html">
    Jupyter Notebook 进阶技巧
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chapter10/cheatsheet.html">
+   Myst syntax cheat sheet
   </a>
  </li>
 </ul>
@@ -535,7 +540,7 @@
                 <i class="fas fa-arrow-up"></i>
             </button>
             
-               <a href="https://pandas.liuzaoqi.com" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
+               <a href="../../index.html" class="btn__qehome" ><i data-feather="home" color = '#5A5A5A' data-tippy-content="Home"></i></a>
                <a class="btn__qelogo"  href="https://www.baidu.com" title="早起Code"></a>
 
 
@@ -684,6 +689,11 @@
 <p class="admonition-title">Note</p>
 <p>本页面代码可以<a class="reference internal" href="../%E6%8C%87%E5%BC%95/%E5%9C%A8%E7%BA%BF%E6%89%A7%E8%A1%8C.html"><span class="doc std std-doc">在线编辑、执行</span></a>！</p>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">concat</span></code> 我翻译成数据拼接，需要和 <a class="reference internal" href="merge.html"><span class="doc std std-doc">merge</span></a> 进行区分，在进行 concat 时一个重要的参数就是 axis ，下图是一个简单的例子</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112232236228.png"><img alt="https://pic.liuzaoqi.com/picgo/202112232236228.png" src="https://pic.liuzaoqi.com/picgo/202112232236228.png" style="width: 100%;" /></a>
+</div>
+<p>下面是官方文档中的案例，你可以修改相关代码来验证自己的想法！</p>
 <div class="section" id="id1">
 <h2>本页数据说明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>在学习本页面操作时，应先了解大致数据结构如下</p>
@@ -1365,19 +1375,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6.html" title="previous page">
+        <a class="left-prev" href="merge.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">数据合并</p>
+                <p class="prevnext-title">merge - 数据连接</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="merge.html" title="next page">
+        <a class="right-next" href="join.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">merge - 数据连接</p>
+                <p class="prevnext-title">join - 横向连接</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
