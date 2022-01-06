@@ -411,9 +411,9 @@ Windows 搜索栏中输入 Sublime Text 并点击打开：
 
 ## 下载
 
-最后如果你需要 `Python 3.9`，`Anaconda 3`，`Sublime Text 3` 安装包，可以在关注公众号「早起Python」，关注后回复安装包，一键获取与下载
+最后如果你想直接获得 `Python 3.9`，`Anaconda 3`，`Sublime Text 3` 安装包，可以微信搜索并关注公众号「早起Python」，关注后回复安装包，一键获取与下载
 
-```{figure} http://liuzaoqi.oss-cn-beijing.aliyuncs.com/2021/03/10/img45.png?域名/sample.jpg?x-oss-process=style/stylename
+```{figure} https://pic.liuzaoqi.com/picgo/202201061718037.png
 :width: 700px
 :align: center
 ```
