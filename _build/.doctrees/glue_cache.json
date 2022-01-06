@@ -1,39 +1,16 @@
 {
   "doc/chapter10/cheatsheet": {
-    "ns_mean": {
+    "example_eq": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "ns_mean",
+          "name": "example_eq",
           "mime_prefix": "application/papermill.record/"
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "-0.013043293992363862"
-      }
-    },
-    "ss_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "ss_mean",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "-0.1761737412004773"
-      }
-    },
-    "glued_text": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "glued_text",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "'here is some text!'"
+        "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
+        "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
       }
     },
     "glued_fig": {
@@ -52,17 +29,40 @@
         "application/papermill.record/image/png": null
       }
     },
-    "example_eq": {
+    "ns_mean": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "example_eq",
+          "name": "ns_mean",
           "mime_prefix": "application/papermill.record/"
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
-        "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
+        "application/papermill.record/text/plain": "0.010826799447946336"
+      }
+    },
+    "glued_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
+      }
+    },
+    "ss_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ss_mean",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "0.6835951992919027"
       }
     }
   }
