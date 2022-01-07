@@ -1,15 +1,31 @@
 {
   "doc/chapter10/cheatsheet": {
-    "ns_mean": {
+    "glued_fig": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "ns_mean",
+          "name": "glued_fig",
           "mime_prefix": "application/papermill.record/"
+        },
+        "filenames": {
+          "image/png": "/Users/liuzaoqi/Desktop/zaoqi-book/_build/jupyter_execute/doc/chapter10/cheatsheet_7_0.png"
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "0.073525758357935"
+        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
+        "application/papermill.record/image/png": null
+      }
+    },
+    "ss_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ss_mean",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "0.13731814836673803"
       }
     },
     "example_eq": {
@@ -25,18 +41,6 @@
         "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
       }
     },
-    "ss_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "ss_mean",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "-0.5802164300210795"
-      }
-    },
     "glued_text": {
       "output_type": "display_data",
       "metadata": {
@@ -49,20 +53,16 @@
         "text/plain": "'here is some text!'"
       }
     },
-    "glued_fig": {
+    "ns_mean": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "glued_fig",
+          "name": "ns_mean",
           "mime_prefix": "application/papermill.record/"
-        },
-        "filenames": {
-          "image/png": "/Users/liuzaoqi/Desktop/zaoqi-book/_build/jupyter_execute/doc/chapter10/cheatsheet_7_0.png"
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
-        "application/papermill.record/image/png": null
+        "application/papermill.record/text/plain": "-0.00686428501742897"
       }
     }
   }

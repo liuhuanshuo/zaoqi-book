@@ -27,11 +27,11 @@
 ---
 **[完整的Pandas教程](doc/指引/使用说明.md)** 🚀
 ^^^
-本教程涵盖大部分 pandas 内容，精选十大常用操作并已专题形式呈现，从入门的[数据读取](doc/chapter1/常见文件读取.md)到进阶[数据合并](doc/chapter5/数据合并.md)等操纵全部涵盖，更有 [Jupyter Notebook 进阶操作](doc/chapter10/jupyter-notebook.md)讲解你可以将其视为一份教程亦或是作速查手册。
+本教程涵盖大部分 pandas 内容，精选十大常用操作并已专题形式呈现，从入门的[数据读取](doc/chapter1/常见文件读取.md)到进阶[数据合并](doc/chapter5/数据合并.md)等操纵全部涵盖，更有 [Jupyter Notebook 进阶操作](doc/chapter10/jupyter-notebook.md)讲解，你可以将其视为一份教程亦或是作速查手册。
 
 ---
 **[操作图解](doc/指引/在线执行.md)** 🎨
 ^^^
-在部分核心章节，例如[数据分组](doc/chapter4/数据分组.ipynb)、[数据透视](doc/chapter5/数据透视.ipynb)、[数据合并](doc/chapter5/数据合并.md)等，我添加了一些过程图解来更方便理解相关操作
+在部分核心章节，例如[数据分组](doc/chapter4/数据分组.ipynb)、[数据透视](doc/chapter5/数据透视.ipynb)、[数据合并](doc/chapter5/数据合并.md)等，我添加了一些过程图解来让不熟悉的用户更方便理解相关操作.
 
 :::
