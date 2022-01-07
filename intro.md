@@ -1,5 +1,7 @@
 # Welcome 👏
 
+
+
 2018年，随着Python量化交易火了起来，我第一次接触 `pandas` 并迅速爱上这款神器。
 
 2019年，我申请了 [微信公众号](https://pic.liuzaoqi.com/picgo/202112150908823.jpeg) 来分享我的 pandas 随笔，逐渐积累一些粉丝。
@@ -30,12 +32,6 @@
 ---
 **[操作图解](doc/指引/在线执行.md)** 🎨
 ^^^
-在部分核心章节，例如[数据透视](doc/chapter5/数据透视.ipynb)、[数据合并](doc/chapter5/数据合并.md)、[数据分组](doc/chapter4/数据分组.ipynb)等，我添加了一些过程图解来更方便理解相关操作
+在部分核心章节，例如[数据分组](doc/chapter4/数据分组.ipynb)、[数据透视](doc/chapter5/数据透视.ipynb)、[数据合并](doc/chapter5/数据合并.md)等，我添加了一些过程图解来更方便理解相关操作
 
 :::
-
-## Find the right documentation resources
-
-Here are a few pointers to help you get started.
-
-## 跟多

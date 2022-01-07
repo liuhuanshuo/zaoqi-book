@@ -9,19 +9,7 @@
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "-0.19350212382187149"
-      }
-    },
-    "ss_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "ss_mean",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "-0.023430474699491943"
+        "application/papermill.record/text/plain": "0.073525758357935"
       }
     },
     "example_eq": {
@@ -35,6 +23,30 @@
       "data": {
         "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
         "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
+      }
+    },
+    "ss_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ss_mean",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "-0.5802164300210795"
+      }
+    },
+    "glued_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
       }
     },
     "glued_fig": {
@@ -51,18 +63,6 @@
       "data": {
         "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
         "application/papermill.record/image/png": null
-      }
-    },
-    "glued_text": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "glued_text",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "'here is some text!'"
       }
     }
   }

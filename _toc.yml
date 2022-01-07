@@ -22,7 +22,7 @@ parts:
       - title: Pandas对比R
         file: doc/chapter0/Pandas对比R
 
-- caption: 图解Pandas 📖
+- caption: 图解Pandas 🔥
   chapters:
 #######################################################################################
 #chapt1
@@ -172,7 +172,7 @@ parts:
 
 #######################################################################################
 #chapt10
-- caption: 更多内容🚀
+- caption: 更多内容 🚀
   chapters:
   - title: Jupyter Notebook 进阶技巧
     file: doc/chapter10/jupyter-notebook

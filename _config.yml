@@ -3,7 +3,7 @@
 #######################################################################################
 # Book settings
 title                       : ""  # The title of the book. Will be placed in the left navbar.
-author                      : 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a> | <a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a>
+author                      : 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a>｜<a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a>｜<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"><img src="https://img.shields.io/badge/微信公众号-5w%2B-green?logo=wechat&style=social" style="padding-bottom:0.2em;" /></a> &nbsp; <a href="https://github.com/liuhuanshuo/zaoqi-book" target="_blank"><img src="https://img.shields.io/github/stars/liuhuanshuo/zaoqi-book.svg?logo=Github&style=social" style="padding-bottom:0.2em;" /></a>
 copyright                   : "2020-2021"  # Copyright year to be placed in the footer
 logo                        : mylogo.png  # A path to the book logo
 email                       : "huanshuo0801@gmail.com"
