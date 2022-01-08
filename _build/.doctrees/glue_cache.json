@@ -1,33 +1,5 @@
 {
   "doc/chapter10/cheatsheet": {
-    "glued_fig": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "glued_fig",
-          "mime_prefix": "application/papermill.record/"
-        },
-        "filenames": {
-          "image/png": "/Users/liuzaoqi/Desktop/zaoqi-book/_build/jupyter_execute/doc/chapter10/cheatsheet_7_0.png"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
-        "application/papermill.record/image/png": null
-      }
-    },
-    "ss_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "ss_mean",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "0.13731814836673803"
-      }
-    },
     "example_eq": {
       "output_type": "display_data",
       "metadata": {
@@ -62,7 +34,35 @@
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "-0.00686428501742897"
+        "application/papermill.record/text/plain": "0.04708535005018939"
+      }
+    },
+    "glued_fig": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_fig",
+          "mime_prefix": "application/papermill.record/"
+        },
+        "filenames": {
+          "image/png": "/Users/liuzaoqi/Desktop/zaoqi-book/_build/jupyter_execute/doc/chapter10/cheatsheet_7_0.png"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
+        "application/papermill.record/image/png": null
+      }
+    },
+    "ss_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ss_mean",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "-0.13620173528056664"
       }
     }
   }
