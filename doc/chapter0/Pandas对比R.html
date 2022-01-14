@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandas 对比 R/R libraries</title>
+    <title>Pandas 对比 R/R libraries &#8212; Graph Pandas</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -80,6 +80,8 @@
       
       <img src="../../_static/mylogo.png" class="logo" alt="logo">
       
+      
+      <h1 class="site-logo" id="site-title">Graph Pandas</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -790,8 +792,8 @@
 <div class="section" id="id6">
 <h3>数据切片<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e6490d18-f569-4f06-82a3-50bcaa1ddd4f" name="beb9f399-8c25-474d-9355-0b8f7153c6bf" type="radio">
-</input><label class="tabbed-label" for="e6490d18-f569-4f06-82a3-50bcaa1ddd4f">
+<input checked="checked" id="bf2f7908-c9a0-420c-849f-ca14b525059c" name="72122e93-81a7-434d-ac2d-8c09b18348da" type="radio">
+</input><label class="tabbed-label" for="bf2f7908-c9a0-420c-849f-ca14b525059c">
 R</label><div class="tabbed-content docutils">
 <p>在 R 中使用 data.frame按名称访问列</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">e</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">5</span><span class="p">))</span>
@@ -804,8 +806,8 @@ R</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b7cf818f-3acf-42ef-81a2-7270f512c577" name="beb9f399-8c25-474d-9355-0b8f7153c6bf" type="radio">
-</input><label class="tabbed-label" for="b7cf818f-3acf-42ef-81a2-7270f512c577">
+<input id="2c1858a4-7368-46b8-9279-7f28d41cac08" name="72122e93-81a7-434d-ac2d-8c09b18348da" type="radio">
+</input><label class="tabbed-label" for="2c1858a4-7368-46b8-9279-7f28d41cac08">
 pandas</label><div class="tabbed-content docutils">
 <p>在 pandas 中同样可以使用列名来访问对应列</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">))</span>
@@ -830,8 +832,8 @@ pandas</label><div class="tabbed-content docutils">
 <div class="section" id="id7">
 <h3>数据聚合<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c3acba36-1810-4a05-87b4-8b26ccd960a6" name="5f2fae74-0b19-4855-a612-d4d8f8723cd1" type="radio">
-</input><label class="tabbed-label" for="c3acba36-1810-4a05-87b4-8b26ccd960a6">
+<input checked="checked" id="11b968ff-c9ea-46a6-964e-aeef8d8a4077" name="bbbd1b9c-3599-48dd-b6e3-66401839a2aa" type="radio">
+</input><label class="tabbed-label" for="11b968ff-c9ea-46a6-964e-aeef8d8a4077">
 R</label><div class="tabbed-content docutils">
 <p>在R中，可以按如下形式将 dataframe 分成两组并计算均值</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
@@ -843,8 +845,8 @@ R</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6e0aad07-b3bf-4cfc-a09f-0dd96b1de752" name="5f2fae74-0b19-4855-a612-d4d8f8723cd1" type="radio">
-</input><label class="tabbed-label" for="6e0aad07-b3bf-4cfc-a09f-0dd96b1de752">
+<input id="b10edbf6-8c82-46d6-9087-0db69a1f59ac" name="bbbd1b9c-3599-48dd-b6e3-66401839a2aa" type="radio">
+</input><label class="tabbed-label" for="b10edbf6-8c82-46d6-9087-0db69a1f59ac">
 pandas</label><div class="tabbed-content docutils">
 <p>在 pandas 中同样可以使用 groupby 来实现</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
@@ -879,8 +881,8 @@ pandas</label><div class="tabbed-content docutils">
 <div class="section" id="match-in">
 <h3>match / %in%<a class="headerlink" href="#match-in" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2f2b81e7-189f-4bbc-86d1-48cfa38771a8" name="898b8c00-179d-4190-b6d5-28a714d46aad" type="radio">
-</input><label class="tabbed-label" for="2f2b81e7-189f-4bbc-86d1-48cfa38771a8">
+<input checked="checked" id="d49c4687-d7a1-4d0d-97c0-5d70067cffdb" name="143175dd-e59f-48fd-b732-b999e947742c" type="radio">
+</input><label class="tabbed-label" for="d49c4687-d7a1-4d0d-97c0-5d70067cffdb">
 R</label><div class="tabbed-content docutils">
 <p>在R中选择数据的一种常见方法是使用%in%，它是使用函数match来定义的。%in%用于返回一个逻辑向量，表示是否存在匹配</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="m">4</span>
@@ -888,8 +890,8 @@ R</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="baccb97e-0d45-4c2e-8974-719a38adc23f" name="898b8c00-179d-4190-b6d5-28a714d46aad" type="radio">
-</input><label class="tabbed-label" for="baccb97e-0d45-4c2e-8974-719a38adc23f">
+<input id="fa444e03-4daf-44b8-8ea4-46fcb7e44ee0" name="143175dd-e59f-48fd-b732-b999e947742c" type="radio">
+</input><label class="tabbed-label" for="fa444e03-4daf-44b8-8ea4-46fcb7e44ee0">
 pandas</label><div class="tabbed-content docutils">
 <p>在 pandas 中可以通过 isin 实现</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -902,8 +904,8 @@ pandas</label><div class="tabbed-content docutils">
 <div class="section" id="tapply">
 <h3>tapply<a class="headerlink" href="#tapply" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="044e3041-fb96-4722-b7fa-68ca9015c506" name="9fd56f0c-e049-48b7-94c8-0684aef0f385" type="radio">
-</input><label class="tabbed-label" for="044e3041-fb96-4722-b7fa-68ca9015c506">
+<input checked="checked" id="fa143a16-36b8-45d5-b4e3-114ae2a0c999" name="c7acefab-8925-476e-a2de-e91664130ecd" type="radio">
+</input><label class="tabbed-label" for="fa143a16-36b8-45d5-b4e3-114ae2a0c999">
 R</label><div class="tabbed-content docutils">
 <p>Tapply类似于聚合，但数据可能是不规则的，例如使用一个名为 <code class="docutils literal notranslate"><span class="pre">baseball</span></code> 的 <code class="docutils literal notranslate"><span class="pre">data.frame</span></code>，并获得相关统计信息</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">baseball</span> <span class="o">&lt;-</span>
@@ -917,8 +919,8 @@ R</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b701de99-e4ff-4c80-8ce9-608580aa33c6" name="9fd56f0c-e049-48b7-94c8-0684aef0f385" type="radio">
-</input><label class="tabbed-label" for="b701de99-e4ff-4c80-8ce9-608580aa33c6">
+<input id="f24b8b67-c45f-4578-8eeb-2fae28cc4fcb" name="c7acefab-8925-476e-a2de-e91664130ecd" type="radio">
+</input><label class="tabbed-label" for="f24b8b67-c45f-4578-8eeb-2fae28cc4fcb">
 pandas</label><div class="tabbed-content docutils">
 <p>在 pandas 中可以通过 pivot_table 实现</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -939,8 +941,8 @@ pandas</label><div class="tabbed-content docutils">
 <div class="section" id="subset">
 <h3>subset<a class="headerlink" href="#subset" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d4401e28-2554-4814-a4dd-e2f2708dd2e3" name="3737d0b6-b376-46e7-b219-480568caff18" type="radio">
-</input><label class="tabbed-label" for="d4401e28-2554-4814-a4dd-e2f2708dd2e3">
+<input checked="checked" id="627f142f-d04e-43e1-96c7-7b684293fe7e" name="e98b5f2a-4a17-4132-ab0a-e6d639a2b1f0" type="radio">
+</input><label class="tabbed-label" for="627f142f-d04e-43e1-96c7-7b684293fe7e">
 R</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">query()</span></code>方法类似于基R子集函数。在R中，你可能想要得到 <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> 的某行，其中一列的值小于另一列的值:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
@@ -949,8 +951,8 @@ R</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="a44aa06e-bfca-4c51-9181-58371050c0ba" name="3737d0b6-b376-46e7-b219-480568caff18" type="radio">
-</input><label class="tabbed-label" for="a44aa06e-bfca-4c51-9181-58371050c0ba">
+<input id="826a18fa-4924-46f9-b909-1caa55528dda" name="e98b5f2a-4a17-4132-ab0a-e6d639a2b1f0" type="radio">
+</input><label class="tabbed-label" for="826a18fa-4924-46f9-b909-1caa55528dda">
 pandas</label><div class="tabbed-content docutils">
 <p>在 pandas 中可以通过 <code class="docutils literal notranslate"><span class="pre">query</span></code> 来实现</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="nf">pd.DataFrame</span><span class="p">({</span><span class="s">&quot;a&quot;</span><span class="o">:</span> <span class="nf">np.random.randn</span><span class="p">(</span><span class="m">10</span><span class="p">),</span> <span class="s">&quot;b&quot;</span><span class="o">:</span> <span class="nf">np.random.randn</span><span class="p">(</span><span class="m">10</span><span class="p">)})</span>
@@ -985,8 +987,8 @@ pandas</label><div class="tabbed-content docutils">
 <div class="section" id="ddply">
 <h3>ddply<a class="headerlink" href="#ddply" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2470fbce-1510-4cb0-874e-7b605b88b0c2" name="49d9fcb0-67b1-4c7c-a4f3-76156f5acc5e" type="radio">
-</input><label class="tabbed-label" for="2470fbce-1510-4cb0-874e-7b605b88b0c2">
+<input checked="checked" id="f0d41d41-e960-467d-8517-f81b7bb248f5" name="44889860-50c7-4340-8432-22cbd2422f8b" type="radio">
+</input><label class="tabbed-label" for="f0d41d41-e960-467d-8517-f81b7bb248f5">
 R</label><div class="tabbed-content docutils">
 <p>在 R 中还可以使用 ddply 来实现类似聚合的功能</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
@@ -1004,8 +1006,8 @@ R</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="81f7f3f8-f59b-4bd7-b944-34098e9e73de" name="49d9fcb0-67b1-4c7c-a4f3-76156f5acc5e" type="radio">
-</input><label class="tabbed-label" for="81f7f3f8-f59b-4bd7-b944-34098e9e73de">
+<input id="81265c19-9607-4e01-ab4c-259f51e9903e" name="44889860-50c7-4340-8432-22cbd2422f8b" type="radio">
+</input><label class="tabbed-label" for="81265c19-9607-4e01-ab4c-259f51e9903e">
 pandas</label><div class="tabbed-content docutils">
 <p>在 pandas 同样可以使用 groupby 来实现</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="nf">pd.DataFrame</span><span class="p">(</span>
