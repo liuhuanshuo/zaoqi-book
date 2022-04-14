@@ -170,7 +170,7 @@ parts:
       - title: compare - 数据比较
         file: doc/chapter9/compare
 
-#######################################################################################
+######################################################################################
 #chapt10
 - caption: 更多内容 🚀
   chapters:
@@ -178,3 +178,5 @@ parts:
     file: doc/chapter10/jupyter-notebook
   - title: Myst syntax cheat sheet
     file: doc/chapter10/cheatsheet
+  - title: ☕️ 支持网站
+    file: doc/chapter10/donate

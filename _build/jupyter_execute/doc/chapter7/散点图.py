@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 直方图
+# # 散点图
 # 
 # ```{admonition} 在线刷题
 # :class: seealso
