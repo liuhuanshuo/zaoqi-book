@@ -1492,7 +1492,6 @@ div.figure> a > img{
 /* ###############0414修改a标签高亮####################### */
 a:hover {
     color: #0072BC !important;
-    text-decoration: none !important;
 }
 /* ################################################## */
 
