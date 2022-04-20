@@ -494,6 +494,23 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter11/chapt11.html">
+   常见操作合集
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/Data_encoding.html">
+     数据编码的十种方式
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
@@ -960,53 +977,53 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.281923</td>
-      <td>0.785344</td>
+      <td>0.636592</td>
+      <td>0.658945</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.838678</td>
-      <td>0.395593</td>
+      <td>0.598214</td>
+      <td>0.877185</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.645973</td>
-      <td>0.878351</td>
+      <td>0.146614</td>
+      <td>0.483857</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.011443</td>
-      <td>0.624118</td>
+      <td>0.179252</td>
+      <td>0.150583</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.107263</td>
-      <td>0.266443</td>
+      <td>0.280876</td>
+      <td>0.185911</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.889143</td>
-      <td>0.490374</td>
+      <td>0.133630</td>
+      <td>0.970894</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.918822</td>
-      <td>0.218971</td>
+      <td>0.470957</td>
+      <td>0.666606</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.646647</td>
-      <td>0.028896</td>
+      <td>0.633806</td>
+      <td>0.507048</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.806861</td>
-      <td>0.188340</td>
+      <td>0.121952</td>
+      <td>0.527328</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.141035</td>
-      <td>0.428383</td>
+      <td>0.318853</td>
+      <td>0.926812</td>
     </tr>
   </tbody>
 </table>
@@ -1970,64 +1987,112 @@ Name: 薪资水平, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>56</th>
+      <th>38</th>
       <td>2020-03-16</td>
       <td>广州</td>
       <td>数据分析</td>
-      <td>大专</td>
-      <td>['数据分析', '数据运营', 'SPSS', '数据库']</td>
+      <td>本科</td>
+      <td>['数据分析', '数据库']</td>
       <td>3-5年</td>
-      <td>15000.0</td>
+      <td>14000.0</td>
       <td>高</td>
       <td>广州数据分析</td>
     </tr>
     <tr>
-      <th>685</th>
+      <th>611</th>
+      <td>2020-03-15</td>
+      <td>深圳</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['IT支持']</td>
+      <td>1年以下</td>
+      <td>1500.0</td>
+      <td>低</td>
+      <td>深圳数据开发</td>
+    </tr>
+    <tr>
+      <th>587</th>
       <td>2020-03-16</td>
       <td>深圳</td>
-      <td>数据分析</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['MySQL', '数据挖掘', 'Spark', '数据分析']</td>
+      <td>1-3年</td>
+      <td>30000.0</td>
+      <td>高</td>
+      <td>深圳数据开发</td>
+    </tr>
+    <tr>
+      <th>475</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>运营</td>
       <td>本科</td>
       <td>['数据分析']</td>
       <td>3-5年</td>
-      <td>35000.0</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>上海运营</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2020-03-16</td>
+      <td>广州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>不限</td>
+      <td>17500.0</td>
+      <td>高</td>
+      <td>广州数据开发</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2020-03-15</td>
+      <td>广州</td>
+      <td>游戏策划</td>
+      <td>本科</td>
+      <td>[]</td>
+      <td>应届毕业生</td>
+      <td>6000.0</td>
+      <td>低</td>
+      <td>广州游戏策划</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>2020-03-14</td>
+      <td>广州</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
+      <td>应届毕业生</td>
+      <td>3000.0</td>
+      <td>低</td>
+      <td>广州数据分析</td>
+    </tr>
+    <tr>
+      <th>771</th>
+      <td>2020-03-13</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['商业', '数据分析']</td>
+      <td>3-5年</td>
+      <td>12500.0</td>
       <td>高</td>
       <td>深圳数据分析</td>
     </tr>
     <tr>
-      <th>40</th>
+      <th>575</th>
       <td>2020-03-16</td>
-      <td>广州</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>[]</td>
-      <td>3-5年</td>
-      <td>17500.0</td>
-      <td>高</td>
-      <td>广州数据分析</td>
-    </tr>
-    <tr>
-      <th>292</th>
-      <td>2020-03-16</td>
-      <td>北京</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>[]</td>
-      <td>不限</td>
-      <td>30000.0</td>
-      <td>高</td>
-      <td>北京数据分析</td>
-    </tr>
-    <tr>
-      <th>719</th>
-      <td>2020-03-11</td>
       <td>深圳</td>
-      <td>数据开发</td>
-      <td>本科</td>
-      <td>['数据挖掘', '数据分析']</td>
-      <td>3-5年</td>
-      <td>22500.0</td>
-      <td>高</td>
-      <td>深圳数据开发</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['SQL', '数据分析', 'BI', '数据库']</td>
+      <td>1-3年</td>
+      <td>9000.0</td>
+      <td>低</td>
+      <td>深圳数据分析</td>
     </tr>
     <tr>
       <th>102</th>
@@ -2042,172 +2107,124 @@ Name: 薪资水平, dtype: float64
       <td>广州数据分析</td>
     </tr>
     <tr>
-      <th>455</th>
-      <td>2020-03-16</td>
-      <td>上海</td>
+      <th>747</th>
+      <td>2019-12-26</td>
+      <td>深圳</td>
       <td>数据分析</td>
       <td>本科</td>
-      <td>['商业', 'BI', '可视化', '数据分析']</td>
+      <td>['可视化', '数据分析', '数据运营']</td>
+      <td>1-3年</td>
+      <td>8000.0</td>
+      <td>低</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据分析</td>
+      <td>大专</td>
+      <td>['BI', '数据分析', '数据运营']</td>
+      <td>3-5年</td>
+      <td>11500.0</td>
+      <td>高</td>
+      <td>杭州数据分析</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>2020-03-16</td>
+      <td>北京</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Hadoop', '算法', '数据分析']</td>
+      <td>5-10年</td>
+      <td>23500.0</td>
+      <td>高</td>
+      <td>北京数据开发</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['Oracle', 'Hadoop', 'Spark', 'MySQL']</td>
+      <td>不限</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>杭州数据开发</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>2020-03-16</td>
+      <td>杭州</td>
+      <td>数据开发</td>
+      <td>本科</td>
+      <td>['ETL']</td>
+      <td>不限</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>杭州数据开发</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>2020-03-13</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析']</td>
       <td>1-3年</td>
       <td>11500.0</td>
       <td>高</td>
-      <td>上海数据分析</td>
-    </tr>
-    <tr>
-      <th>562</th>
-      <td>2020-03-16</td>
-      <td>上海</td>
-      <td>数据分析</td>
-      <td>硕士</td>
-      <td>['数据分析']</td>
-      <td>不限</td>
-      <td>12500.0</td>
-      <td>高</td>
-      <td>上海数据分析</td>
-    </tr>
-    <tr>
-      <th>219</th>
-      <td>2020-03-16</td>
-      <td>杭州</td>
-      <td>高端产品职位</td>
-      <td>本科</td>
-      <td>[]</td>
-      <td>5-10年</td>
-      <td>32500.0</td>
-      <td>高</td>
-      <td>杭州高端产品职位</td>
-    </tr>
-    <tr>
-      <th>225</th>
-      <td>2020-03-16</td>
-      <td>杭州</td>
-      <td>数据开发</td>
-      <td>不限</td>
-      <td>['MySQL', '数据挖掘']</td>
-      <td>不限</td>
-      <td>20000.0</td>
-      <td>高</td>
-      <td>杭州数据开发</td>
-    </tr>
-    <tr>
-      <th>492</th>
-      <td>2020-03-16</td>
-      <td>上海</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['商业', '数据分析']</td>
-      <td>3-5年</td>
-      <td>20000.0</td>
-      <td>高</td>
-      <td>上海数据分析</td>
-    </tr>
-    <tr>
-      <th>132</th>
-      <td>2020-03-12</td>
-      <td>广州</td>
-      <td>市场|营销</td>
-      <td>本科</td>
-      <td>['数据分析']</td>
-      <td>应届毕业生</td>
-      <td>1500.0</td>
-      <td>低</td>
-      <td>广州市场|营销</td>
-    </tr>
-    <tr>
-      <th>619</th>
-      <td>2020-03-16</td>
-      <td>深圳</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析']</td>
-      <td>3-5年</td>
-      <td>22500.0</td>
-      <td>高</td>
       <td>深圳数据分析</td>
     </tr>
     <tr>
-      <th>214</th>
+      <th>597</th>
       <td>2020-03-16</td>
-      <td>杭州</td>
-      <td>财务</td>
-      <td>本科</td>
-      <td>['会计', '分析']</td>
-      <td>3-5年</td>
-      <td>9500.0</td>
-      <td>低</td>
-      <td>杭州财务</td>
-    </tr>
-    <tr>
-      <th>758</th>
-      <td>2020-03-13</td>
       <td>深圳</td>
       <td>数据开发</td>
       <td>本科</td>
-      <td>[]</td>
-      <td>不限</td>
-      <td>4000.0</td>
-      <td>低</td>
+      <td>['MySQL', '数据挖掘']</td>
+      <td>1-3年</td>
+      <td>22500.0</td>
+      <td>高</td>
       <td>深圳数据开发</td>
     </tr>
     <tr>
-      <th>355</th>
-      <td>2020-03-16</td>
-      <td>北京</td>
-      <td>市场|营销</td>
-      <td>本科</td>
-      <td>['数据分析', '行业分析', '市场分析', '消费者分析']</td>
-      <td>5-10年</td>
-      <td>22500.0</td>
-      <td>高</td>
-      <td>北京市场|营销</td>
-    </tr>
-    <tr>
-      <th>734</th>
+      <th>590</th>
       <td>2020-03-16</td>
       <td>深圳</td>
       <td>数据分析</td>
+      <td>本科</td>
+      <td>['数据分析', 'SQL']</td>
+      <td>3-5年</td>
+      <td>22500.0</td>
+      <td>高</td>
+      <td>深圳数据分析</td>
+    </tr>
+    <tr>
+      <th>564</th>
+      <td>2020-03-16</td>
+      <td>上海</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['BI', '商业', '数据分析', '数据运营']</td>
+      <td>3-5年</td>
+      <td>20000.0</td>
+      <td>高</td>
+      <td>上海数据分析</td>
+    </tr>
+    <tr>
+      <th>617</th>
+      <td>2020-03-16</td>
+      <td>深圳</td>
+      <td>数据分析</td>
+      <td>本科</td>
+      <td>['SQL', '数据库']</td>
       <td>不限</td>
-      <td>['商业', '数据分析', '可视化', 'SPSS']</td>
-      <td>3-5年</td>
-      <td>22500.0</td>
+      <td>12000.0</td>
       <td>高</td>
       <td>深圳数据分析</td>
-    </tr>
-    <tr>
-      <th>233</th>
-      <td>2020-03-16</td>
-      <td>杭州</td>
-      <td>数据开发</td>
-      <td>本科</td>
-      <td>['数据分析', 'MySQL', '数据挖掘']</td>
-      <td>3-5年</td>
-      <td>37500.0</td>
-      <td>高</td>
-      <td>杭州数据开发</td>
-    </tr>
-    <tr>
-      <th>739</th>
-      <td>2020-03-15</td>
-      <td>深圳</td>
-      <td>数据分析</td>
-      <td>大专</td>
-      <td>['数据库', '可视化', '数据分析']</td>
-      <td>1-3年</td>
-      <td>7500.0</td>
-      <td>低</td>
-      <td>深圳数据分析</td>
-    </tr>
-    <tr>
-      <th>310</th>
-      <td>2020-03-16</td>
-      <td>北京</td>
-      <td>数据分析</td>
-      <td>本科</td>
-      <td>['数据分析']</td>
-      <td>1-3年</td>
-      <td>15000.0</td>
-      <td>高</td>
-      <td>北京数据分析</td>
     </tr>
   </tbody>
 </table>
