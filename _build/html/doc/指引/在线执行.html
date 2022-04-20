@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>在线执行代码 &#8212; Graph Pandas</title>
+    <title>在线执行代码</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -90,8 +90,6 @@
       
       <img src="../../_static/mylogo.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">Graph Pandas</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -496,6 +494,23 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter11/chapt11.html">
+   常见操作合集
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/Data_encoding.html">
+     数据编码的十种方式
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
@@ -665,7 +680,7 @@
         <div class="qe-page__header">
 
     <div class="qe-page__header-copy">
-        <p class="qe-page__header-heading" ><a href="#">早起Code -> Python数据分析教程 -> 图解Pandas -> </a></p>
+        <p class="qe-page__header-heading" ><a href="https://liuzaoqi.com/">Zaoqi's Blog</a> -> <a href="#">Python数据分析教程</a> -> <a href="https://pandas.liuzaoqi.com/">图解Pandas</a> -> </p>
         <p class="qe-page__header-subheading"> 在线执行代码</p>
     </div>
     <p class="qe-page__header-authors"><a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank" style="color: #333">刘早起@微信公众号:早起Python</a></p>
@@ -687,11 +702,11 @@
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112171120695.png"><img alt="https://pic.liuzaoqi.com/picgo/202112171120695.png" src="https://pic.liuzaoqi.com/picgo/202112171120695.png" style="width: 700px;" /></a>
 </div>
-<p>之后耐心等待页面加载（所需时间与网络、并发用户相关，一般在1-3分钟内加载完成），直到提示 <code class="docutils literal notranslate"><span class="pre">Lunching</span> <span class="pre">from</span> <span class="pre">mybinder.org:ready</span></code></p>
+<p>之后耐心等待页面加载（所需时间与网络、并发用户相关，一般在1-3分钟内加载完成，若很久没好，可以刷新下页面重新执行一般可以解决），直到提示 <code class="docutils literal notranslate"><span class="pre">Lunching</span> <span class="pre">from</span> <span class="pre">mybinder.org:ready</span></code></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112171122279.png"><img alt="https://pic.liuzaoqi.com/picgo/202112171122279.png" src="https://pic.liuzaoqi.com/picgo/202112171122279.png" style="width: 700px;" /></a>
 </div>
-<p>现在，你可以跳转到该页面任意单元格，通过点击 <code class="docutils literal notranslate"><span class="pre">run</span> </code>来运行代码</p>
+<p>现在，你可以跳转到该页面任意单元格，通过点击 <code class="docutils literal notranslate"><span class="pre">run</span> </code>来运行你感兴趣的代码</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://pic.liuzaoqi.com/picgo/202112171205375.png"><img alt="https://pic.liuzaoqi.com/picgo/202112171205375.png" src="https://pic.liuzaoqi.com/picgo/202112171205375.png" style="width: 700px;" /></a>
 </div>
@@ -708,7 +723,7 @@
 </div>
 <div class="section" id="id5">
 <h3>偶有报错是正常的<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>如果是执行代码报错，可能是由于某个相关变量未创建（因为后面的代码可能会与该页面上方某个操作有关），你可以根据报错提示找到对应单元格执行后再次尝试！</p>
+<p>如果是执行代码报错，例如若提示 <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'df'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> 可能是由于某个相关变量<code class="docutils literal notranslate"><span class="pre">df</span></code>未创建（因为后面的代码可能会与该页面上方某个操作有关），你可以根据报错提示找到对应单元格执行后再次尝试！</p>
 <p>如果是初始化报错，如上面所说，在线执行代码功能使用的是第三方平台的公共资源，<strong>因此可能会由于并发请求数量多/网络延迟等原因，引发未知错误或崩溃，如果无法使用，可以刷新页面或过一段时间再试！</strong></p>
 </div>
 </div>
@@ -768,7 +783,7 @@
     <div class="container">
       <p style="font-size: 0.8em">
         
-          By 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a>｜<a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a>｜<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"><img src="https://img.shields.io/badge/微信公众号-5w%2B-green?logo=wechat&style=social" style="padding-bottom:0.2em;" /></a> &nbsp; <a href="https://github.com/liuhuanshuo/zaoqi-book" target="_blank"><img src="https://img.shields.io/github/stars/liuhuanshuo/zaoqi-book.svg?logo=Github&style=social" style="padding-bottom:0.2em;" /></a> &nbsp; <a href="https://pandas.liuzaoqi.com/doc/chapter10/donate.html"><img src="https://img.shields.io/badge/赞赏-请早起喝咖啡～-green?logo=CoffeeScript&style=social&logoColor=critical" style="padding-bottom:0.2em;" /></a><br/>
+          By 刘早起@<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"  style=" color:#333;">微信公众号:早起Python</a>｜友情链接 -> <a href="https://iswbm.com/" target="_blank" style=" color:#333;">明哥教程 🚀</a>｜<a href="https://beian.miit.gov.cn/" target="_blank"  style=" color:#333;">皖ICP备2021017583号-1</a>｜<a href="https://pic.liuzaoqi.com/picgo/202112150908823.jpeg" target="_blank"><img src="https://img.shields.io/badge/微信公众号-5w%2B-green?logo=wechat&style=social" style="padding-bottom:0.2em;" /></a> &nbsp; <a href="https://github.com/liuhuanshuo/zaoqi-book" target="_blank"><img src="https://img.shields.io/github/stars/liuhuanshuo/zaoqi-book.svg?logo=Github&style=social" style="padding-bottom:0.2em;" /></a> &nbsp; <a href="https://www.zhihu.com/people/almost-lover-1hs" target="_blank"><img src="https://img.shields.io/badge/%20follow-5k-green?logo=zhihu&style=social&logoColor=#019DFF" style="padding-bottom:0.2em;" /></a> &nbsp; <a href="https://pandas.liuzaoqi.com/doc/chapter10/donate.html"><img src="https://img.shields.io/badge/赞赏-请早起喝咖啡～-green?logo=CoffeeScript&style=social&logoColor=critical" style="padding-bottom:0.2em;" /></a><br/>
         
       </p>
     </div>

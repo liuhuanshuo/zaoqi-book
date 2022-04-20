@@ -3,6 +3,12 @@
 
 # (content:document)=
 # 
+# ```{admonition} 网站打开慢？
+# :class: note
+# 
+# 由于本站使用了CDN加速，更新网站内容时会刷新节点缓存，偶有网站打开速度突然变慢为正常情况。
+# ```
+# 
 # # 使用说明
 # 
 # 本网站是我的[Pandas进阶修炼300题](https://mp.weixin.qq.com/s/GW6OxfwIp2X8p2X9fcQZOg)交互式版本，亦是一份 `pandas` 学习指南。

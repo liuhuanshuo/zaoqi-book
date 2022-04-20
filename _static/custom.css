@@ -1446,7 +1446,7 @@ blockquote div>p {
 @media (min-width: 720px){
 .pl-md-3, .px-md-3 {
     padding-left: 1rem!important;
-    padding-right: 5rem !important;
+    padding-right: 2rem !important;
     padding-top: 2rem;
 }}
 
@@ -1491,7 +1491,20 @@ div.figure> a > img{
 
 /* ###############0414修改a标签高亮####################### */
 a:hover {
-    color: #0072BC !important;
-    text-decoration: none !important;
+    color: #004979 !important;
 }
 /* ################################################## */
+
+/* ###############0415修改右侧目录字体大小####################### */
+.toc-h2 {
+    font-size: .85rem;
+}
+/* ################################################## */
+
+/* ###############0415修改正文和目录的边距####################### */
+/* ###############还需要修改1447行####################### */
+.bd-toc {
+    overflow-y: unset;
+    margin-top: 3em;
+    margin-left: 2.5em;
+}
